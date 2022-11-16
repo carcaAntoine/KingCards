@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 3371167198131570054}
   - component: {fileID: 2537200698857550029}
   - component: {fileID: 1428765498180999422}
-  - component: {fileID: 5076231465310242487}
   m_Layer: 0
   m_Name: LoiAgricoleCard
-  m_TagString: Untagged
+  m_TagString: Turn1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,15 +111,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 6}
   m_EdgeRadius: 0
---- !u!114 &5076231465310242487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2482412821245232433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b1fe9ad48b9c0343838cf9deb2e59a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

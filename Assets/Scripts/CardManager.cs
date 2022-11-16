@@ -6,7 +6,7 @@ using System;
 
 namespace MyGame
 {
-    public class CardManager : MouseOver
+    public class CardManager : MonoBehaviour
     {
         /*------------------ NOURRITURE ------------------*/
         static private Text foodIncomeText; //income nourriture (GameObject)
