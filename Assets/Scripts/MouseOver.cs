@@ -19,7 +19,7 @@ namespace MyGame
         private void OnMouseDown()
         {
             Debug.Log("Mouse Click Detected");
-            LoiAgricoleDisable.LoiAgricoleCard();
+            CardManager.LoiAgricoleCard();
         }
     }
 

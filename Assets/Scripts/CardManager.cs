@@ -6,7 +6,7 @@ using System;
 
 namespace MyGame
 {
-    public class LoiAgricoleDisable : MonoBehaviour
+    public class CardManager : MouseOver
     {
         /*------------------ NOURRITURE ------------------*/
         static private Text foodIncomeText; //income nourriture (GameObject)
@@ -23,6 +23,7 @@ namespace MyGame
         static private Text goldValueText;  //valeur argent (GameObject)
         static private int goldValue;  //valeur de l'argent à ajouter
         static private int goldIncome; //valeur de l'income à ajouter
+        
         /*--------------------------------------------*/
         void Start()
         {
