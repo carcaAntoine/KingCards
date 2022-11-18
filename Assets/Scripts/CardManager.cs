@@ -25,15 +25,6 @@ namespace MyGame
         static private int goldIncome; //valeur de l'income à ajouter
         
         /*--------------------------------------------*/
-        void Start()
-        {
-
-        }
-
-        void Update()
-        {
-
-        }
 
         static public void LoiAgricoleCard()
         {
@@ -47,7 +38,7 @@ namespace MyGame
         {
             goldIncomeText = GameObject.Find("GoldIncome").GetComponent<Text>();
             goldIncome = Convert.ToInt32(goldIncomeText.text);
-            goldIncomeText.text = (goldIncome + 5).ToString();
+            goldIncomeText.text = (goldIncome + 10).ToString();
         }
 
         static public void LoiMartialeCard()

@@ -6,48 +6,44 @@ namespace MyGame
 {
     public class MouseOver : MonoBehaviour
     {
-        //private string functionName;
-        //private GameObject selectionnedCard;
-        /* void OnMouseEnter()
-         {
-             Debug.Log("Mouse is over GameObject.");
-         }
+        private string selectionnedCard;//Nom de la carte sélectionnée
+        private string functionName;//Nom de la fonction liée à la carte sélectionnée
 
-         void OnMouseExit()
-         {
-             Debug.Log("Mouse is no longer on GameObject.");
-         }
- */
-        /*
-                private void OnMouseDown()
-                {
-                    //selectionnedCard = 
-                    functionName = selectionnedCard.name;
-                    Debug.Log(functionName);
-                    CardManager.LoiAgricoleCard();
-                }
-        */
-        private void Update()
+        private void OnMouseDown()
         {
-            if (Input.GetMouseButtonDown(0))
+            selectionnedCard = this.gameObject.name;
+            Debug.Log("clic sur " + selectionnedCard);// retourne NameCard(Clone)
+
+            //########## Supprimer le (Clone) de selectionnedCard ##########
+
+            int len = 7; //nombre de caractères à supprimer à la fin de selectionnedCard
+            functionName = selectionnedCard.RemoveCloneEnd(len);
+            Debug.Log(functionName);
+
+            //##############################################################
+
+            switch (functionName)
             {
-                RaycastHit hit;
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-                if (Physics.Raycast(ray, out hit, 100.0f))
-                {
-                    if (hit.transform != null) //voit si l'élément existe
-                    {
-                        PrintName(hit.transform.gameObject);
-                    }
-                }
+                case "LoiAgricoleCard":
+                    CardManager.LoiAgricoleCard();
+                    GameManager.EndTurn();
+                    GameManager.newTurn();
+                    break;
+                case "LoiFiscaleCard":
+                    CardManager.LoiFiscaleCard();
+                    break;
+                case "LoiMartialeCard":
+                    CardManager.LoiMartialeCard();
+                    break;
+                default:
+                    Debug.Log("error");
+                    break;
             }
+
+
         }
 
-        private void PrintName(GameObject go)
-        {
-            Debug.Log(go.name);
-        }
+
 
     }
 }
