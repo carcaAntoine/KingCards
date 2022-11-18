@@ -12,12 +12,13 @@ namespace MyGame
 
 
         public GameObject[] turn1Cards;
-        static public GameObject[] otherTurnsCards;
+        public GameObject[] otherTurnsCards;
         static public int turnCounterValue;
         static private Text turnCounterText;
         static private GameObject deck;
         static int card1Index = 0;
         static int card2Index = 0;
+        static int numberOfCards;
 
         void TurnOne()
         {
@@ -37,26 +38,43 @@ namespace MyGame
         {
             turnCounterValue += 1;
             turnCounterText.text = turnCounterValue.ToString();
-            Destroy (GameObject.Find("Deck"), .5f);
+            Destroy(GameObject.Find("Deck"), .5f);
         }
 
         void Start()
         {
+            numberOfCards = otherTurnsCards.Length;
             deck = GameObject.Find("Deck");
             TurnOne();
         }
 
-        public static void newTurn()
+        public void newTurn()
         {
+            // Création des indexs pour la sélection aléatoire des 2 cartes
             System.Random rdn = new System.Random();
-            card1Index = rdn.Next(0, 4);
-            card2Index = rdn.Next(0, 4);
-            while(card1Index == card2Index)
+            card1Index = rdn.Next(0, numberOfCards);
+            card2Index = rdn.Next(0, numberOfCards);
+            while (card1Index == card2Index)
             {
-                card2Index = rdn.Next(0, 4);
+                card2Index = rdn.Next(0, numberOfCards);
+                Debug.Log("valeurs identiques. Nouvel essai");
             }
             Debug.Log(card1Index);
             Debug.Log(card2Index);
+            // ------------------------------------------------------------
+
+            GameObject Deck = new GameObject(); //Création d'un nouveau Deck
+            Deck.name = "Deck";
+            deck = GameObject.Find("Deck");
+
+            GameObject instantiateCard1 = otherTurnsCards[card1Index];
+            GameObject instance = Instantiate(instantiateCard1, new Vector3(-5, 0, 0f), Quaternion.identity) as GameObject;
+            instance.transform.parent = deck.transform;
+            
+            GameObject instantiateCard2 = otherTurnsCards[card2Index];
+            GameObject secondInstance = Instantiate(instantiateCard2, new Vector3(5, 0, 0f), Quaternion.identity) as GameObject;
+            secondInstance.transform.parent = deck.transform;
+
         }
 
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MyGame
 {
-    public class MouseOver : MonoBehaviour
+    public class MouseOver : GameManager
     {
         private string selectionnedCard;//Nom de la carte sélectionnée
         private string functionName;//Nom de la fonction liée à la carte sélectionnée
@@ -26,8 +26,8 @@ namespace MyGame
             {
                 case "LoiAgricoleCard":
                     CardManager.LoiAgricoleCard();
-                    GameManager.EndTurn();
-                    GameManager.newTurn();
+                    EndTurn();
+                    newTurn();
                     break;
                 case "LoiFiscaleCard":
                     CardManager.LoiFiscaleCard();
