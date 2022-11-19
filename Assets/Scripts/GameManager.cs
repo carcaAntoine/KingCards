@@ -43,6 +43,7 @@ namespace MyGame
 
         void Start()
         {
+            Debug.Log("Le jeu démarre");
             numberOfCards = otherTurnsCards.Length;
             deck = GameObject.Find("Deck");
             TurnOne();
