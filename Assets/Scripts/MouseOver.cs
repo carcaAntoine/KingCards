@@ -27,7 +27,7 @@ namespace MyGame
                 case "LoiAgricoleCard":
                     CardManager.LoiAgricoleCard();
                     EndTurn();
-                    newTurn();
+                    Debug.Log("Fin du tour 1");
                     break;
                 case "LoiFiscaleCard":
                     CardManager.LoiFiscaleCard();

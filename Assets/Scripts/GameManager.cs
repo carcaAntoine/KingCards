@@ -44,13 +44,15 @@ namespace MyGame
         void Start()
         {
             Debug.Log("Le jeu démarre");
-            numberOfCards = otherTurnsCards.Length;
             deck = GameObject.Find("Deck");
             TurnOne();
+            //newTurn();
         }
 
-        public void newTurn()
+        void newTurn()
         {
+            numberOfCards = otherTurnsCards.Length;
+            Debug.Log(numberOfCards);
             // Création des indexs pour la sélection aléatoire des 2 cartes
             System.Random rdn = new System.Random();
             card1Index = rdn.Next(0, numberOfCards);
