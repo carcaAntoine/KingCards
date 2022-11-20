@@ -28,6 +28,7 @@ namespace MyGame
                     CardManager.LoiAgricoleCard();
                     EndTurn();
                     Debug.Log("Fin du tour 1");
+                    newTurn();
                     break;
                 case "LoiFiscaleCard":
                     CardManager.LoiFiscaleCard();

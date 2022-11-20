@@ -18,10 +18,11 @@ namespace MyGame
         static private GameObject deck;
         static int card1Index = 0;
         static int card2Index = 0;
-        static int numberOfCards;
+        public static int numberOfCards = 4; //Nombre de cartes dans Other Turn Cards
 
         void TurnOne()
         {
+            Debug.Log(otherTurnsCards.Length);
             int x = -5;
             for (int i = 0; i < turn1Cards.Length; i++)
             {
@@ -49,27 +50,33 @@ namespace MyGame
             //newTurn();
         }
 
-        void newTurn()
+        public void newTurn()
         {
-            numberOfCards = otherTurnsCards.Length;
-            Debug.Log(numberOfCards);
+            //numberOfCards = otherTurnsCards.Length;
+            Debug.Log("nombre de cartes : " + numberOfCards);
             // Création des indexs pour la sélection aléatoire des 2 cartes
             System.Random rdn = new System.Random();
-            card1Index = rdn.Next(0, numberOfCards);
-            card2Index = rdn.Next(0, numberOfCards);
+            card1Index = rdn.Next(0, numberOfCards - 1);
+            card2Index = rdn.Next(0, numberOfCards - 1);
             while (card1Index == card2Index)
             {
                 card2Index = rdn.Next(0, numberOfCards);
                 Debug.Log("valeurs identiques. Nouvel essai");
             }
-            Debug.Log(card1Index);
-            Debug.Log(card2Index);
+            Debug.Log("card1Index : " + card1Index);
+            Debug.Log("card2Index : " + card2Index);
             // ------------------------------------------------------------
 
             GameObject Deck = new GameObject(); //Création d'un nouveau Deck
             Deck.name = "Deck";
             deck = GameObject.Find("Deck");
+            createDeck();
+            
+        }
 
+        void createDeck()
+        {
+            Debug.Log("création du deck");
             GameObject instantiateCard1 = otherTurnsCards[card1Index];
             GameObject instance = Instantiate(instantiateCard1, new Vector3(-5, 0, 0f), Quaternion.identity) as GameObject;
             instance.transform.parent = deck.transform;
@@ -77,7 +84,7 @@ namespace MyGame
             GameObject instantiateCard2 = otherTurnsCards[card2Index];
             GameObject secondInstance = Instantiate(instantiateCard2, new Vector3(5, 0, 0f), Quaternion.identity) as GameObject;
             secondInstance.transform.parent = deck.transform;
-
+            
         }
 
     }
