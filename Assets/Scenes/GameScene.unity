@@ -300,9 +300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1fe9ad48b9c0343838cf9deb2e59a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turn1Cards: []
-  otherTurnsCards: []
-  testTurn: []
 --- !u!1 &591797904
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,10 +1175,6 @@ MonoBehaviour:
   - {fileID: 6326482537749681062, guid: 63f71d7408b5b35489e939d25c88b7dd, type: 3}
   - {fileID: 7894039106024109301, guid: b35be4bba04c5c044b0786f571aceaa1, type: 3}
   - {fileID: 27641317092143249, guid: 329aaf63c8c58dc4584d3085dc06d33c, type: 3}
-  testTurn:
-  - {fileID: 2482412821245232433, guid: 3cb4f865f73117446bbe5c1417d6a099, type: 3}
-  - {fileID: 3279127251666445786, guid: cb39806bb40dda54dac2eea4c681e96a, type: 3}
-  - {fileID: 6585705457527193927, guid: d60ef69995239214bb7754e2759a5d5b, type: 3}
 --- !u!4 &1518848428
 Transform:
   m_ObjectHideFlags: 0

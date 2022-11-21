@@ -19,10 +19,28 @@ namespace MyGame
         static int card1Index = 0;
         static int card2Index = 0;
         public static int numberOfCards = 4; //Nombre de cartes dans Other Turn Cards
+        public static bool changeTurn = false;
 
+        void Start()
+        {
+            //Debug.Log("Le jeu démarre");
+            deck = GameObject.Find("Deck");
+            TurnOne();
+        }
+
+        void Update()
+        {
+            if (changeTurn)
+            {
+                newTurn();
+                createDeck();
+
+            }
+        }
         void TurnOne()
         {
-            Debug.Log(otherTurnsCards.Length);
+            Debug.Log("turn1Cards Length : " + turn1Cards.Length);
+            Debug.Log("otherTurnCards Length : " + otherTurnsCards.Length);
             int x = -5;
             for (int i = 0; i < turn1Cards.Length; i++)
             {
@@ -39,20 +57,15 @@ namespace MyGame
         {
             turnCounterValue += 1;
             turnCounterText.text = turnCounterValue.ToString();
-            Destroy(GameObject.Find("Deck"), .5f);
+            Destroy(GameObject.Find("Deck"), 0f);
+            changeTurn = true;
         }
 
-        void Start()
+        public static void newTurn()
         {
-            Debug.Log("Le jeu démarre");
-            deck = GameObject.Find("Deck");
-            TurnOne();
-            //newTurn();
-        }
-
-        public void newTurn()
-        {
-            //numberOfCards = otherTurnsCards.Length;
+            turnCounterValue += 1;
+            turnCounterText.text = turnCounterValue.ToString();
+            Destroy(GameObject.Find("Deck"), 0f);
             Debug.Log("nombre de cartes : " + numberOfCards);
             // Création des indexs pour la sélection aléatoire des 2 cartes
             System.Random rdn = new System.Random();
@@ -70,22 +83,27 @@ namespace MyGame
             GameObject Deck = new GameObject(); //Création d'un nouveau Deck
             Deck.name = "Deck";
             deck = GameObject.Find("Deck");
-            createDeck();
-            
+
         }
 
-        void createDeck()
+        public void createDeck()
         {
+            // changeTurn = false;
             Debug.Log("création du deck");
             GameObject instantiateCard1 = otherTurnsCards[card1Index];
-            GameObject instance = Instantiate(instantiateCard1, new Vector3(-5, 0, 0f), Quaternion.identity) as GameObject;
-            instance.transform.parent = deck.transform;
-            
+            GameObject instance1 = Instantiate(instantiateCard1, new Vector3(-3, 0, 0f), Quaternion.identity) as GameObject;
+            instance1.transform.parent = deck.transform;
+
             GameObject instantiateCard2 = otherTurnsCards[card2Index];
-            GameObject secondInstance = Instantiate(instantiateCard2, new Vector3(5, 0, 0f), Quaternion.identity) as GameObject;
+            GameObject secondInstance = Instantiate(instantiateCard2, new Vector3(3, 0, 0f), Quaternion.identity) as GameObject;
             secondInstance.transform.parent = deck.transform;
-            
+
+            Debug.Log("deck créé");
+            changeTurn = false;
+            Debug.Log("variable à false");
         }
+
+
 
     }
 }
