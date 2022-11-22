@@ -11,7 +11,7 @@ namespace MyGame
     {
         public GameObject[] turn1Cards;
         //public GameObject[] otherTurnsCards;
-        static string[] cardsList = new string[] { "Convoi", "Education", "Impots", "JoiesDeLaRue" };
+        static string[] cardsList = new string[] { "Convoi", "Education", "Impots", "JoiesDeLaRue", "NouvelleTaxe" };
         static string card1; //Nom de la première carte, tiré du tableau cardList
         static string card2; //Nom de la deuxième carte, tiré du tableau cardList
         static public int turnCounterValue;
@@ -19,7 +19,7 @@ namespace MyGame
         static private GameObject deck;
         static int card1Index = 0;
         static int card2Index = 0;
-        public static int numberOfCards = 4; //Nombre de cartes (hors cartes du turn 1)
+        public static int numberOfCards = 5; //Nombre de cartes (hors cartes du turn 1)
         static private GameObject Card1Object; //1re carte à afficher
         static private GameObject Card2Object; //2e carte à afficher
 
@@ -37,6 +37,8 @@ namespace MyGame
             GameObject.Find("Impots").GetComponent<BoxCollider2D>().enabled = false;
             GameObject.Find("JoiesDeLaRue").GetComponent<Renderer>().enabled = false;
             GameObject.Find("JoiesDeLaRue").GetComponent<BoxCollider2D>().enabled = false;
+            GameObject.Find("NouvelleTaxe").GetComponent<Renderer>().enabled = false;
+            GameObject.Find("NouvelleTaxe").GetComponent<BoxCollider2D>().enabled = false;
             //-----------------------------------------
 
             TurnOne();
@@ -111,6 +113,9 @@ namespace MyGame
                 case "JoiesDeLaRue":
                     Card1Object = GameObject.Find("JoiesDeLaRue");
                     break;
+                case "NouvelleTaxe":
+                    Card1Object = GameObject.Find("NouvelleTaxe"); 
+                    break;
                 default:
                     Debug.Log("error with card name");
                     break;
@@ -130,6 +135,9 @@ namespace MyGame
                 case "JoiesDeLaRue":
                     Card2Object = GameObject.Find("JoiesDeLaRue");
                     break;
+                case "NouvelleTaxe":
+                    Card2Object = GameObject.Find("NouvelleTaxe"); 
+                    break;
                 default:
                     Debug.Log("error with card name");
                     break;
@@ -147,7 +155,7 @@ namespace MyGame
 
         public static void checkIfGameIsOver()
         {
-            
+
         }
 
         /*
