@@ -9,10 +9,8 @@ namespace MyGame
 {
     public class GameManager : MonoBehaviour
     {
-
-
         public GameObject[] turn1Cards;
-        public GameObject[] otherTurnsCards;
+        //public GameObject[] otherTurnsCards;
         static string[] cardsList = new string[] { "Convoi", "Education", "Impots", "JoiesDeLaRue" };
         static string card1; //Nom de la première carte, tiré du tableau cardList
         static string card2; //Nom de la deuxième carte, tiré du tableau cardList
@@ -21,7 +19,7 @@ namespace MyGame
         static private GameObject deck;
         static int card1Index = 0;
         static int card2Index = 0;
-        public static int numberOfCards = 4; //Nombre de cartes dans Other Turn Cards
+        public static int numberOfCards = 4; //Nombre de cartes (hors cartes du turn 1)
         static private GameObject Card1Object; //1re carte à afficher
         static private GameObject Card2Object; //2e carte à afficher
 
@@ -47,7 +45,7 @@ namespace MyGame
         void TurnOne()
         {
             Debug.Log("turn1Cards Length : " + turn1Cards.Length);
-            Debug.Log("otherTurnCards Length : " + otherTurnsCards.Length);
+            //Debug.Log("otherTurnCards Length : " + otherTurnsCards.Length);
             int x = -5;
             for (int i = 0; i < turn1Cards.Length; i++)
             {
@@ -145,6 +143,11 @@ namespace MyGame
             Card2Object.GetComponent<Renderer>().enabled = true;
             Card2Object.GetComponent<BoxCollider2D>().enabled = true;
             // ------------------------------------------------------------
+        }
+
+        public static void checkIfGameIsOver()
+        {
+            
         }
 
         /*
