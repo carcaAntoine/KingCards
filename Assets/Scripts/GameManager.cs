@@ -35,6 +35,10 @@ namespace MyGame
         static private GameObject nouvelleTaxeCard;
 
         //------------------------------------------
+        private Text title;
+        private Image effet1;
+        private Image signet;
+        //------------------------------------------
 
         void Start()
         {
@@ -43,6 +47,7 @@ namespace MyGame
             numberOfCards = otherTurnsCards.Length;
             Debug.Log("Nombre de cartes : " + numberOfCards);
             InitGame();
+            TestdelaCarte();
             /*
             for (int i = 0; i < otherTurnsCards.Length; i++)
             {
@@ -52,6 +57,17 @@ namespace MyGame
             }
             */
             TurnOne();
+        }
+
+        void TestdelaCarte()
+        {
+            title = GameObject.Find("Title").GetComponent<Text>();
+            title.text = "Titre Test";
+            signet = GameObject.Find("Signet").GetComponent<Image>();
+            signet.color = Color.blue;
+            //effet1 = GameObject.Find("IconEffect1").GetComponent<Image>();
+            //effet1.sprite = 
+            
         }
 
         void InitGame()
