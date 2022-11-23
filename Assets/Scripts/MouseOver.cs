@@ -64,7 +64,7 @@ namespace MyGame
             }
             GameManager.EndTurn();
             //GameManager.newTurn();
-            
+
         }
 
 

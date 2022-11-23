@@ -1107,6 +1107,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Convoi
       objectReference: {fileID: 0}
+    - target: {fileID: 3135352167412491148, guid: 90af9057f4eeea44fa74702cf97ef14b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3190804235977925247, guid: 90af9057f4eeea44fa74702cf97ef14b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5936570760539152847, guid: 90af9057f4eeea44fa74702cf97ef14b, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1553,6 +1561,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 851683742490173717, guid: 368148e1416aa7640913e027bea6d979, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 872229907466543334, guid: 368148e1416aa7640913e027bea6d979, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3220258798352100760, guid: 368148e1416aa7640913e027bea6d979, type: 3}
       propertyPath: m_Name
       value: Impots
@@ -1741,6 +1757,14 @@ PrefabInstance:
     - target: {fileID: 6653494485654284310, guid: 340bd25a568bd4241b9c6bf0483b95bf, type: 3}
       propertyPath: m_Name
       value: Education
+      objectReference: {fileID: 0}
+    - target: {fileID: 8877883985233044635, guid: 340bd25a568bd4241b9c6bf0483b95bf, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9007082507361330536, guid: 340bd25a568bd4241b9c6bf0483b95bf, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 340bd25a568bd4241b9c6bf0483b95bf, type: 3}
@@ -2044,6 +2068,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: JoiesDeLaRue
       objectReference: {fileID: 0}
+    - target: {fileID: 7773088148975714112, guid: d5678773c39561f438f2ebb2b3bb2426, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7788007847167999667, guid: d5678773c39561f438f2ebb2b3bb2426, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5678773c39561f438f2ebb2b3bb2426, type: 3}
 --- !u!1 &1518848426
@@ -2289,6 +2321,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 716353710974896481, guid: d3a1874f95164ef40a6ef5c0fc6ecb4f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025692911073282194, guid: d3a1874f95164ef40a6ef5c0fc6ecb4f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2979869808854074399, guid: d3a1874f95164ef40a6ef5c0fc6ecb4f, type: 3}
       propertyPath: m_Name
       value: NouvelleTaxe

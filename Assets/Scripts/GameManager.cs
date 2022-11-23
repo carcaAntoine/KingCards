@@ -15,33 +15,66 @@ namespace MyGame
         static string card1; //Nom de la première carte, tiré du tableau cardList
         static string card2; //Nom de la deuxième carte, tiré du tableau cardList
         static public int turnCounterValue;
-        static private Text turnCounterText;
+        static public Text turnCounterText;
         static private GameObject deck;
         static int card1Index = 0;
         static int card2Index = 0;
         public static int numberOfCards; //Nombre de cartes (hors cartes du turn 1)
-        static private GameObject Card1Object; //1re carte à afficher
-        static private GameObject Card2Object; //2e carte à afficher
+        static public GameObject Card1Object; //1re carte à afficher
+        static public GameObject Card2Object; //2e carte à afficher
         private static GameObject gameOverScreen;
         private static Text gameOverText;
         public static bool gameIsOver = false; //passe à true quand la partie est perdue
 
+        //------------------ Cards -----------------
+
+        static private GameObject convoiCard;
+        static private GameObject educationCard;
+        static private GameObject impotsCard;
+        static private GameObject joiesDeLaRueCard;
+        static private GameObject nouvelleTaxeCard;
+
+        //------------------------------------------
+
         void Start()
         {
-            gameOverScreen = GameObject.Find("GameOverCanva");
-            gameOverScreen.SetActive(false);
+
             deck = GameObject.Find("Deck");
             numberOfCards = otherTurnsCards.Length;
             Debug.Log("Nombre de cartes : " + numberOfCards);
-
+            InitGame();
+            /*
             for (int i = 0; i < otherTurnsCards.Length; i++)
             {
                 GameObject actualGameObject = otherTurnsCards[i];
                 actualGameObject.GetComponent<Renderer>().enabled = false;
                 actualGameObject.GetComponent<BoxCollider2D>().enabled = false;
             }
-
+            */
             TurnOne();
+        }
+
+        void InitGame()
+        {
+            //----- Ecran de GameOver -----
+            gameOverScreen = GameObject.Find("GameOverCanva");
+            gameOverScreen.SetActive(false);
+
+            //----- Cards -----
+            convoiCard = GameObject.Find("Convoi");
+            convoiCard.SetActive(false);
+
+            educationCard = GameObject.Find("Education");
+            educationCard.SetActive(false);
+
+            impotsCard = GameObject.Find("Impots");
+            impotsCard.SetActive(false);
+
+            joiesDeLaRueCard = GameObject.Find("JoiesDeLaRue");
+            joiesDeLaRueCard.SetActive(false);
+
+            nouvelleTaxeCard = GameObject.Find("NouvelleTaxe");
+            nouvelleTaxeCard.SetActive(false);
         }
 
         void TurnOne()
@@ -64,12 +97,19 @@ namespace MyGame
         public static void EndTurn()
         {
             checkIfGameIsOver();
-            if(!gameIsOver)
+            if (!gameIsOver)
             {
-            turnCounterValue += 1;
-            turnCounterText.text = turnCounterValue.ToString();
-            Debug.Log("EndTurn appelé");
-            newTurn();
+                turnCounterValue += 1;
+                turnCounterText.text = turnCounterValue.ToString();
+
+                if (turnCounterValue > 2)
+                {
+                    Card1Object.SetActive(false);
+                    Card2Object.SetActive(false);
+                }
+
+                Debug.Log("EndTurn appelé");
+                newTurn();
             }
         }
 
@@ -106,19 +146,19 @@ namespace MyGame
             switch (card1)
             {
                 case "Convoi":
-                    Card1Object = GameObject.Find("Convoi");
+                    Card1Object = convoiCard;
                     break;
                 case "Education":
-                    Card1Object = GameObject.Find("Education");
+                    Card1Object = educationCard;
                     break;
                 case "Impots":
-                    Card1Object = GameObject.Find("Impots");
+                    Card1Object = impotsCard;
                     break;
                 case "JoiesDeLaRue":
-                    Card1Object = GameObject.Find("JoiesDeLaRue");
+                    Card1Object = joiesDeLaRueCard;
                     break;
                 case "NouvelleTaxe":
-                    Card1Object = GameObject.Find("NouvelleTaxe");
+                    Card1Object = nouvelleTaxeCard;
                     break;
                 default:
                     Debug.Log("error with card name");
@@ -128,32 +168,40 @@ namespace MyGame
             switch (card2)
             {
                 case "Convoi":
-                    Card2Object = GameObject.Find("Convoi");
+                    Card2Object = convoiCard;
                     break;
                 case "Education":
-                    Card2Object = GameObject.Find("Education");
+                    Card2Object = educationCard;
                     break;
                 case "Impots":
-                    Card2Object = GameObject.Find("Impots");
+                    Card2Object = impotsCard;
                     break;
                 case "JoiesDeLaRue":
-                    Card2Object = GameObject.Find("JoiesDeLaRue");
+                    Card2Object = joiesDeLaRueCard;
                     break;
                 case "NouvelleTaxe":
-                    Card2Object = GameObject.Find("NouvelleTaxe");
+                    Card2Object = nouvelleTaxeCard;
                     break;
                 default:
                     Debug.Log("error with card name");
                     break;
             }
 
-            Card1Object.transform.Translate(-3, 0, 0f);
-            Card1Object.GetComponent<Renderer>().enabled = true;
-            Card1Object.GetComponent<BoxCollider2D>().enabled = true;
+            //--------- Repositionner Les Cartes -------------------------
+            
+            if(Card1Object.transform.position.x != -3)
+            {
+                Card1Object.transform.position = new Vector3(-3, 0, 0);
+            }
+            
+            Card1Object.SetActive(true);
 
-            Card2Object.transform.Translate(3, 0, 0f);
-            Card2Object.GetComponent<Renderer>().enabled = true;
-            Card2Object.GetComponent<BoxCollider2D>().enabled = true;
+            if(Card2Object.transform.position.x != 3)
+            {
+                Card2Object.transform.position = new Vector3(3, 0, 0);
+            }
+            Card2Object.SetActive(true);
+
             // ------------------------------------------------------------
         }
 
