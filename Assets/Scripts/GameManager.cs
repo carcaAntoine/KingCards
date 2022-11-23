@@ -75,6 +75,12 @@ namespace MyGame
 
             nouvelleTaxeCard = GameObject.Find("NouvelleTaxe");
             nouvelleTaxeCard.SetActive(false);
+
+            turnCounterText = GameObject.Find("TurnCount").GetComponent<Text>();
+            turnCounterValue = Convert.ToInt32(turnCounterText.text);
+
+            
+
         }
 
         void TurnOne()
@@ -89,9 +95,7 @@ namespace MyGame
                 instance.transform.parent = deck.transform;
                 x = x + 5;
             }
-            turnCounterText = GameObject.Find("TurnCount").GetComponent<Text>();
-            turnCounterValue = Convert.ToInt32(turnCounterText.text);
-
+            
         }
 
         public static void EndTurn()
