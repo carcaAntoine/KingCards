@@ -107,8 +107,7 @@ namespace MyGame
                     Card1Object.SetActive(false);
                     Card2Object.SetActive(false);
                 }
-
-                Debug.Log("EndTurn appelé");
+                //Debug.Log("EndTurn appelé");
                 newTurn();
             }
         }
@@ -188,7 +187,7 @@ namespace MyGame
             }
 
             //--------- Repositionner Les Cartes -------------------------
-            
+
             if(Card1Object.transform.position.x != -3)
             {
                 Card1Object.transform.position = new Vector3(-3, 0, 0);
@@ -208,38 +207,42 @@ namespace MyGame
         public static void checkIfGameIsOver()
         {
             CardManager.CheckValues();
+            //------ DEBUG ------
+            /*
             Debug.Log("Food : " + CardManager.foodValue);
             Debug.Log("Army : " + CardManager.armyValue);
             Debug.Log("Gold : " + CardManager.goldValue);
             Debug.Log("Bonheur : " + CardManager.bonheurValue);
             Debug.Log("Evolution : " + CardManager.evolutionValue);
+            */
+            //-------------------
 
             if (CardManager.foodValue <= 0)
             {
                 gameOverScreen.SetActive(true);
                 gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
-                gameOverText.text = "Votre peuple est mort de faim. \n Votre règne s'achève après " + turnCounterValue + " ans de règne.";
+                gameOverText.text = "Votre peuple est mort de faim. \n Votre règne s'achève après " + turnCounterValue + " ans.";
                 gameIsOver = true;
             }
             if (CardManager.goldValue <= 0)
             {
                 gameOverScreen.SetActive(true);
                 gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
-                gameOverText.text = "Votre Royaume est ruiné. \n Votre règne s'achève après " + turnCounterValue + " ans de règne.";
+                gameOverText.text = "Votre Royaume est ruiné. \n Votre règne s'achève après " + turnCounterValue + " ans.";
                 gameIsOver = true;
             }
             if (CardManager.goldValue <= 0)
             {
                 gameOverScreen.SetActive(true);
                 gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
-                gameOverText.text = "Votre Royaume est ruiné. \n Votre règne s'achève après " + turnCounterValue + " ans de règne.";
+                gameOverText.text = "Votre Royaume est ruiné. \n Votre règne s'achève après " + turnCounterValue + " ans.";
                 gameIsOver = true;
             }
             if (CardManager.bonheurValue <= 0)
             {
                 gameOverScreen.SetActive(true);
                 gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
-                gameOverText.text = "Votre peuple vous a destitué. \n Votre règne s'achève après " + turnCounterValue + " ans de règne.";
+                gameOverText.text = "Votre peuple vous a destitué. \n Votre règne s'achève après " + turnCounterValue + " ans.";
                 gameIsOver = true;
             }
 
