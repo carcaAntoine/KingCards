@@ -24,7 +24,7 @@ namespace MyGame
             else
             {
                 functionName = selectionnedCard;
-                Debug.Log(functionName);
+                Debug.Log("functionName : " + functionName);
             }
             //##############################################################
 
@@ -43,13 +43,28 @@ namespace MyGame
                     CardManager.LoiMartialeCard();
                     GameManager.destroyDeck();
                     break;
+                case "Convoi":
+                    CardManager.Convoi();
+                    break;
+                case "Education":
+                    CardManager.Education();
+                    break;
+                case "Impots":
+                    CardManager.Impots();
+                    break;
+                case "JoiesDeLaRue":
+                    CardManager.JoiesDeLaRue();
+                    break;
+                case "NouvelleTaxe":
+                    CardManager.NouvelleTaxe();
+                    break;
                 default:
-                    Debug.Log("error, carte non renseignée");
+                    Debug.Log("erreur, carte non renseignée");
                     break;
             }
             GameManager.EndTurn();
-            GameManager.newTurn();
-
+            //GameManager.newTurn();
+            
         }
 
 

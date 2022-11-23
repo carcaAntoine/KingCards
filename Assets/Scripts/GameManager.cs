@@ -10,7 +10,7 @@ namespace MyGame
     public class GameManager : MonoBehaviour
     {
         public GameObject[] turn1Cards;
-        //public GameObject[] otherTurnsCards;
+        public GameObject[] otherTurnsCards;
         static string[] cardsList = new string[] { "Convoi", "Education", "Impots", "JoiesDeLaRue", "NouvelleTaxe" };
         static string card1; //Nom de la première carte, tiré du tableau cardList
         static string card2; //Nom de la deuxième carte, tiré du tableau cardList
@@ -19,34 +19,34 @@ namespace MyGame
         static private GameObject deck;
         static int card1Index = 0;
         static int card2Index = 0;
-        public static int numberOfCards = 5; //Nombre de cartes (hors cartes du turn 1)
+        public static int numberOfCards; //Nombre de cartes (hors cartes du turn 1)
         static private GameObject Card1Object; //1re carte à afficher
         static private GameObject Card2Object; //2e carte à afficher
-
+        private static GameObject gameOverScreen;
+        private static Text gameOverText;
+        public static bool gameIsOver = false; //passe à true quand la partie est perdue
 
         void Start()
         {
+            gameOverScreen = GameObject.Find("GameOverCanva");
+            gameOverScreen.SetActive(false);
             deck = GameObject.Find("Deck");
+            numberOfCards = otherTurnsCards.Length;
+            Debug.Log("Nombre de cartes : " + numberOfCards);
 
-            // "Désactivation" des cartes non utilisées
-            GameObject.Find("Convoi").GetComponent<Renderer>().enabled = false;
-            GameObject.Find("Convoi").GetComponent<BoxCollider2D>().enabled = false;
-            GameObject.Find("Education").GetComponent<Renderer>().enabled = false;
-            GameObject.Find("Education").GetComponent<BoxCollider2D>().enabled = false;
-            GameObject.Find("Impots").GetComponent<Renderer>().enabled = false;
-            GameObject.Find("Impots").GetComponent<BoxCollider2D>().enabled = false;
-            GameObject.Find("JoiesDeLaRue").GetComponent<Renderer>().enabled = false;
-            GameObject.Find("JoiesDeLaRue").GetComponent<BoxCollider2D>().enabled = false;
-            GameObject.Find("NouvelleTaxe").GetComponent<Renderer>().enabled = false;
-            GameObject.Find("NouvelleTaxe").GetComponent<BoxCollider2D>().enabled = false;
-            //-----------------------------------------
+            for (int i = 0; i < otherTurnsCards.Length; i++)
+            {
+                GameObject actualGameObject = otherTurnsCards[i];
+                actualGameObject.GetComponent<Renderer>().enabled = false;
+                actualGameObject.GetComponent<BoxCollider2D>().enabled = false;
+            }
 
             TurnOne();
         }
 
         void TurnOne()
         {
-            Debug.Log("turn1Cards Length : " + turn1Cards.Length);
+            //Debug.Log("turn1Cards Length : " + turn1Cards.Length);
             //Debug.Log("otherTurnCards Length : " + otherTurnsCards.Length);
             int x = -5;
             for (int i = 0; i < turn1Cards.Length; i++)
@@ -63,10 +63,14 @@ namespace MyGame
 
         public static void EndTurn()
         {
+            checkIfGameIsOver();
+            if(!gameIsOver)
+            {
             turnCounterValue += 1;
             turnCounterText.text = turnCounterValue.ToString();
             Debug.Log("EndTurn appelé");
-
+            newTurn();
+            }
         }
 
         public static void destroyDeck()
@@ -114,7 +118,7 @@ namespace MyGame
                     Card1Object = GameObject.Find("JoiesDeLaRue");
                     break;
                 case "NouvelleTaxe":
-                    Card1Object = GameObject.Find("NouvelleTaxe"); 
+                    Card1Object = GameObject.Find("NouvelleTaxe");
                     break;
                 default:
                     Debug.Log("error with card name");
@@ -136,7 +140,7 @@ namespace MyGame
                     Card2Object = GameObject.Find("JoiesDeLaRue");
                     break;
                 case "NouvelleTaxe":
-                    Card2Object = GameObject.Find("NouvelleTaxe"); 
+                    Card2Object = GameObject.Find("NouvelleTaxe");
                     break;
                 default:
                     Debug.Log("error with card name");
@@ -155,6 +159,41 @@ namespace MyGame
 
         public static void checkIfGameIsOver()
         {
+            CardManager.CheckValues();
+            Debug.Log("Food : " + CardManager.foodValue);
+            Debug.Log("Army : " + CardManager.armyValue);
+            Debug.Log("Gold : " + CardManager.goldValue);
+            Debug.Log("Bonheur : " + CardManager.bonheurValue);
+            Debug.Log("Evolution : " + CardManager.evolutionValue);
+
+            if (CardManager.foodValue <= 0)
+            {
+                gameOverScreen.SetActive(true);
+                gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
+                gameOverText.text = "Votre peuple est mort de faim. \n Votre règne s'achève après " + turnCounterValue + " ans de règne.";
+                gameIsOver = true;
+            }
+            if (CardManager.goldValue <= 0)
+            {
+                gameOverScreen.SetActive(true);
+                gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
+                gameOverText.text = "Votre Royaume est ruiné. \n Votre règne s'achève après " + turnCounterValue + " ans de règne.";
+                gameIsOver = true;
+            }
+            if (CardManager.goldValue <= 0)
+            {
+                gameOverScreen.SetActive(true);
+                gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
+                gameOverText.text = "Votre Royaume est ruiné. \n Votre règne s'achève après " + turnCounterValue + " ans de règne.";
+                gameIsOver = true;
+            }
+            if (CardManager.bonheurValue <= 0)
+            {
+                gameOverScreen.SetActive(true);
+                gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
+                gameOverText.text = "Votre peuple vous a destitué. \n Votre règne s'achève après " + turnCounterValue + " ans de règne.";
+                gameIsOver = true;
+            }
 
         }
 
