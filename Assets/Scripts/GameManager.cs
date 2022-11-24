@@ -83,14 +83,14 @@ namespace MyGame
             //----- Ecran de GameOver -----
             gameOverScreen = GameObject.Find("GameOverCanva");
             gameOverScreen.SetActive(false);
-
+/*
             //----- Cards -----
             convoiCard = GameObject.Find("Convoi");
             convoiCard.SetActive(false);
-
+            
             educationCard = GameObject.Find("Education");
             educationCard.SetActive(false);
-
+            
             impotsCard = GameObject.Find("Impots");
             impotsCard.SetActive(false);
 
@@ -102,7 +102,7 @@ namespace MyGame
 
             turnCounterText = GameObject.Find("TurnCount").GetComponent<Text>();
             turnCounterValue = Convert.ToInt32(turnCounterText.text);
-
+*/
 
 
         }
