@@ -28,9 +28,9 @@ namespace MyGame
         static private Text bonheurValueText;
         static public int bonheurValue;
 
-        /*------------------ ÉVOLUTION ------------------*/
-        static private Text evolutionValueText;
-        static public int evolutionValue;
+        /*------------------ POPULATION ------------------*/
+        static private Text peopleValueText;
+        static public int peopleValue;
         
         /*--------------------------------------------*/
 
@@ -48,8 +48,8 @@ namespace MyGame
             bonheurValueText = GameObject.Find("BonheurValue").GetComponent<Text>();
             bonheurValue = Convert.ToInt32(bonheurValueText.text);
 
-            evolutionValueText = GameObject.Find("EvolutionValue").GetComponent<Text>();
-            evolutionValue = Convert.ToInt32(evolutionValueText.text);
+            /*evolutionValueText = GameObject.Find("EvolutionValue").GetComponent<Text>();
+            evolutionValue = Convert.ToInt32(evolutionValueText.text);*/
         }
         static public void LoiAgricoleCard()
         {
@@ -82,9 +82,9 @@ namespace MyGame
 
         static public void Education()
         {
-            evolutionValueText = GameObject.Find("EvolutionValue").GetComponent<Text>();
+            /*evolutionValueText = GameObject.Find("EvolutionValue").GetComponent<Text>();
             evolutionValue = (Convert.ToInt32(evolutionValueText.text) + 2);
-            evolutionValueText.text = evolutionValue.ToString();
+            evolutionValueText.text = evolutionValue.ToString();*/
 
             goldValueText = GameObject.Find("GoldValue").GetComponent<Text>();
             goldValue = (Convert.ToInt32(goldValueText.text) - 50);

@@ -15,7 +15,7 @@ namespace MyGame
             Debug.Log("clic sur " + selectionnedCard);// retourne NameCard(Clone)
 
             //########## Supprimer le (Clone) de selectionnedCard ##########
-            if (GameManager.turnCounterValue == 1)
+            if (GameManager.singleton.turnCounterValue == 1)
             {
                 int len = 7; //nombre de caractères à supprimer à la fin de selectionnedCard
                 functionName = selectionnedCard.RemoveCloneEnd(len);
@@ -33,15 +33,15 @@ namespace MyGame
                 case "LoiAgricoleCard":
                     CardManager.LoiAgricoleCard();
                     Debug.Log("Fin du tour 1");
-                    GameManager.destroyDeck();
+                    GameManager.singleton.destroyDeck();
                     break;
                 case "LoiFiscaleCard":
                     CardManager.LoiFiscaleCard();
-                    GameManager.destroyDeck();
+                    GameManager.singleton.destroyDeck();
                     break;
                 case "LoiMartialeCard":
                     CardManager.LoiMartialeCard();
-                    GameManager.destroyDeck();
+                    GameManager.singleton.destroyDeck();
                     break;
                 case "Convoi":
                     CardManager.Convoi();
@@ -62,7 +62,7 @@ namespace MyGame
                     Debug.Log("erreur, carte non renseignée");
                     break;
             }
-            GameManager.EndTurn();
+            GameManager.singleton.EndTurn();
             //GameManager.newTurn();
 
         }

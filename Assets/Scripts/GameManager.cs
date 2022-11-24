@@ -9,22 +9,23 @@ namespace MyGame
 {
     public class GameManager : MonoBehaviour
     {
+        public static GameManager singleton;
         public GameObject[] turn1Cards;
         public GameObject[] otherTurnsCards;
-        static string[] cardsList = new string[] { "Convoi", "Education", "Impots", "JoiesDeLaRue", "NouvelleTaxe" };
-        static string card1; //Nom de la première carte, tiré du tableau cardList
-        static string card2; //Nom de la deuxième carte, tiré du tableau cardList
-        static public int turnCounterValue;
-        static public Text turnCounterText;
-        static private GameObject deck;
-        static int card1Index = 0;
-        static int card2Index = 0;
-        public static int numberOfCards; //Nombre de cartes (hors cartes du turn 1)
-        static public GameObject Card1Object; //1re carte à afficher
-        static public GameObject Card2Object; //2e carte à afficher
-        private static GameObject gameOverScreen;
-        private static Text gameOverText;
-        public static bool gameIsOver = false; //passe à true quand la partie est perdue
+        string[] cardsList = new string[] { "Convoi", "Education", "Impots", "JoiesDeLaRue", "NouvelleTaxe" };
+        string card1; //Nom de la première carte, tiré du tableau cardList
+        string card2; //Nom de la deuxième carte, tiré du tableau cardList
+        public int turnCounterValue;
+        public Text turnCounterText;
+        private GameObject deck;
+        int card1Index = 0;
+        int card2Index = 0;
+        public int numberOfCards; //Nombre de cartes (hors cartes du turn 1)
+        public GameObject Card1Object; //1re carte à afficher
+        public GameObject Card2Object; //2e carte à afficher
+        private GameObject gameOverScreen;
+        private Text gameOverText;
+        public bool gameIsOver = false; //passe à true quand la partie est perdue
 
         //------------------ Cards -----------------
 
@@ -40,6 +41,12 @@ namespace MyGame
         private Image signet;
         //------------------------------------------
 
+
+        void Awake()
+        {
+            singleton = this;
+        }
+
         void Start()
         {
 
@@ -47,7 +54,7 @@ namespace MyGame
             numberOfCards = otherTurnsCards.Length;
             Debug.Log("Nombre de cartes : " + numberOfCards);
             InitGame();
-            TestdelaCarte();
+            //TestdelaCarte();
             /*
             for (int i = 0; i < otherTurnsCards.Length; i++)
             {
@@ -67,7 +74,7 @@ namespace MyGame
             signet.color = Color.blue;
             //effet1 = GameObject.Find("IconEffect1").GetComponent<Image>();
             //effet1.sprite = 
-            
+
         }
 
         void InitGame()
@@ -95,7 +102,7 @@ namespace MyGame
             turnCounterText = GameObject.Find("TurnCount").GetComponent<Text>();
             turnCounterValue = Convert.ToInt32(turnCounterText.text);
 
-            
+
 
         }
 
@@ -111,10 +118,10 @@ namespace MyGame
                 instance.transform.parent = deck.transform;
                 x = x + 5;
             }
-            
+
         }
 
-        public static void EndTurn()
+        public void EndTurn()
         {
             checkIfGameIsOver();
             if (!gameIsOver)
@@ -132,12 +139,12 @@ namespace MyGame
             }
         }
 
-        public static void destroyDeck()
+        public void destroyDeck()
         {
             Destroy(GameObject.Find("Deck"), 0f);
         }
 
-        public static void newTurn()
+        public void newTurn()
         {
             //Debug.Log("nombre de cartes : " + numberOfCards);
 
@@ -208,14 +215,14 @@ namespace MyGame
 
             //--------- Repositionner Les Cartes -------------------------
 
-            if(Card1Object.transform.position.x != -3)
+            if (Card1Object.transform.position.x != -3)
             {
                 Card1Object.transform.position = new Vector3(-3, 0, 0);
             }
-            
+
             Card1Object.SetActive(true);
 
-            if(Card2Object.transform.position.x != 3)
+            if (Card2Object.transform.position.x != 3)
             {
                 Card2Object.transform.position = new Vector3(3, 0, 0);
             }
@@ -224,7 +231,7 @@ namespace MyGame
             // ------------------------------------------------------------
         }
 
-        public static void checkIfGameIsOver()
+        public void checkIfGameIsOver()
         {
             CardManager.CheckValues();
             //------ DEBUG ------
