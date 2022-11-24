@@ -31,7 +31,7 @@ namespace MyGame
         /*------------------ POPULATION ------------------*/
         static private Text peopleValueText;
         static public int peopleValue;
-        
+
         /*--------------------------------------------*/
 
         public static void CheckValues()
@@ -48,9 +48,10 @@ namespace MyGame
             bonheurValueText = GameObject.Find("BonheurValue").GetComponent<Text>();
             bonheurValue = Convert.ToInt32(bonheurValueText.text);
 
-            /*evolutionValueText = GameObject.Find("EvolutionValue").GetComponent<Text>();
-            evolutionValue = Convert.ToInt32(evolutionValueText.text);*/
+            peopleValueText = GameObject.Find("PeopleValue").GetComponent<Text>();
+            peopleValue = Convert.ToInt32(peopleValueText.text);
         }
+
         static public void LoiAgricoleCard()
         {
             foodIncomeText = GameObject.Find("FoodIncome").GetComponent<Text>();
@@ -71,6 +72,9 @@ namespace MyGame
             armyValueText = GameObject.Find("ArmyValue").GetComponent<Text>();
             armyValue = (Convert.ToInt32(armyValueText.text)) + 50;
             armyValueText.text = armyValue.ToString();
+            goldIncomeText = GameObject.Find("GoldIncome").GetComponent<Text>(); 
+            goldIncome = (Convert.ToInt32(goldIncomeText.text)) - 50;
+            goldIncomeText.text = goldIncome.ToString();
         }
 
         static public void Convoi()

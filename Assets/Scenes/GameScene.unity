@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 412667277}
   - component: {fileID: 412667276}
   m_Layer: 5
-  m_Name: Evolution
+  m_Name: People
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a34e1e1881ddf7544b19e761ba23643b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1785,7 +1785,7 @@ GameObject:
   - component: {fileID: 1333432611}
   - component: {fileID: 1333432610}
   m_Layer: 5
-  m_Name: EvolutionValue
+  m_Name: PeopleValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1844,7 +1844,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 50
 --- !u!222 &1333432611
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2127,6 +2127,12 @@ MonoBehaviour:
   - {fileID: 3220258798352100760, guid: 368148e1416aa7640913e027bea6d979, type: 3}
   - {fileID: 5530121231560258509, guid: d5678773c39561f438f2ebb2b3bb2426, type: 3}
   - {fileID: 2979869808854074399, guid: d3a1874f95164ef40a6ef5c0fc6ecb4f, type: 3}
+  turnCounterValue: 0
+  turnCounterText: {fileID: 0}
+  numberOfCards: 0
+  Card1Object: {fileID: 0}
+  Card2Object: {fileID: 0}
+  gameIsOver: 0
 --- !u!4 &1518848428
 Transform:
   m_ObjectHideFlags: 0

@@ -54,6 +54,7 @@ namespace MyGame
             numberOfCards = otherTurnsCards.Length;
             Debug.Log("Nombre de cartes : " + numberOfCards);
             InitGame();
+            //CardManager.IncomeManagement();
             //TestdelaCarte();
             /*
             for (int i = 0; i < otherTurnsCards.Length; i++)
@@ -123,6 +124,7 @@ namespace MyGame
 
         public void EndTurn()
         {
+            //CardManager.IncomeManagement();
             checkIfGameIsOver();
             if (!gameIsOver)
             {
@@ -146,7 +148,7 @@ namespace MyGame
 
         public void newTurn()
         {
-            //Debug.Log("nombre de cartes : " + numberOfCards);
+            
 
             // Création des indexs pour la sélection aléatoire des 2 cartes
             System.Random rdn = new System.Random();
@@ -274,6 +276,8 @@ namespace MyGame
             }
 
         }
+
+        
 
         /*
             public static void createDeck()
