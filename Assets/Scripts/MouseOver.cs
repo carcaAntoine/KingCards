@@ -9,6 +9,18 @@ namespace MyGame
         private string selectionnedCard;//Nom de la carte sélectionnée
         private string functionName;//Nom de la fonction liée à la carte sélectionnée
 
+        private void OnMouseEnter()
+        {
+            selectionnedCard = this.gameObject.name;
+            Debug.Log("survol de " + selectionnedCard);
+        }
+
+        private void OnMouseHover()
+        {
+            selectionnedCard = this.gameObject.name;
+            Debug.Log("le survol de " + selectionnedCard);
+        }
+
         private void OnMouseDown()
         {
             selectionnedCard = this.gameObject.name;

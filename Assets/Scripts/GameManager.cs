@@ -64,7 +64,7 @@ namespace MyGame
                 actualGameObject.GetComponent<BoxCollider2D>().enabled = false;
             }
             */
-            //TurnOne();
+            TurnOne();
         }
 
         void TestdelaCarte()
