@@ -39,16 +39,16 @@ namespace MyGame
                 case "Convoi":
                     CardManager.Convoi();
                     break;
-                case "Education":
+                case "Éducation":
                     CardManager.Education();
                     break;
-                case "Impots":
+                case "Impôts":
                     CardManager.Impots();
                     break;
-                case "JoiesDeLaRue":
+                case "Joies de la Rue":
                     CardManager.JoiesDeLaRue();
                     break;
-                case "NouvelleTaxe":
+                case "Nouvelle Taxe":
                     CardManager.NouvelleTaxe();
                     break;
                 default:

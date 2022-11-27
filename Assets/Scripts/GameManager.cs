@@ -59,6 +59,7 @@ namespace MyGame
 
         public void EndTurn()
         {
+            CardManager.IncomeManager();
             checkIfGameIsOver();
             if (!CardManager.gameOver)
             {
@@ -116,6 +117,8 @@ namespace MyGame
             }
 
         }
+
+        
 
         public void DisplayTurnOneCards()
         {

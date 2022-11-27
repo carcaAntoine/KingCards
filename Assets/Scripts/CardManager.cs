@@ -9,27 +9,27 @@ namespace MyGame
     public class CardManager : MonoBehaviour
     {
         /*------------------ NOURRITURE ------------------*/
-        static private Text foodIncomeText; //income nourriture (GameObject)
-        static private Text foodValueText;  //valeur nourriture (GameObject)
+        static public Text foodIncomeText; //income nourriture (GameObject)
+        static public Text foodValueText;  //valeur nourriture (GameObject)
         static public int foodValue;  //valeur de la nourriture à ajouter
-        static private int foodIncome; //valeur de l'income à ajouter
+        static public int foodIncome; //valeur de l'income à ajouter
 
         /*------------------ ARMEE ------------------*/
-        static private Text armyValueText; //valeur armée (GameObject)
+        static public Text armyValueText; //valeur armée (GameObject)
         static public int armyValue; //valeur armée à ajouter
 
         /*------------------ ARGENT ------------------*/
-        static private Text goldIncomeText; //income argent (GameObject)
-        static private Text goldValueText;  //valeur argent (GameObject)
+        static public Text goldIncomeText; //income argent (GameObject)
+        static public Text goldValueText;  //valeur argent (GameObject)
         static public int goldValue;  //valeur de l'argent à ajouter
-        static private int goldIncome; //valeur de l'income à ajouter
+        static public int goldIncome; //valeur de l'income à ajouter
 
         /*------------------ BONHEUR ------------------*/
-        static private Text bonheurValueText;
+        static public Text bonheurValueText;
         static public int bonheurValue;
 
         /*------------------ POPULATION ------------------*/
-        static private Text peopleValueText;
+        static public Text peopleValueText;
         static public int peopleValue;
 
         /*------------------------------------------------*/
@@ -37,13 +37,17 @@ namespace MyGame
 
         /*------------------------------------------------*/
 
-        public static void CheckValues()
+        public static void InitValues()
         {
             foodValueText = GameObject.Find("FoodValue").GetComponent<Text>();
             foodValue = Convert.ToInt32(foodValueText.text);
+            foodIncomeText = GameObject.Find("FoodIncome").GetComponent<Text>();
+            foodIncome = Convert.ToInt32(foodIncomeText.text);
 
             goldValueText = GameObject.Find("GoldValue").GetComponent<Text>();
             goldValue = Convert.ToInt32(goldValueText.text);
+            goldIncomeText = GameObject.Find("GoldIncome").GetComponent<Text>();
+            goldIncome = Convert.ToInt32(goldIncomeText.text);
 
             armyValueText = GameObject.Find("ArmyValue").GetComponent<Text>();
             armyValue = Convert.ToInt32(armyValueText.text);
@@ -53,18 +57,36 @@ namespace MyGame
 
             peopleValueText = GameObject.Find("PeopleValue").GetComponent<Text>();
             peopleValue = Convert.ToInt32(peopleValueText.text);
+        }
 
-            if(foodValue == 0 || goldValue == 0 || bonheurValue == 0 ||peopleValue == 0)
+        public static void CheckValues()
+        {
+            InitValues();
+
+            if (foodValue == 0 || goldValue == 0 || bonheurValue == 0 || peopleValue == 0)
             {
                 gameOver = true;
             }
         }
 
+        public static void IncomeManager()
+        {
+            InitValues();
+
+            foodValue = foodValue + foodIncome;
+            foodValueText.text = foodValue.ToString();
+
+            goldValue = goldValue + goldIncome;
+            goldValueText.text = goldValue.ToString();
+        }
+
         static public void LoiAgricoleCard()
         {
+
             foodIncomeText = GameObject.Find("FoodIncome").GetComponent<Text>();
             foodIncome = (Convert.ToInt32(foodIncomeText.text)) + 5;
             foodIncomeText.text = foodIncome.ToString();
+
 
         }
 
@@ -80,7 +102,7 @@ namespace MyGame
             armyValueText = GameObject.Find("ArmyValue").GetComponent<Text>();
             armyValue = (Convert.ToInt32(armyValueText.text)) + 50;
             armyValueText.text = armyValue.ToString();
-            goldIncomeText = GameObject.Find("GoldIncome").GetComponent<Text>(); 
+            goldIncomeText = GameObject.Find("GoldIncome").GetComponent<Text>();
             goldIncome = (Convert.ToInt32(goldIncomeText.text)) - 50;
             goldIncomeText.text = goldIncome.ToString();
         }
@@ -94,9 +116,9 @@ namespace MyGame
 
         static public void Education()
         {
-            /*evolutionValueText = GameObject.Find("EvolutionValue").GetComponent<Text>();
-            evolutionValue = (Convert.ToInt32(evolutionValueText.text) + 2);
-            evolutionValueText.text = evolutionValue.ToString();*/
+            bonheurValueText = GameObject.Find("BonheurValue").GetComponent<Text>();
+            bonheurValue = (Convert.ToInt32(bonheurValueText.text) + 5);
+            bonheurValueText.text = bonheurValue.ToString();
 
             goldValueText = GameObject.Find("GoldValue").GetComponent<Text>();
             goldValue = (Convert.ToInt32(goldValueText.text) - 50);
