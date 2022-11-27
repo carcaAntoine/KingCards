@@ -168,8 +168,8 @@ GameObject:
   - component: {fileID: 3815744481339140769}
   - component: {fileID: 3815744481339140768}
   - component: {fileID: 3815744481339140771}
-  - component: {fileID: 1477206810873078040}
   - component: {fileID: 8623466401559715327}
+  - component: {fileID: 364335666445138899}
   m_Layer: 5
   m_Name: CardModele
   m_TagString: Untagged
@@ -264,7 +264,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!61 &1477206810873078040
+--- !u!114 &8623466401559715327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815744481339140770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b1fe9ad48b9c0343838cf9deb2e59a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &364335666445138899
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -290,18 +302,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 345, y: 485}
   m_EdgeRadius: 0
---- !u!114 &8623466401559715327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3815744481339140770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b1fe9ad48b9c0343838cf9deb2e59a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3815744481914991881
 GameObject:
   m_ObjectHideFlags: 0

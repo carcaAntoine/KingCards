@@ -1,46 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 namespace MyGame
 {
     public class MouseOver : MonoBehaviour
     {
-        private string selectionnedCard;//Nom de la carte sélectionnée
-        private string functionName;//Nom de la fonction liée à la carte sélectionnée
+        private string selectionnedCard;//Nom de la carte (GameObject) sélectionnée
+        private string cardName; //Nom de la carte sélectionnée
+        //private string functionName;//Nom de la fonction liée à la carte sélectionnée
 
-        private void OnMouseEnter()
-        {
-            selectionnedCard = this.gameObject.name;
-            Debug.Log("survol de " + selectionnedCard);
-        }
-
-        private void OnMouseHover()
-        {
-            selectionnedCard = this.gameObject.name;
-            Debug.Log("le survol de " + selectionnedCard);
-        }
 
         private void OnMouseDown()
         {
             selectionnedCard = this.gameObject.name;
-            Debug.Log("clic sur " + selectionnedCard);// retourne NameCard(Clone)
+            Debug.Log("clic sur " + selectionnedCard);
+            cardName = GameObject.Find(selectionnedCard).transform.GetChild(2).GetComponent<Text>().text;
+            
+            Debug.Log("nom de la carte : " + cardName);
 
-            //########## Supprimer le (Clone) de selectionnedCard ##########
-            if (GameManager.singleton.turnCounterValue == 1)
-            {
-                int len = 7; //nombre de caractères à supprimer à la fin de selectionnedCard
-                functionName = selectionnedCard.RemoveCloneEnd(len);
-                Debug.Log(functionName);
-            }
-            else
-            {
-                functionName = selectionnedCard;
-                Debug.Log("functionName : " + functionName);
-            }
-            //##############################################################
-
-            switch (functionName)
+            switch (cardName)
             {
                 case "LoiAgricoleCard":
                     CardManager.LoiAgricoleCard();
@@ -70,11 +51,14 @@ namespace MyGame
                 case "NouvelleTaxe":
                     CardManager.NouvelleTaxe();
                     break;
+                case "Loi Fiscale":
+                    Debug.Log("Hello there");
+                    break;
                 default:
                     Debug.Log("erreur, carte non renseignée");
                     break;
             }
-            GameManager.singleton.EndTurn();
+            //GameManager.singleton.EndTurn();
             //GameManager.newTurn();
 
         }
