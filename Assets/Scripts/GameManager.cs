@@ -10,14 +10,10 @@ namespace MyGame
     public class GameManager : MonoBehaviour
     {
         public static GameManager singleton;
-        public GameObject[] turn1Cards;
-        public GameObject[] otherTurnsCards;
-        string[] cardsList = new string[] { "Convoi", "Education", "Impots", "JoiesDeLaRue", "NouvelleTaxe" };
         string card1; //Nom de la première carte, tiré du tableau cardList
         string card2; //Nom de la deuxième carte, tiré du tableau cardList
         public int turnCounterValue;
         public Text turnCounterText;
-        private GameObject deck;
         int card1Index = 0;
         int card2Index = 0;
         public int numberOfCards; //Nombre de cartes (hors cartes du turn 1)
@@ -25,22 +21,12 @@ namespace MyGame
         public GameObject Card2Object; //2e carte à afficher
         private GameObject gameOverScreen;
         private Text gameOverText;
-        public bool gameIsOver = false; //passe à true quand la partie est perdue
 
-        //------------------ Cards -----------------
+        public CardCreator cardCreator;
+        public GameObject[] cardSlots;
 
-        static private GameObject convoiCard;
-        static private GameObject educationCard;
-        static private GameObject impotsCard;
-        static private GameObject joiesDeLaRueCard;
-        static private GameObject nouvelleTaxeCard;
 
         //------------------------------------------
-        private Text title;
-        private Image effet1;
-        private Image signet;
-        //------------------------------------------
-
 
         void Awake()
         {
@@ -49,107 +35,43 @@ namespace MyGame
 
         void Start()
         {
-
-            deck = GameObject.Find("Deck");
-            numberOfCards = otherTurnsCards.Length;
-            Debug.Log("Nombre de cartes : " + numberOfCards);
             InitGame();
-            //CardManager.IncomeManagement();
-            //TestdelaCarte();
-            /*
-            for (int i = 0; i < otherTurnsCards.Length; i++)
-            {
-                GameObject actualGameObject = otherTurnsCards[i];
-                actualGameObject.GetComponent<Renderer>().enabled = false;
-                actualGameObject.GetComponent<BoxCollider2D>().enabled = false;
-            }
-            */
-            TurnOne();
-        }
-
-        void TestdelaCarte()
-        {
-            title = GameObject.Find("Title").GetComponent<Text>();
-            title.text = "Titre Test";
-            signet = GameObject.Find("Signet").GetComponent<Image>();
-            signet.color = Color.blue;
-            //effet1 = GameObject.Find("IconEffect1").GetComponent<Image>();
-            //effet1.sprite = 
-
+            //UIManager.uiManagerSingleton.DisplayTurnOneCards();
+            DisplayTurnOneCards();
         }
 
         void InitGame()
         {
-            //----- Ecran de GameOver -----
+            //----- Désactive Ecran de GameOver -----
             gameOverScreen = GameObject.Find("GameOverCanva");
             gameOverScreen.SetActive(false);
-/*
-            //----- Cards -----
-            convoiCard = GameObject.Find("Convoi");
-            convoiCard.SetActive(false);
-            
-            educationCard = GameObject.Find("Education");
-            educationCard.SetActive(false);
-            
-            impotsCard = GameObject.Find("Impots");
-            impotsCard.SetActive(false);
-
-            joiesDeLaRueCard = GameObject.Find("JoiesDeLaRue");
-            joiesDeLaRueCard.SetActive(false);
-
-            nouvelleTaxeCard = GameObject.Find("NouvelleTaxe");
-            nouvelleTaxeCard.SetActive(false);
 
             turnCounterText = GameObject.Find("TurnCount").GetComponent<Text>();
             turnCounterValue = Convert.ToInt32(turnCounterText.text);
-*/
-
-
         }
 
-        void TurnOne()
+        public void EndTurnOne()
         {
-            //Debug.Log("turn1Cards Length : " + turn1Cards.Length);
-            //Debug.Log("otherTurnCards Length : " + otherTurnsCards.Length);
-            int x = -5;
-            for (int i = 0; i < turn1Cards.Length; i++)
-            {
-                GameObject toInstantiate = turn1Cards[i];
-                GameObject instance = Instantiate(toInstantiate, new Vector3(x, 0, 0f), Quaternion.identity) as GameObject;
-                instance.transform.parent = deck.transform;
-                x = x + 5;
-            }
-
+            numberOfCards = CardCreator.ListLength;
+            Debug.Log("nombre de cartes : " + numberOfCards);
+            GameObject.Find("ThirdCard").SetActive(false);
         }
 
         public void EndTurn()
         {
-            //CardManager.IncomeManagement();
             checkIfGameIsOver();
-            if (!gameIsOver)
+            if (!CardManager.gameOver)
             {
                 turnCounterValue += 1;
                 turnCounterText.text = turnCounterValue.ToString();
 
-                if (turnCounterValue > 2)
-                {
-                    Card1Object.SetActive(false);
-                    Card2Object.SetActive(false);
-                }
                 //Debug.Log("EndTurn appelé");
                 newTurn();
             }
         }
 
-        public void destroyDeck()
-        {
-            Destroy(GameObject.Find("Deck"), 0f);
-        }
-
         public void newTurn()
         {
-            
-
             // Création des indexs pour la sélection aléatoire des 2 cartes
             System.Random rdn = new System.Random();
             card1Index = rdn.Next(0, numberOfCards - 1);
@@ -163,150 +85,71 @@ namespace MyGame
             Debug.Log("card2Index : " + card2Index);
             // ------------------------------------------------------------
 
-            // Implémentation des noms des cartes sélectionnées
-            card1 = cardsList[card1Index];
-            Debug.Log(card1);
-            card2 = cardsList[card2Index];
-            Debug.Log(card2);
-            // ------------------------------------------------------------
-
-            // Affichage des cartes sélectionnées
-            switch (card1)
-            {
-                case "Convoi":
-                    Card1Object = convoiCard;
-                    break;
-                case "Education":
-                    Card1Object = educationCard;
-                    break;
-                case "Impots":
-                    Card1Object = impotsCard;
-                    break;
-                case "JoiesDeLaRue":
-                    Card1Object = joiesDeLaRueCard;
-                    break;
-                case "NouvelleTaxe":
-                    Card1Object = nouvelleTaxeCard;
-                    break;
-                default:
-                    Debug.Log("error with card name");
-                    break;
-            }
-
-            switch (card2)
-            {
-                case "Convoi":
-                    Card2Object = convoiCard;
-                    break;
-                case "Education":
-                    Card2Object = educationCard;
-                    break;
-                case "Impots":
-                    Card2Object = impotsCard;
-                    break;
-                case "JoiesDeLaRue":
-                    Card2Object = joiesDeLaRueCard;
-                    break;
-                case "NouvelleTaxe":
-                    Card2Object = nouvelleTaxeCard;
-                    break;
-                default:
-                    Debug.Log("error with card name");
-                    break;
-            }
-
-            //--------- Repositionner Les Cartes -------------------------
-
-            if (Card1Object.transform.position.x != -3)
-            {
-                Card1Object.transform.position = new Vector3(-3, 0, 0);
-            }
-
-            Card1Object.SetActive(true);
-
-            if (Card2Object.transform.position.x != 3)
-            {
-                Card2Object.transform.position = new Vector3(3, 0, 0);
-            }
-            Card2Object.SetActive(true);
-
-            // ------------------------------------------------------------
+            DisplayCards();
         }
 
         public void checkIfGameIsOver()
         {
             CardManager.CheckValues();
-            //------ DEBUG ------
-            /*
-            Debug.Log("Food : " + CardManager.foodValue);
-            Debug.Log("Army : " + CardManager.armyValue);
-            Debug.Log("Gold : " + CardManager.goldValue);
-            Debug.Log("Bonheur : " + CardManager.bonheurValue);
-            Debug.Log("Evolution : " + CardManager.evolutionValue);
-            */
-            //-------------------
+            if (CardManager.gameOver == true)
+            {
+                gameOverScreen.SetActive(true);
+                gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
 
-            if (CardManager.foodValue <= 0)
-            {
-                gameOverScreen.SetActive(true);
-                gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
-                gameOverText.text = "Votre peuple est mort de faim. \n Votre règne s'achève après " + turnCounterValue + " ans.";
-                gameIsOver = true;
-            }
-            if (CardManager.goldValue <= 0)
-            {
-                gameOverScreen.SetActive(true);
-                gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
-                gameOverText.text = "Votre Royaume est ruiné. \n Votre règne s'achève après " + turnCounterValue + " ans.";
-                gameIsOver = true;
-            }
-            if (CardManager.goldValue <= 0)
-            {
-                gameOverScreen.SetActive(true);
-                gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
-                gameOverText.text = "Votre Royaume est ruiné. \n Votre règne s'achève après " + turnCounterValue + " ans.";
-                gameIsOver = true;
-            }
-            if (CardManager.bonheurValue <= 0)
-            {
-                gameOverScreen.SetActive(true);
-                gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
-                gameOverText.text = "Votre peuple vous a destitué. \n Votre règne s'achève après " + turnCounterValue + " ans.";
-                gameIsOver = true;
+                if (CardManager.foodValue <= 0)
+                {
+                    gameOverText.text = "Votre peuple est mort de faim. \n Votre règne s'achève après " + turnCounterValue + " ans.";
+                }
+                else if (CardManager.goldValue <= 0)
+                {
+                    gameOverText.text = "Votre Royaume est ruiné. \n Votre règne s'achève après " + turnCounterValue + " ans.";
+                }
+                else if (CardManager.peopleValue <= 0)
+                {
+                    gameOverText.text = "Tous vos habitants sont morts. \n Votre règne s'achève après " + turnCounterValue + " ans.";
+                }
+                else
+                {
+                    gameOverText.text = "Votre peuple vous a destitué. \n Votre règne s'achève après " + turnCounterValue + " ans.";
+                }
+
             }
 
         }
 
-        
-
-        /*
-            public static void createDeck()
+        public void DisplayTurnOneCards()
+        {
+            for (int i = 0; i < cardCreator.TurnOneCards.Count; i++)
             {
-                Debug.Log("création du deck");
-                GameObject Deck = new GameObject(); //Création d'un nouveau Deck
-                Deck.name = "Deck";
-                deck = GameObject.Find("Deck");
+                //Assigne infos des cards de cardCreator
 
-
-                //---------- Méthode avec otherTurnsCards[] ----------------------------
-
-                GameObject instantiateCard1 = otherTurnsCards[card1Index];
-                GameObject instance1 = Instantiate(instantiateCard1, new Vector3(-3, 0, 0f), Quaternion.identity) as GameObject;
-                instance1.transform.parent = deck.transform;
-                Debug.Log(otherTurnsCards[card1Index].name);
-
-                GameObject instantiateCard2 = otherTurnsCards[card2Index];
-                GameObject secondInstance = Instantiate(instantiateCard2, new Vector3(3, 0, 0f), Quaternion.identity) as GameObject;
-                secondInstance.transform.parent = deck.transform;
-                Debug.Log(otherTurnsCards[card2Index].name);
-
-                Debug.Log("deck créé");
-
-                //------------------------------------------------------------------------
-
+                cardSlots[i].transform.GetChild(1).GetComponent<Image>().sprite = cardCreator.TurnOneCards[i].signetSprite;
+                cardSlots[i].transform.GetChild(2).GetComponent<Text>().text = cardCreator.TurnOneCards[i].cardTitle;
+                cardSlots[i].transform.GetChild(3).GetComponent<Text>().text = cardCreator.TurnOneCards[i].cardDescription;
+                cardSlots[i].transform.GetChild(4).GetComponent<Image>().sprite = cardCreator.TurnOneCards[i].effect1Sprite;
+                cardSlots[i].transform.GetChild(4).transform.GetChild(0).GetComponent<Text>().text = cardCreator.TurnOneCards[i].effect1Text;
+                cardSlots[i].transform.GetChild(5).GetComponent<Image>().sprite = cardCreator.TurnOneCards[i].effect2Sprite;
+                cardSlots[i].transform.GetChild(5).transform.GetChild(0).GetComponent<Text>().text = cardCreator.TurnOneCards[i].effect2Text;
             }
-        */
+        }
 
+        public void DisplayCards()
+        {
+            cardSlots[0].transform.GetChild(1).GetComponent<Image>().sprite = cardCreator.OtherTurnsCards[card1Index].signetSprite;
+            cardSlots[0].transform.GetChild(2).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card1Index].cardTitle;
+            cardSlots[0].transform.GetChild(3).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card1Index].cardDescription;
+            cardSlots[0].transform.GetChild(4).GetComponent<Image>().sprite = cardCreator.OtherTurnsCards[card1Index].effect1Sprite;
+            cardSlots[0].transform.GetChild(4).transform.GetChild(0).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card1Index].effect1Text;
+            cardSlots[0].transform.GetChild(5).GetComponent<Image>().sprite = cardCreator.OtherTurnsCards[card1Index].effect2Sprite;
+            cardSlots[0].transform.GetChild(5).transform.GetChild(0).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card1Index].effect2Text;
 
+            cardSlots[1].transform.GetChild(1).GetComponent<Image>().sprite = cardCreator.OtherTurnsCards[card2Index].signetSprite;
+            cardSlots[1].transform.GetChild(2).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card2Index].cardTitle;
+            cardSlots[1].transform.GetChild(3).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card2Index].cardDescription;
+            cardSlots[1].transform.GetChild(4).GetComponent<Image>().sprite = cardCreator.OtherTurnsCards[card2Index].effect1Sprite;
+            cardSlots[1].transform.GetChild(4).transform.GetChild(0).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card2Index].effect1Text;
+            cardSlots[1].transform.GetChild(5).GetComponent<Image>().sprite = cardCreator.OtherTurnsCards[card2Index].effect2Sprite;
+            cardSlots[1].transform.GetChild(5).transform.GetChild(0).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card2Index].effect2Text;
+        }
     }
 }

@@ -23,18 +23,18 @@ namespace MyGame
 
             switch (cardName)
             {
-                case "LoiAgricoleCard":
+                case "Loi Agricole":
                     CardManager.LoiAgricoleCard();
                     Debug.Log("Fin du tour 1");
-                    GameManager.singleton.destroyDeck();
+                    GameManager.singleton.EndTurnOne();
                     break;
-                case "LoiFiscaleCard":
+                case "Loi Fiscale":
                     CardManager.LoiFiscaleCard();
-                    GameManager.singleton.destroyDeck();
+                    GameManager.singleton.EndTurnOne();
                     break;
-                case "LoiMartialeCard":
+                case "Loi Martiale":
                     CardManager.LoiMartialeCard();
-                    GameManager.singleton.destroyDeck();
+                    GameManager.singleton.EndTurnOne();
                     break;
                 case "Convoi":
                     CardManager.Convoi();
@@ -51,14 +51,11 @@ namespace MyGame
                 case "NouvelleTaxe":
                     CardManager.NouvelleTaxe();
                     break;
-                case "Loi Fiscale":
-                    Debug.Log("Hello there");
-                    break;
                 default:
                     Debug.Log("erreur, carte non renseignée");
                     break;
             }
-            //GameManager.singleton.EndTurn();
+            GameManager.singleton.EndTurn();
             //GameManager.newTurn();
 
         }

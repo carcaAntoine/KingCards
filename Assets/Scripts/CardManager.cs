@@ -32,7 +32,10 @@ namespace MyGame
         static private Text peopleValueText;
         static public int peopleValue;
 
-        /*--------------------------------------------*/
+        /*------------------------------------------------*/
+        public static bool gameOver = false;
+
+        /*------------------------------------------------*/
 
         public static void CheckValues()
         {
@@ -50,6 +53,11 @@ namespace MyGame
 
             peopleValueText = GameObject.Find("PeopleValue").GetComponent<Text>();
             peopleValue = Convert.ToInt32(peopleValueText.text);
+
+            if(foodValue == 0 || goldValue == 0 || bonheurValue == 0 ||peopleValue == 0)
+            {
+                gameOver = true;
+            }
         }
 
         static public void LoiAgricoleCard()
