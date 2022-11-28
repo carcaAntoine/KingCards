@@ -18,7 +18,7 @@ namespace MyGame
             selectionnedCard = this.gameObject.name;
             Debug.Log("clic sur " + selectionnedCard);
             cardName = GameObject.Find(selectionnedCard).transform.GetChild(2).GetComponent<Text>().text;
-            
+
             Debug.Log("nom de la carte : " + cardName);
 
             switch (cardName)
@@ -48,18 +48,30 @@ namespace MyGame
                 case "Joies de la Rue":
                     CardManager.JoiesDeLaRue();
                     break;
+                case "Libre Passage":
+                    CardManager.LibrePassage();
+                    break;
+                case "Joies du Cirque":
+                    CardManager.JoiesDuCirque();
+                    break;
+                case "L'Art des Mots":
+                    CardManager.LartDesMots();
+                    break;
+                case "Nationalisme":
+                    CardManager.Nationalisme();
+                    break;
                 case "Nouvelle Taxe":
                     CardManager.NouvelleTaxe();
                     break;
-                case "Libre Passage":
-                    CardManager.LibrePassage();
+                case "Récoltes Prometteuses":
+                    CardManager.RecoltesPrometteuses();
                     break;
                 default:
                     Debug.Log("erreur, carte non renseignée");
                     break;
             }
             GameManager.singleton.EndTurn();
-            //GameManager.newTurn();
+
 
         }
 
