@@ -51,6 +51,9 @@ namespace MyGame
                 case "Nouvelle Taxe":
                     CardManager.NouvelleTaxe();
                     break;
+                case "Libre Passage":
+                    CardManager.LibrePassage();
+                    break;
                 default:
                     Debug.Log("erreur, carte non renseignée");
                     break;

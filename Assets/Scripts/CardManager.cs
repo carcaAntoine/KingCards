@@ -93,17 +93,17 @@ namespace MyGame
         static public void LoiFiscaleCard()
         {
             goldIncomeText = GameObject.Find("GoldIncome").GetComponent<Text>();
-            goldIncome = (Convert.ToInt32(goldIncomeText.text)) + 10;
+            goldIncome = (Convert.ToInt32(goldIncomeText.text)) + 5;
             goldIncomeText.text = goldIncome.ToString();
         }
 
         static public void LoiMartialeCard()
         {
             armyValueText = GameObject.Find("ArmyValue").GetComponent<Text>();
-            armyValue = (Convert.ToInt32(armyValueText.text)) + 50;
+            armyValue = (Convert.ToInt32(armyValueText.text)) + 10;
             armyValueText.text = armyValue.ToString();
             goldIncomeText = GameObject.Find("GoldIncome").GetComponent<Text>();
-            goldIncome = (Convert.ToInt32(goldIncomeText.text)) - 50;
+            goldIncome = (Convert.ToInt32(goldIncomeText.text)) - 10;
             goldIncomeText.text = goldIncome.ToString();
         }
 
@@ -153,5 +153,13 @@ namespace MyGame
             goldIncome = (Convert.ToInt32(goldIncomeText.text)) + 5;
             goldIncomeText.text = goldIncome.ToString();
         }
+
+        public static void LibrePassage()
+        {
+            peopleValueText = GameObject.Find("PeopleValue").GetComponent<Text>();
+            peopleValue = Convert.ToInt32(peopleValueText.text) + 5;
+            peopleValueText.text = peopleValue.ToString();
+        }
+
     }
 }

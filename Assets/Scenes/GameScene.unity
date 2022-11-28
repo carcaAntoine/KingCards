@@ -2739,14 +2739,14 @@ MonoBehaviour:
     cardDescription: "Vous ordonnez de privil\xE9gier le d\xE9veloppement de l'\xE9conomie."
     signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
     effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
-    effect1Text: Argent  +  10 par tour
+    effect1Text: Argent  +  5 par tour
     effect2Sprite: {fileID: 0}
     effect2Text: 
   - cardTitle: Loi Martiale
     cardDescription: "Vous ordonnez de privil\xE9gier le d\xE9veloppement de l'arm\xE9e."
     signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
     effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
-    effect1Text: "Arm\xE9e  +  50"
+    effect1Text: "Arm\xE9e  +  10"
     effect2Sprite: {fileID: 0}
     effect2Text: 
   OtherTurnsCards:
@@ -2781,6 +2781,14 @@ MonoBehaviour:
     effect1Text: Bonheur  -  5
     effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
     effect2Text: Argent  +  15
+  - cardTitle: Libre Passage
+    cardDescription: "Vous autorisez les migrants \xE9trangers \xE0 venir dans votre
+      cit\xE9."
+    signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
+    effect1Text: Population  +  5
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
 --- !u!4 &1731559007
 Transform:
   m_ObjectHideFlags: 0
