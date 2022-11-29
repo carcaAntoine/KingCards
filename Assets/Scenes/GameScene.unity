@@ -154,7 +154,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 856287464}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -235,7 +235,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 856287464}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -314,6 +314,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1518848427}
+        m_TargetAssemblyTypeName: MyGame.GameManager, Assembly-CSharp
+        m_MethodName: checkIfGameIsOver
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -905,6 +917,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1fe9ad48b9c0343838cf9deb2e59a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &562456769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 562456770}
+  - component: {fileID: 562456772}
+  - component: {fileID: 562456771}
+  m_Layer: 5
+  m_Name: background catastrophe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &562456770
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562456769}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 856287464}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 988.5334, y: 413.2833}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &562456771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562456769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 47c33d9056f10eb46b7ba0ce2b8dc578, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &562456772
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562456769}
+  m_CullTransparentMesh: 1
 --- !u!1 &591797904
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,7 +1448,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 200}
+  m_SizeDelta: {x: 800, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &785191013
 MonoBehaviour:
@@ -1661,6 +1749,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1865236341}
+  - {fileID: 562456770}
   - {fileID: 1258154476}
   - {fileID: 42708376}
   - {fileID: 859664228}
@@ -1705,7 +1794,7 @@ RectTransform:
   m_Children:
   - {fileID: 1911182153}
   m_Father: {fileID: 856287464}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2297,6 +2386,72 @@ MonoBehaviour:
       de vos citoyens."
     malusSprite: {fileID: 21300000, guid: e160fa3829637df41a056dfad9bb9e1b, type: 3}
     malusEffectText: Population  -  3
+  - malusName: "M\xE9contents"
+    alertLevel: Alerte !
+    malusDescription: "Une partie des citoyens vient de manifester contre la hausse
+      des imp\xF4ts et des taxes que vous ajoutez constamment."
+    malusSprite: {fileID: 21300000, guid: e94ac09bd842a294c8a33884eb91c957, type: 3}
+    malusEffectText: Bonheur  -  5
+  - malusName: ProtectionRoutes
+    alertLevel: Alerte !
+    malusDescription: "L'augmentation des activit\xE9s barbares dans la r\xE9gion
+      vous oblige \xE0 r\xE9quisitionner des soldats pour prot\xE9ger les routes."
+    malusSprite: {fileID: 21300000, guid: e2db4f647aec3ba40aedae1cc5fbd4d9, type: 3}
+    malusEffectText: "Arm\xE9e  -  10"
+  - malusName: "MauvaisesR\xE9coltes"
+    alertLevel: Alerte !
+    malusDescription: "Les r\xE9coltes de bl\xE9 sont moins bonnes que pr\xE9vu,
+      diminuant votre stock pour passer l'hiver."
+    malusSprite: {fileID: 21300000, guid: f427ce5ce983ef74b9bc95f0332e3af4, type: 3}
+    malusEffectText: Nourriture  -  50
+  - malusName: Travaux
+    alertLevel: Alerte !
+    malusDescription: "Vous devez r\xE9aliser des travaux en urgence pour restaurer
+      des b\xE2timents v\xE9tustes qui risquent de s'effondrer."
+    malusSprite: {fileID: 21300000, guid: b7a0dabd84f6d0a47b153d558a0d5ec3, type: 3}
+    malusEffectText: Argent  -  60
+  - malusName: Accident
+    alertLevel: Alerte !
+    malusDescription: "Un grave accident a eu lieu dans la cit\xE9, causant de nombreuses
+      victimes."
+    malusSprite: {fileID: 21300000, guid: e160fa3829637df41a056dfad9bb9e1b, type: 3}
+    malusEffectText: Population  -  10
+  - malusName: Deuil
+    alertLevel: Alerte !
+    malusDescription: "La cit\xE9 est en deuil suite \xE0 l'annonce de la mort d'un
+      membre de la famille royale."
+    malusSprite: {fileID: 21300000, guid: e94ac09bd842a294c8a33884eb91c957, type: 3}
+    malusEffectText: Bonheur  -  5
+  - malusName: "R\xE9coltesPerdues"
+    alertLevel: Catastrophe !
+    malusDescription: "La mauvaise m\xE9t\xE9o de ces derni\xE8res semaines \xE0
+      ravag\xE9 les r\xE9coltes ! Il va \xEAtre difficile de nourrir votre peuple."
+    malusSprite: {fileID: 21300000, guid: f427ce5ce983ef74b9bc95f0332e3af4, type: 3}
+    malusEffectText: Nourriture  -  150
+  - malusName: Guerre
+    alertLevel: Catastrophe !
+    malusDescription: "Une cit\xE9 voisine vous a d\xE9clar\xE9 la guerre !\nVous
+      envoyez votre arm\xE9e d\xE9fendre votre royaume."
+    malusSprite: {fileID: 21300000, guid: e2db4f647aec3ba40aedae1cc5fbd4d9, type: 3}
+    malusEffectText: "Arm\xE9e  -  150"
+  - malusName: Inondation
+    alertLevel: Catastrophe !
+    malusDescription: "Le fleuve est entr\xE9 en crue ! \nDe nombreux b\xE2timents
+      sont inond\xE9s, et de gros travaux sont \xE0 pr\xE9voir."
+    malusSprite: {fileID: 21300000, guid: b7a0dabd84f6d0a47b153d558a0d5ec3, type: 3}
+    malusEffectText: Argent  -  150
+  - malusName: "R\xE9volte"
+    alertLevel: Catastrophe !
+    malusDescription: "Des r\xE9volutionnaires sont arriv\xE9s en ville et tentent
+      de retourner une partie de la population contre vous !"
+    malusSprite: {fileID: 21300000, guid: e94ac09bd842a294c8a33884eb91c957, type: 3}
+    malusEffectText: Bonheur  -  20
+  - malusName: "\xC9pid\xE9mie"
+    alertLevel: Catastrophe !
+    malusDescription: "Une \xE9pid\xE9mie se propage en ville ! De nombreux citoyens
+      meurent \xE0 cause de cette maladie."
+    malusSprite: {fileID: 21300000, guid: e160fa3829637df41a056dfad9bb9e1b, type: 3}
+    malusEffectText: "Population divis\xE9e par  2"
 --- !u!4 &1180980001
 Transform:
   m_ObjectHideFlags: 0
@@ -2420,7 +2575,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 856287464}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3024,7 +3179,7 @@ MonoBehaviour:
     cardDescription: Un convoi de nourriture vient d'arriver d'un pays voisin.
     signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
     effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
-    effect1Text: Nourriture  +  50
+    effect1Text: Nourriture  +  15
     effect2Sprite: {fileID: 0}
     effect2Text: 
   - cardTitle: "\xC9ducation"
@@ -3099,6 +3254,86 @@ MonoBehaviour:
     signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
     effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
     effect1Text: Nourriture   +  2 par tour
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+  - cardTitle: Subventions Militaires
+    cardDescription: "Vous d\xE9cidez de subventionner le secteur militaire afin
+      d'augmenter les effectifs de votre arm\xE9e."
+    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect1Text: "Arm\xE9e   +  10"
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+  - cardTitle: "Coupe Budg\xE9taire"
+    cardDescription: "Vous d\xE9cidez de diminuer vos effectifs militaires pour faire
+      des \xE9conomies."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent   +  5 par tour
+    effect2Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect2Text: "Arm\xE9e  -  5"
+  - cardTitle: Contrat Agricole
+    cardDescription: "Vous signez un contrat d'approvisionnement en nourriture avec
+      une cit\xE9 voisine."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture   +  2 par tour
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent  -  2 par tour
+  - cardTitle: "Contrat de S\xE9curit\xE9"
+    cardDescription: Vous employez une troupe de mercenaires pour compenser votre
+      manque de soldats.
+    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect1Text: "Arm\xE9e   +  10"
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent  -  5 par tour
+  - cardTitle: Contrat de Travail
+    cardDescription: "Vous signez un contrat pour r\xE9aliser des travaux dans une
+      cit\xE9 voisine."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent   +  25
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+  - cardTitle: Nouveaux arrivants
+    cardDescription: "Vous tentez d'attirer de nouveaux habitants dans votre royaume
+      pour redynamiser l'\xE9conomie."
+    signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
+    effect1Text: Population   +  7
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+  - cardTitle: "Heureuse arriv\xE9e"
+    cardDescription: "Bonne nouvelle ! Un hameau de fermiers proche de chez vous
+      demande \xE0 rejoindre votre royaume."
+    signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
+    effect1Text: Population   +  10
+    effect2Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect2Text: Nourriture  +  15 par tour
+  - cardTitle: Festival
+    cardDescription: "Vous d\xE9cidez d'organiser un grand festival pour divertir
+      vos citoyens."
+    signetSprite: {fileID: 21300000, guid: d2fdbbe74dc0ee34e92677993f2fb718, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect1Text: Bonheur   +  10
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent  -  35
+  - cardTitle: Parade militaire
+    cardDescription: "Vous d\xE9cidez d'organiser un grand d\xE9fil\xE9 pour c\xE9l\xE9brer
+      vos r\xE9centes victoires militaires."
+    signetSprite: {fileID: 21300000, guid: d2fdbbe74dc0ee34e92677993f2fb718, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect1Text: Bonheur   +  5
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent  -  20
+  - cardTitle: Projet militaire
+    cardDescription: "Vous souhaitez vous doter d'une grande arm\xE9e, et d\xE9cidez
+      d'acc\xE9l\xE9rer le recrutement de soldats."
+    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect1Text: "Arm\xE9e   +  15"
     effect2Sprite: {fileID: 0}
     effect2Text: 
 --- !u!4 &1731559007
@@ -3409,8 +3644,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 0}
-  m_SizeDelta: {x: 160, y: 50}
+  m_AnchoredPosition: {x: 130, y: 0}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911182154
 MonoBehaviour:

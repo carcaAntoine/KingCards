@@ -63,7 +63,7 @@ namespace MyGame
         {
             InitValues();
 
-            if (foodValue == 0 || goldValue == 0 || bonheurValue == 0 || peopleValue == 0)
+            if (foodValue <= 0 || armyValue <= 0 || goldValue <= 0 || bonheurValue <= 0 || peopleValue <= 0)
             {
                 gameOver = true;
             }
@@ -80,132 +80,124 @@ namespace MyGame
             goldValueText.text = goldValue.ToString();
         }
 
-        static public void LoiAgricoleCard()
-        {
+        //########################################################################################
+        // FONCTIONS DE MODIFICATION DES STATS
 
-            foodIncomeText = GameObject.Find("FoodIncome").GetComponent<Text>();
-            foodIncome = (Convert.ToInt32(foodIncomeText.text)) + 5;
-            foodIncomeText.text = foodIncome.ToString();
-
-
-        }
-
-        static public void LoiFiscaleCard()
-        {
-            goldIncomeText = GameObject.Find("GoldIncome").GetComponent<Text>();
-            goldIncome = (Convert.ToInt32(goldIncomeText.text)) + 5;
-            goldIncomeText.text = goldIncome.ToString();
-        }
-
-        static public void LoiMartialeCard()
-        {
-            armyValueText = GameObject.Find("ArmyValue").GetComponent<Text>();
-            armyValue = (Convert.ToInt32(armyValueText.text)) + 10;
-            armyValueText.text = armyValue.ToString();
-            goldIncomeText = GameObject.Find("GoldIncome").GetComponent<Text>();
-            goldIncome = (Convert.ToInt32(goldIncomeText.text)) - 10;
-            goldIncomeText.text = goldIncome.ToString();
-        }
-
-        static public void Convoi()
+        public static void FoodPlus(int val)
         {
             foodValueText = GameObject.Find("FoodValue").GetComponent<Text>();
-            foodValue = (Convert.ToInt32(foodValueText.text) + 50);
+            foodValue = (Convert.ToInt32(foodValueText.text)) + val;
             foodValueText.text = foodValue.ToString();
         }
 
-        static public void Education()
+        public static void FoodMinus(int val)
         {
-            bonheurValueText = GameObject.Find("BonheurValue").GetComponent<Text>();
-            bonheurValue = (Convert.ToInt32(bonheurValueText.text) + 5);
-            bonheurValueText.text = bonheurValue.ToString();
-
-            goldValueText = GameObject.Find("GoldValue").GetComponent<Text>();
-            goldValue = (Convert.ToInt32(goldValueText.text) - 50);
-            goldValueText.text = goldValue.ToString();
+            foodValueText = GameObject.Find("FoodValue").GetComponent<Text>();
+            foodValue = (Convert.ToInt32(foodValueText.text)) - val;
+            foodValueText.text = foodValue.ToString();
         }
 
-        static public void Impots()
+        public static void FoodIncomePlus(int val)
         {
-            goldValueText = GameObject.Find("GoldValue").GetComponent<Text>();
-            goldValue = (Convert.ToInt32(goldValueText.text) + 50);
-            goldValueText.text = goldValue.ToString();
-        }
-
-        static public void JoiesDeLaRue()
-        {
-            bonheurValueText = GameObject.Find("BonheurValue").GetComponent<Text>();
-            bonheurValue = (Convert.ToInt32(bonheurValueText.text) - 5);
-            bonheurValueText.text = bonheurValue.ToString();
-
-            goldValueText = GameObject.Find("GoldValue").GetComponent<Text>();
-            goldValue = (Convert.ToInt32(goldValueText.text) + 15);
-            goldValueText.text = goldValue.ToString();
-        }
-
-        public static void LibrePassage()
-        {
-            peopleValueText = GameObject.Find("PeopleValue").GetComponent<Text>();
-            peopleValue = Convert.ToInt32(peopleValueText.text) + 5;
-            peopleValueText.text = peopleValue.ToString();
-
             foodIncomeText = GameObject.Find("FoodIncome").GetComponent<Text>();
-            foodIncome = Convert.ToInt32(foodIncomeText.text) - 5;
+            foodIncome = (Convert.ToInt32(foodIncomeText.text)) + val;
             foodIncomeText.text = foodIncome.ToString();
         }
 
-        static public void JoiesDuCirque()
+        public static void FoodIncomeMinus(int val)
         {
-            bonheurValueText = GameObject.Find("BonheurValue").GetComponent<Text>();
-            bonheurValue = (Convert.ToInt32(bonheurValueText.text) + 10);
-            bonheurValueText.text = bonheurValue.ToString();
-
-            goldValueText = GameObject.Find("GoldValue").GetComponent<Text>();
-            goldValue = (Convert.ToInt32(goldValueText.text) + 5);
-            goldValueText.text = goldValue.ToString();
+            foodIncomeText = GameObject.Find("FoodIncome").GetComponent<Text>();
+            foodIncome = (Convert.ToInt32(foodIncomeText.text)) + val;
+            foodIncomeText.text = foodIncome.ToString();
         }
 
-        public static void LartDesMots()
-        {
-            bonheurValueText = GameObject.Find("BonheurValue").GetComponent<Text>();
-            bonheurValue = (Convert.ToInt32(bonheurValueText.text) + 5);
-            bonheurValueText.text = bonheurValue.ToString();
-
-            goldValueText = GameObject.Find("GoldValue").GetComponent<Text>();
-            goldValue = (Convert.ToInt32(goldValueText.text) - 50);
-            goldValueText.text = goldValue.ToString();
-        }
-
-        public static void Nationalisme()
+        public static void ArmyPlus(int val)
         {
             armyValueText = GameObject.Find("ArmyValue").GetComponent<Text>();
-            armyValue = (Convert.ToInt32(armyValueText.text)) + 5;
+            armyValue = (Convert.ToInt32(armyValueText.text)) + val;
             armyValueText.text = armyValue.ToString();
 
             goldIncomeText = GameObject.Find("GoldIncome").GetComponent<Text>();
-            goldIncome = (Convert.ToInt32(goldIncomeText.text)) - 5;
+            goldIncome = (Convert.ToInt32(goldIncomeText.text)) - val;
             goldIncomeText.text = goldIncome.ToString();
         }
 
-        static public void NouvelleTaxe()
+        public static void ArmyMinus(int val)
         {
-            bonheurValueText = GameObject.Find("BonheurValue").GetComponent<Text>();
-            bonheurValue = (Convert.ToInt32(bonheurValueText.text) - 5);
-            bonheurValueText.text = bonheurValue.ToString();
+            armyValueText = GameObject.Find("ArmyValue").GetComponent<Text>();
+            armyValue = (Convert.ToInt32(armyValueText.text)) - val;
+            armyValueText.text = armyValue.ToString();
 
             goldIncomeText = GameObject.Find("GoldIncome").GetComponent<Text>();
-            goldIncome = (Convert.ToInt32(goldIncomeText.text)) + 2;
+            goldIncome = (Convert.ToInt32(goldIncomeText.text)) + val;
             goldIncomeText.text = goldIncome.ToString();
         }
 
-        static public void RecoltesPrometteuses()
+        public static void GoldPlus(int val)
         {
+            goldValueText = GameObject.Find("GoldValue").GetComponent<Text>();
+            goldValue = (Convert.ToInt32(goldValueText.text) + val);
+            goldValueText.text = goldValue.ToString();
+        }
+
+        public static void GoldMinus(int val)
+        {
+            goldValueText = GameObject.Find("GoldValue").GetComponent<Text>();
+            goldValue = (Convert.ToInt32(goldValueText.text) - val);
+            goldValueText.text = goldValue.ToString();
+        }
+
+        public static void GoldIncomePlus(int val)
+        {
+            goldIncomeText = GameObject.Find("GoldIncome").GetComponent<Text>();
+            goldIncome = (Convert.ToInt32(goldIncomeText.text)) + val;
+            goldIncomeText.text = goldIncome.ToString();
+        }
+
+        public static void GoldIncomeMinus(int val)
+        {
+            goldIncomeText = GameObject.Find("GoldIncome").GetComponent<Text>();
+            goldIncome = (Convert.ToInt32(goldIncomeText.text)) - val;
+            goldIncomeText.text = goldIncome.ToString();
+        }
+
+        public static void BonheurPlus(int val)
+        {
+            bonheurValueText = GameObject.Find("BonheurValue").GetComponent<Text>();
+            bonheurValue = (Convert.ToInt32(bonheurValueText.text) + val);
+            bonheurValueText.text = bonheurValue.ToString();
+        }
+
+        public static void BonheurMinus(int val)
+        {
+            bonheurValueText = GameObject.Find("BonheurValue").GetComponent<Text>();
+            bonheurValue = (Convert.ToInt32(bonheurValueText.text) - val);
+            bonheurValueText.text = bonheurValue.ToString();
+        }
+
+        public static void PeoplePlus(int val)
+        {
+            peopleValueText = GameObject.Find("PeopleValue").GetComponent<Text>();
+            peopleValue = Convert.ToInt32(peopleValueText.text) + val;
+            peopleValueText.text = peopleValue.ToString();
+
             foodIncomeText = GameObject.Find("FoodIncome").GetComponent<Text>();
-            foodIncome = (Convert.ToInt32(foodIncomeText.text)) + 2;
+            foodIncome = Convert.ToInt32(foodIncomeText.text) - val;
             foodIncomeText.text = foodIncome.ToString();
         }
 
+        public static void PeopleMinus(int val)
+        {
+            peopleValueText = GameObject.Find("PeopleValue").GetComponent<Text>();
+            peopleValue = Convert.ToInt32(peopleValueText.text) - val;
+            peopleValueText.text = peopleValue.ToString();
 
+            foodIncomeText = GameObject.Find("FoodIncome").GetComponent<Text>();
+            foodIncome = Convert.ToInt32(foodIncomeText.text) + val;
+            foodIncomeText.text = foodIncome.ToString();
+        }
+
+        //########################################################################################
 
     }
 }
