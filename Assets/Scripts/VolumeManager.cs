@@ -4,19 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
-[RequireComponent(typeof(Slider))]
 public class VolumeManager : MonoBehaviour
 {
-   Slider slider
-   {
-    get { return GetComponent<Slider>();}
-   }
 
    public AudioMixer mixer;
    public string volumeName;
 
-   public void UpdateValueOnChange(float value)
+   public void SetLevel(float volume)
    {
-    mixer.SetFloat(volumeName, Mathf.Log(value) * 20f);
+    mixer.SetFloat(volumeName, Mathf.Log(volume) * 20f);
    }
+
 }
