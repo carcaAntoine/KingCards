@@ -39,6 +39,10 @@ namespace MyGame
         public GameObject[] cardSlots;
         public MalusCreator malusCreator;
 
+        //------------- Pause Menu Canvas ---------------
+
+        public GameObject pauseMenuScreen;
+
         //------------------------------------------
 
         void Awake()
@@ -59,6 +63,7 @@ namespace MyGame
             gameOverScreen = GameObject.Find("GameOverCanva");
             gameOverScreen.SetActive(false);
 
+            //Initialise éléments Malus canvas et désactive Ecran Malus
             malusScreen = GameObject.Find("MalusCanvas");
             malusTitle = GameObject.Find("MalusTitle").GetComponent<Text>();
             malusDesc = GameObject.Find("Malus").GetComponent<Text>();
@@ -67,6 +72,10 @@ namespace MyGame
             malusCatastropheScreen = GameObject.Find("background catastrophe");
             malusAlerteScreen = GameObject.Find("background");
             malusScreen.SetActive(false);
+
+            //Désactive Ecran Pause
+            pauseMenuScreen = GameObject.Find("PauseMenuCanvas");
+            pauseMenuScreen.SetActive(false);
 
             turnCounterText = GameObject.Find("TurnCount").GetComponent<Text>();
             turnCounterValue = Convert.ToInt32(turnCounterText.text);
@@ -97,6 +106,11 @@ namespace MyGame
 
                     //minIndex = 10;
                     GetMalus();
+                }
+
+                if (turnCounterValue % 10 == 5 && turnCounterValue != 5)
+                {
+                    CardManager.PeoplePlus(5);
                 }
             }
         }
