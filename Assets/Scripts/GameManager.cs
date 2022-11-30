@@ -25,6 +25,7 @@ namespace MyGame
         //----------- Game Over Canvas -------------
         private GameObject gameOverScreen;
         private Text gameOverText;
+        private Text scoreText;
 
         //------------- Malus Canvas ---------------
         private GameObject malusScreen;
@@ -61,6 +62,7 @@ namespace MyGame
         {
             //----- Désactive Ecran de GameOver -----
             gameOverScreen = GameObject.Find("GameOverCanva");
+            scoreText = GameObject.Find("ScoreValue").GetComponent<Text>();
             gameOverScreen.SetActive(false);
 
             //Initialise éléments Malus canvas et désactive Ecran Malus
@@ -163,6 +165,9 @@ namespace MyGame
                     gameOverText.text = "Votre peuple vous a destitué. \n Votre règne s'achève après " + turnCounterValue + " jours.";
                 }
 
+                //Affichage du score
+                int score = (CardManager.peopleValue * 3) + CardManager.bonheurValue + CardManager.goldValue;
+                scoreText.text = score.ToString();
             }
 
         }
