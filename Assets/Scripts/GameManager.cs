@@ -112,7 +112,7 @@ namespace MyGame
 
                 if (turnCounterValue % 10 == 5 && turnCounterValue != 5)
                 {
-                    CardManager.PeoplePlus(5);
+                    CardManager.PeopleChange(5);
                 }
             }
         }
@@ -166,7 +166,7 @@ namespace MyGame
                 }
 
                 //Affichage du score
-                int score = (CardManager.peopleValue * 3) + CardManager.bonheurValue + CardManager.goldValue;
+                int score = (CardManager.peopleValue * 3) + CardManager.happyValue + CardManager.goldValue;
                 scoreText.text = score.ToString();
             }
 
@@ -180,40 +180,23 @@ namespace MyGame
             {
                 //Assigne infos des cards de cardCreator
 
-                cardSlots[i].transform.GetChild(1).GetComponent<Image>().sprite = cardCreator.TurnOneCards[i].signetSprite;
-                cardSlots[i].transform.GetChild(2).GetComponent<Text>().text = cardCreator.TurnOneCards[i].cardTitle;
-                cardSlots[i].transform.GetChild(3).GetComponent<Text>().text = cardCreator.TurnOneCards[i].cardDescription;
-                cardSlots[i].transform.GetChild(4).GetComponent<Image>().sprite = cardCreator.TurnOneCards[i].effect1Sprite;
-                cardSlots[i].transform.GetChild(4).transform.GetChild(0).GetComponent<Text>().text = cardCreator.TurnOneCards[i].effect1Text;
-                cardSlots[i].transform.GetChild(5).GetComponent<Image>().sprite = cardCreator.TurnOneCards[i].effect2Sprite;
-                cardSlots[i].transform.GetChild(5).transform.GetChild(0).GetComponent<Text>().text = cardCreator.TurnOneCards[i].effect2Text;
+                cardSlots[i].GetComponent<Cards>().Configure(cardCreator.TurnOneCards[i]);
+
             }
         }
 
         public void DisplayCards()
         {
-            cardSlots[0].transform.GetChild(1).GetComponent<Image>().sprite = cardCreator.OtherTurnsCards[card1Index].signetSprite;
-            cardSlots[0].transform.GetChild(2).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card1Index].cardTitle;
-            cardSlots[0].transform.GetChild(3).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card1Index].cardDescription;
-            cardSlots[0].transform.GetChild(4).GetComponent<Image>().sprite = cardCreator.OtherTurnsCards[card1Index].effect1Sprite;
-            cardSlots[0].transform.GetChild(4).transform.GetChild(0).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card1Index].effect1Text;
-            cardSlots[0].transform.GetChild(5).GetComponent<Image>().sprite = cardCreator.OtherTurnsCards[card1Index].effect2Sprite;
-            cardSlots[0].transform.GetChild(5).transform.GetChild(0).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card1Index].effect2Text;
 
-            cardSlots[1].transform.GetChild(1).GetComponent<Image>().sprite = cardCreator.OtherTurnsCards[card2Index].signetSprite;
-            cardSlots[1].transform.GetChild(2).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card2Index].cardTitle;
-            cardSlots[1].transform.GetChild(3).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card2Index].cardDescription;
-            cardSlots[1].transform.GetChild(4).GetComponent<Image>().sprite = cardCreator.OtherTurnsCards[card2Index].effect1Sprite;
-            cardSlots[1].transform.GetChild(4).transform.GetChild(0).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card2Index].effect1Text;
-            cardSlots[1].transform.GetChild(5).GetComponent<Image>().sprite = cardCreator.OtherTurnsCards[card2Index].effect2Sprite;
-            cardSlots[1].transform.GetChild(5).transform.GetChild(0).GetComponent<Text>().text = cardCreator.OtherTurnsCards[card2Index].effect2Text;
+            cardSlots[0].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card1Index]);
+            cardSlots[1].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card2Index]);
         }
 
 
         public void GetMalus()
-        {   
+        {
             //augmentation de la difficulté au-delà du tour 50
-            if(turnCounterValue == 50)
+            if (turnCounterValue == 50)
             {
                 minIndex = 10;
             }
@@ -230,8 +213,8 @@ namespace MyGame
             malusDesc.text = malusCreator.MalusList[malusIndex].malusDescription;
             malusEffectIcon.sprite = malusCreator.MalusList[malusIndex].malusSprite;
             malusEffect.text = malusCreator.MalusList[malusIndex].malusEffectText;
-            
-            switch(malusTitle.text)
+
+            switch (malusTitle.text)
             {
                 case "Alerte !":
                     malusScreen.SetActive(true);
@@ -274,8 +257,8 @@ namespace MyGame
                     CardManager.peopleValueText.text = CardManager.peopleValue.ToString();
                     break;
                 case "Mécontents":
-                    CardManager.bonheurValue = CardManager.bonheurValue - 5;
-                    CardManager.bonheurValueText.text = CardManager.bonheurValue.ToString();
+                    CardManager.happyValue = CardManager.happyValue - 5;
+                    CardManager.happyValueText.text = CardManager.happyValue.ToString();
                     break;
                 case "ProtectionRoutes":
                     CardManager.armyValue = CardManager.armyValue - 10;
@@ -294,8 +277,8 @@ namespace MyGame
                     CardManager.peopleValueText.text = CardManager.peopleValue.ToString();
                     break;
                 case "Deuil":
-                    CardManager.bonheurValue = CardManager.bonheurValue - 5;
-                    CardManager.bonheurValueText.text = CardManager.bonheurValue.ToString();
+                    CardManager.happyValue = CardManager.happyValue - 5;
+                    CardManager.happyValueText.text = CardManager.happyValue.ToString();
                     break;
                 //------------------------- CATASTROPHES -------------------------
                 case "RécoltesPerdues":
@@ -311,8 +294,8 @@ namespace MyGame
                     CardManager.goldValueText.text = CardManager.goldValue.ToString();
                     break;
                 case "Révolte":
-                    CardManager.bonheurValue = CardManager.bonheurValue - 20;
-                    CardManager.bonheurValueText.text = CardManager.bonheurValue.ToString();
+                    CardManager.happyValue = CardManager.happyValue - 20;
+                    CardManager.happyValueText.text = CardManager.happyValue.ToString();
                     break;
                 case "Épidémie":
                     CardManager.peopleValue = CardManager.peopleValue / 2;
@@ -322,8 +305,25 @@ namespace MyGame
                     Debug.Log("Erreur : Malus introuvable");
                     break;
             }
-            
+
 
         }
+
+        public void AddValues(Card card)
+        {
+            //previousTurns.Add(card);
+            CardManager.InitValues();
+            Debug.Log(card.foodIncome);
+
+            CardManager.FoodChange(card.food);
+            CardManager.FoodIncomeChange(card.foodIncome);
+            CardManager.ArmyChange(card.army);
+            CardManager.GoldChange(card.gold);
+            CardManager.GoldIncomeChange(card.goldIncome);
+            CardManager.HappinessChange(card.happiness);
+            CardManager.PeopleChange(card.people);
+
+        }
+
     }
 }

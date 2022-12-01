@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardCreator : MonoBehaviour
+namespace MyGame
 {
-   public List<Cards> TurnOneCards = new List<Cards>();
-   public List<Cards> OtherTurnsCards = new List<Cards>();
-   public static int ListLength;
+    public class CardCreator : MonoBehaviour
+    {
+        public List<Card> TurnOneCards = new List<Card>();
+        public List<Card> OtherTurnsCards = new List<Card>();
+        public static int ListLength;
 
-   private void Start()
-   {
-      ListLength = OtherTurnsCards.Count;
-   }
+        private void Start()
+        {
+            ListLength = OtherTurnsCards.Count;
+        }
+    }
 }

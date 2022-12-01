@@ -406,7 +406,7 @@ RectTransform:
   m_Children:
   - {fileID: 1930294240}
   m_Father: {fileID: 1843428541}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -1539,7 +1539,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1843428541}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1987,7 +1987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1373462170384854209, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 15
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 3815744481141486600, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2295,90 +2295,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796033310}
   m_CullTransparentMesh: 1
---- !u!1 &796511031
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 796511032}
-  - component: {fileID: 796511033}
-  m_Layer: 0
-  m_Name: GameOverImage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &796511032
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796511031}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -560.75, y: -250.2899, z: 0}
-  m_LocalScale: {x: 22, y: 10.335271, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1843428541}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &796511033
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796511031}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &850793222
 GameObject:
   m_ObjectHideFlags: 0
@@ -2709,7 +2625,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1843428541}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2789,7 +2705,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1843428541}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3167,7 +3083,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1373462170384854209, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 15
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 3815744481141486600, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4455,9 +4371,16 @@ MonoBehaviour:
       agricole."
     signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
     effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
-    effect1Text: Nourriture  +  5 par tour
+    effect1Text: Nourriture + 5 par tour
     effect2Sprite: {fileID: 0}
     effect2Text: 
+    food: 0
+    foodIncome: 5
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: Loi Fiscale
     cardDescription: "Vous ordonnez de privil\xE9gier le d\xE9veloppement de l'\xE9conomie."
     signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
@@ -4465,6 +4388,13 @@ MonoBehaviour:
     effect1Text: Argent  +  5 par tour
     effect2Sprite: {fileID: 0}
     effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 5
+    happiness: 0
+    people: 0
   - cardTitle: Loi Martiale
     cardDescription: "Vous ordonnez de privil\xE9gier le d\xE9veloppement de l'arm\xE9e."
     signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
@@ -4472,6 +4402,13 @@ MonoBehaviour:
     effect1Text: "Arm\xE9e  +  10"
     effect2Sprite: {fileID: 0}
     effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 10
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   OtherTurnsCards:
   - cardTitle: Convoi
     cardDescription: Un convoi de nourriture vient d'arriver d'un pays voisin.
@@ -4480,6 +4417,13 @@ MonoBehaviour:
     effect1Text: Nourriture  +  15
     effect2Sprite: {fileID: 0}
     effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: "\xC9ducation"
     cardDescription: "Vous lancez la construction d'une biblioth\xE8que pour \xE9duquer
       vos citoyens."
@@ -4488,6 +4432,13 @@ MonoBehaviour:
     effect1Text: Bonheur  +  5
     effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
     effect2Text: Argent   -  50
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: "Imp\xF4ts"
     cardDescription: "Les imp\xF4ts ont \xE9t\xE9 r\xE9colt\xE9s.\nIl est temps de
       renflouer les caisses."
@@ -4496,6 +4447,13 @@ MonoBehaviour:
     effect1Text: Argent  +  50
     effect2Sprite: {fileID: 0}
     effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: Joies de la Rue
     cardDescription: Vous interdisez la prostitution dans vos rues, et taxez lourdement
       les contrevenants.
@@ -4504,6 +4462,13 @@ MonoBehaviour:
     effect1Text: Bonheur  -  5
     effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
     effect2Text: Argent  +  15
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: Libre Passage
     cardDescription: "Vous autorisez les migrants \xE9trangers \xE0 venir dans votre
       cit\xE9."
@@ -4512,6 +4477,13 @@ MonoBehaviour:
     effect1Text: Population  +  5
     effect2Sprite: {fileID: 0}
     effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: Joies du Cirque
     cardDescription: 'Le cirque est en ville !
 
@@ -4522,6 +4494,13 @@ MonoBehaviour:
     effect1Text: Bonheur  +  10
     effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
     effect2Text: Argent  +  5
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: L'Art des Mots
     cardDescription: "Vous lancez la construction d'un th\xE9\xE2tre pour divertir
       le peuple."
@@ -4530,6 +4509,13 @@ MonoBehaviour:
     effect1Text: Bonheur  +  5
     effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
     effect2Text: Argent  -  50
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: Nationalisme
     cardDescription: "De jeunes citoyens souhaitent s'enr\xF4ler, grossissant les
       rangs de votre arm\xE9e."
@@ -4538,6 +4524,13 @@ MonoBehaviour:
     effect1Text: "Arm\xE9e  +  5"
     effect2Sprite: {fileID: 0}
     effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: Nouvelle Taxe
     cardDescription: "Vous d\xE9cidez d'instaurer une nouvelle taxe pour renflouer
       les caisses du royaume."
@@ -4546,6 +4539,13 @@ MonoBehaviour:
     effect1Text: Argent   +  2 par tour
     effect2Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
     effect2Text: Bonheur  -  5
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: "R\xE9coltes Prometteuses"
     cardDescription: "D'apr\xE8s les paysans, la prochaine r\xE9colte devrait \xEAtre
       particuli\xE8rement bonne."
@@ -4554,6 +4554,13 @@ MonoBehaviour:
     effect1Text: Nourriture   +  2 par tour
     effect2Sprite: {fileID: 0}
     effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: Subventions Militaires
     cardDescription: "Vous d\xE9cidez de subventionner le secteur militaire afin
       d'augmenter les effectifs de votre arm\xE9e."
@@ -4562,6 +4569,13 @@ MonoBehaviour:
     effect1Text: "Arm\xE9e   +  10"
     effect2Sprite: {fileID: 0}
     effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: "Coupe Budg\xE9taire"
     cardDescription: "Vous d\xE9cidez de diminuer vos effectifs militaires pour faire
       des \xE9conomies."
@@ -4570,6 +4584,13 @@ MonoBehaviour:
     effect1Text: Argent   +  5 par tour
     effect2Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
     effect2Text: "Arm\xE9e  -  5"
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: Contrat Agricole
     cardDescription: "Vous signez un contrat d'approvisionnement en nourriture avec
       une cit\xE9 voisine."
@@ -4578,6 +4599,13 @@ MonoBehaviour:
     effect1Text: Nourriture   +  2 par tour
     effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
     effect2Text: Argent  -  2 par tour
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: "Contrat de S\xE9curit\xE9"
     cardDescription: Vous employez une troupe de mercenaires pour compenser votre
       manque de soldats.
@@ -4586,6 +4614,13 @@ MonoBehaviour:
     effect1Text: "Arm\xE9e   +  10"
     effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
     effect2Text: Argent  -  5 par tour
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: Contrat de Travail
     cardDescription: "Vous signez un contrat pour r\xE9aliser des travaux dans une
       cit\xE9 voisine."
@@ -4594,6 +4629,13 @@ MonoBehaviour:
     effect1Text: Argent   +  25
     effect2Sprite: {fileID: 0}
     effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: Nouveaux arrivants
     cardDescription: "Vous tentez d'attirer de nouveaux habitants dans votre royaume
       pour redynamiser l'\xE9conomie."
@@ -4602,6 +4644,13 @@ MonoBehaviour:
     effect1Text: Population   +  7
     effect2Sprite: {fileID: 0}
     effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: "Heureuse arriv\xE9e"
     cardDescription: "Bonne nouvelle ! Un hameau de fermiers proche de chez vous
       demande \xE0 rejoindre votre royaume."
@@ -4610,6 +4659,13 @@ MonoBehaviour:
     effect1Text: Population   +  10
     effect2Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
     effect2Text: Nourriture  +  15 par tour
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: Festival
     cardDescription: "Vous d\xE9cidez d'organiser un grand festival pour divertir
       vos citoyens."
@@ -4618,6 +4674,13 @@ MonoBehaviour:
     effect1Text: Bonheur   +  10
     effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
     effect2Text: Argent  -  35
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: Parade militaire
     cardDescription: "Vous d\xE9cidez d'organiser un grand d\xE9fil\xE9 pour c\xE9l\xE9brer
       vos r\xE9centes victoires militaires."
@@ -4626,6 +4689,13 @@ MonoBehaviour:
     effect1Text: Bonheur   +  5
     effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
     effect2Text: Argent  -  20
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
   - cardTitle: Projet militaire
     cardDescription: "Vous souhaitez vous doter d'une grande arm\xE9e, et d\xE9cidez
       d'acc\xE9l\xE9rer le recrutement de soldats."
@@ -4634,6 +4704,13 @@ MonoBehaviour:
     effect1Text: "Arm\xE9e   +  15"
     effect2Sprite: {fileID: 0}
     effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
 --- !u!4 &1731559007
 Transform:
   m_ObjectHideFlags: 0
@@ -4899,7 +4976,6 @@ RectTransform:
   m_Children:
   - {fileID: 1790706620}
   - {fileID: 785191012}
-  - {fileID: 796511032}
   - {fileID: 893927008}
   - {fileID: 951952410}
   - {fileID: 618634840}
@@ -5449,7 +5525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1373462170384854209, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 15
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1477206810873078040, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_Enabled

@@ -20,7 +20,7 @@ namespace MyGame
             cardName = GameObject.Find(selectionnedCard).transform.GetChild(2).GetComponent<Text>().text;
 
             Debug.Log("nom de la carte : " + cardName);
-
+/*
             switch (cardName)
             {
                 case "Loi Agricole":
@@ -110,6 +110,8 @@ namespace MyGame
                     Debug.Log("erreur, carte non renseignée");
                     break;
             }
+            */
+            //GameManager.singleton.AddValues(card);
             GameManager.singleton.EndTurn();
 
 
