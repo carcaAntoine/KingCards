@@ -12,6 +12,7 @@ namespace MyGame
         public Card myCard;
         private string selectionnedCard;//Nom de la carte (GameObject) sélectionnée
         private string cardName; //Nom de la carte sélectionnée
+        public static bool turnone = true;
 
         public void Configure(Card card)
         {
@@ -24,7 +25,7 @@ namespace MyGame
             transform.GetChild(5).transform.GetChild(0).GetComponent<Text>().text = card.effect2Text;
             myCard = card; // permet de faire le AddValue() dans la fonction OnMouseDown
         }
-        
+
 
         private void OnMouseDown()
         {
@@ -32,9 +33,19 @@ namespace MyGame
             //Debug.Log("clic sur " + selectionnedCard);
             cardName = GameObject.Find(selectionnedCard).transform.GetChild(2).GetComponent<Text>().text;
             Debug.Log("nom de la carte : " + cardName);
-            
+
             GameManager.singleton.AddValues(myCard);
-            GameManager.singleton.EndTurnOne();
+
+            if (turnone)
+            {
+                GameManager.singleton.EndTurnOne();
+                turnone = false;
+            }
+            else
+            {
+                GameManager.singleton.EndTurn();
+            }
+
             GameManager.singleton.newTurn();
         }
     }

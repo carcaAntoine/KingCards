@@ -35,6 +35,10 @@ namespace MyGame
         private Text malusDesc;
         private Image malusEffectIcon;
         private Text malusEffect;
+
+        public Malus malus;
+        public GameObject[] malusSlots;
+        public int malusALertLevel;
         //------------------------------------------
         public CardCreator cardCreator;
         public GameObject[] cardSlots;
@@ -90,6 +94,7 @@ namespace MyGame
             numberOfCards = CardCreator.ListLength;
             Debug.Log("nombre de cartes : " + numberOfCards);
             GameObject.Find("ThirdCard").SetActive(false);
+            CardManager.IncomeManager();
         }
 
         public void EndTurn()
@@ -174,16 +179,12 @@ namespace MyGame
 
         }
 
-
-
         public void DisplayTurnOneCards()
         {
             for (int i = 0; i < 3; i++)
             {
                 //Assigne infos des cards de cardCreator
-
                 cardSlots[i].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[i]);
-
             }
         }
 
@@ -194,6 +195,10 @@ namespace MyGame
             cardSlots[1].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card2Index]);
         }
 
+        public void DisplayMalus()
+        {
+            malusSlots[malusALertLevel].GetComponent<MalusConfig>().ConfigureMalus(malusCreator.MalusList[malusIndex]);
+        }
 
         public void GetMalus()
         {
@@ -205,131 +210,66 @@ namespace MyGame
 
             //choix aléatoire de l'index du malus
             int malusListLength = MalusCreator.mlLength;
-            //Debug.Log("minIndex : " + minIndex);
             System.Random rdn = new System.Random();
             malusIndex = rdn.Next(minIndex, malusListLength - 1);
-            Debug.Log("malus choisi : " + malusIndex);
 
-            //affichage du malus
-            malusTitle.text = malusCreator.MalusList[malusIndex].alertLevel;
-            malusDesc.text = malusCreator.MalusList[malusIndex].malusDescription;
-            malusEffectIcon.sprite = malusCreator.MalusList[malusIndex].malusSprite;
-            malusEffect.text = malusCreator.MalusList[malusIndex].malusEffectText;
-
-            switch (malusTitle.text)
+            malusScreen.SetActive(true);
+            if (malusCreator.MalusList[malusIndex].alertLevel == 0)
             {
-                case "Alerte !":
-                    malusScreen.SetActive(true);
-                    malusAlerteScreen.SetActive(true);
-                    malusCatastropheScreen.SetActive(false);
-                    break;
-                case "Catastrophe !":
-                    malusScreen.SetActive(true);
-                    malusCatastropheScreen.SetActive(true);
-                    malusAlerteScreen.SetActive(false);
-                    break;
-                default:
-                    Debug.Log("erreur, mauvais titre");
-                    break;
+                malusALertLevel = 0;
+                malusSlots[0].SetActive(true);
+                malusSlots[1].SetActive(false);
             }
+            else
+            {
+                malusALertLevel = 1;
+                malusSlots[0].SetActive(false);
+                malusSlots[1].SetActive(true);
+            }
+
+            DisplayMalus();
 
             string nameMalus = malusCreator.MalusList[malusIndex].malusName;
             Debug.Log("Malus name : " + nameMalus);
 
             //application du malus
             CardManager.InitValues();
-            switch (nameMalus)
-            {
-                //------------------------- ALERTES -------------------------
-                case "AttaqueBarbare":
-                    CardManager.armyValue = CardManager.armyValue - 20;
-                    CardManager.armyValueText.text = CardManager.armyValue.ToString();
-                    break;
-                case "IncendieDepotGrains":
-                    CardManager.foodValue = CardManager.foodValue - 30;
-                    CardManager.foodValueText.text = CardManager.foodValue.ToString();
-                    break;
-                case "Voleur":
-                    CardManager.goldValue = CardManager.goldValue - 30;
-                    CardManager.goldValueText.text = CardManager.goldValue.ToString();
-                    break;
-                case "Kidnapping":
-                    CardManager.peopleValue = CardManager.peopleValue - 3;
-                    CardManager.peopleValueText.text = CardManager.peopleValue.ToString();
-                    break;
-                case "Mécontents":
-                    CardManager.happyValue = CardManager.happyValue - 5;
-                    CardManager.happyValueText.text = CardManager.happyValue.ToString();
-                    break;
-                case "ProtectionRoutes":
-                    CardManager.armyValue = CardManager.armyValue - 10;
-                    CardManager.armyValueText.text = CardManager.armyValue.ToString();
-                    break;
-                case "MauvaisesRécoltes":
-                    CardManager.foodValue = CardManager.foodValue - 50;
-                    CardManager.foodValueText.text = CardManager.foodValue.ToString();
-                    break;
-                case "Travaux":
-                    CardManager.goldValue = CardManager.goldValue - 60;
-                    CardManager.goldValueText.text = CardManager.goldValue.ToString();
-                    break;
-                case "Accident":
-                    CardManager.peopleValue = CardManager.peopleValue - 10;
-                    CardManager.peopleValueText.text = CardManager.peopleValue.ToString();
-                    break;
-                case "Deuil":
-                    CardManager.happyValue = CardManager.happyValue - 5;
-                    CardManager.happyValueText.text = CardManager.happyValue.ToString();
-                    break;
-                //------------------------- CATASTROPHES -------------------------
-                case "RécoltesPerdues":
-                    CardManager.foodValue = CardManager.foodValue - 150;
-                    CardManager.foodValueText.text = CardManager.foodValue.ToString();
-                    break;
-                case "Guerre":
-                    CardManager.armyValue = CardManager.armyValue - 150;
-                    CardManager.armyValueText.text = CardManager.armyValue.ToString();
-                    break;
-                case "Inondation":
-                    CardManager.goldValue = CardManager.goldValue - 150;
-                    CardManager.goldValueText.text = CardManager.goldValue.ToString();
-                    break;
-                case "Révolte":
-                    CardManager.happyValue = CardManager.happyValue - 20;
-                    CardManager.happyValueText.text = CardManager.happyValue.ToString();
-                    break;
-                case "Épidémie":
-                    CardManager.peopleValue = CardManager.peopleValue / 2;
-                    CardManager.peopleValueText.text = CardManager.peopleValue.ToString();
-                    break;
-                default:
-                    Debug.Log("Erreur : Malus introuvable");
-                    break;
-            }
+            ApplyMalus(malus);
+        }
 
+        public void ApplyMalus(Malus malus)
+        {
+            CardManager.InitValues();
 
+            CardManager.FoodChange(malus.foodMalus);
+            CardManager.ArmyChange(malus.armyMalus);
+            CardManager.GoldChange(malus.goldMalus);
+            CardManager.HappinessChange(malus.happinessMalus);
+            CardManager.PeopleChange(malus.peopleMalus);
         }
 
         public void AddValues(Card card)
         {
             //previousTurns.Add(card);
             CardManager.InitValues();
-            //Debug.Log(card.foodIncome);
 
             CardManager.FoodChange(card.food);
-            Debug.Log("card food : " + card.food);
             CardManager.FoodIncomeChange(card.foodIncome);
-            Debug.Log("card foodIncome : " + card.foodIncome);
             CardManager.ArmyChange(card.army);
-            Debug.Log("card army : " + card.army);
             CardManager.GoldChange(card.gold);
-            Debug.Log("card gold : " + card.gold);
             CardManager.GoldIncomeChange(card.goldIncome);
-            Debug.Log("card goldIncome : " + card.goldIncome);
             CardManager.HappinessChange(card.happiness);
-            Debug.Log("card happy : " + card.happiness);
             CardManager.PeopleChange(card.people);
+
+            /*
+            Debug.Log("card food : " + card.food);
+            Debug.Log("card foodIncome : " + card.foodIncome);
+            Debug.Log("card army : " + card.army);
+            Debug.Log("card gold : " + card.gold);
+            Debug.Log("card goldIncome : " + card.goldIncome);
+            Debug.Log("card happy : " + card.happiness);
             Debug.Log("card people : " + card.people);
+            */
 
         }
 
