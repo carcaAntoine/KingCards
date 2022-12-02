@@ -4135,7 +4135,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: -5.3477783}
+  m_AnchoredPosition: {x: 0, y: -5.3477783}
   m_SizeDelta: {x: 0, y: -168.9131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1444160314
@@ -4240,6 +4240,22 @@ MonoBehaviour:
   - {fileID: 2141914060}
   - {fileID: 1440029554}
   malusCreator: {fileID: 1180980000}
+  card:
+    cardTitle: 
+    cardDescription: 
+    signetSprite: {fileID: 0}
+    effect1Sprite: {fileID: 0}
+    effect1Text: 
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 5
   pauseMenuScreen: {fileID: 0}
 --- !u!4 &1518848428
 Transform:
@@ -4381,6 +4397,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: Loi Fiscale
     cardDescription: "Vous ordonnez de privil\xE9gier le d\xE9veloppement de l'\xE9conomie."
     signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
@@ -4395,8 +4412,9 @@ MonoBehaviour:
     goldIncome: 5
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: Loi Martiale
-    cardDescription: "Vous ordonnez de privil\xE9gier le d\xE9veloppement de l'arm\xE9e."
+    cardDescription: 
     signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
     effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
     effect1Text: "Arm\xE9e  +  10"
@@ -4409,7 +4427,54 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   OtherTurnsCards:
+  - cardTitle: Loi Agricole
+    cardDescription: "Vous ordonnez de privil\xE9gier le d\xE9veloppement du secteur
+      agricole."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture + 5 par tour
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 5
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 5
+  - cardTitle: Loi Fiscale
+    cardDescription: "Vous ordonnez de privil\xE9gier le d\xE9veloppement de l'\xE9conomie."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent + 5 par tour
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 5
+    happiness: 0
+    people: 0
+    cooldown: 5
+  - cardTitle: Loi Martiale
+    cardDescription: "Vous ordonnez de privil\xE9gier le d\xE9veloppement de l'arm\xE9e."
+    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect1Text: "Arm\xE9e + 10"
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 10
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 5
   - cardTitle: Convoi
     cardDescription: Un convoi de nourriture vient d'arriver d'un pays voisin.
     signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
@@ -4424,6 +4489,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: "\xC9ducation"
     cardDescription: "Vous lancez la construction d'une biblioth\xE8que pour \xE9duquer
       vos citoyens."
@@ -4439,6 +4505,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: "Imp\xF4ts"
     cardDescription: "Les imp\xF4ts ont \xE9t\xE9 r\xE9colt\xE9s.\nIl est temps de
       renflouer les caisses."
@@ -4454,6 +4521,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: Joies de la Rue
     cardDescription: Vous interdisez la prostitution dans vos rues, et taxez lourdement
       les contrevenants.
@@ -4469,6 +4537,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: Libre Passage
     cardDescription: "Vous autorisez les migrants \xE9trangers \xE0 venir dans votre
       cit\xE9."
@@ -4484,6 +4553,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: Joies du Cirque
     cardDescription: 'Le cirque est en ville !
 
@@ -4501,6 +4571,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: L'Art des Mots
     cardDescription: "Vous lancez la construction d'un th\xE9\xE2tre pour divertir
       le peuple."
@@ -4516,6 +4587,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: Nationalisme
     cardDescription: "De jeunes citoyens souhaitent s'enr\xF4ler, grossissant les
       rangs de votre arm\xE9e."
@@ -4531,6 +4603,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: Nouvelle Taxe
     cardDescription: "Vous d\xE9cidez d'instaurer une nouvelle taxe pour renflouer
       les caisses du royaume."
@@ -4546,6 +4619,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: "R\xE9coltes Prometteuses"
     cardDescription: "D'apr\xE8s les paysans, la prochaine r\xE9colte devrait \xEAtre
       particuli\xE8rement bonne."
@@ -4561,6 +4635,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: Subventions Militaires
     cardDescription: "Vous d\xE9cidez de subventionner le secteur militaire afin
       d'augmenter les effectifs de votre arm\xE9e."
@@ -4576,6 +4651,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: "Coupe Budg\xE9taire"
     cardDescription: "Vous d\xE9cidez de diminuer vos effectifs militaires pour faire
       des \xE9conomies."
@@ -4591,6 +4667,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: Contrat Agricole
     cardDescription: "Vous signez un contrat d'approvisionnement en nourriture avec
       une cit\xE9 voisine."
@@ -4606,6 +4683,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: "Contrat de S\xE9curit\xE9"
     cardDescription: Vous employez une troupe de mercenaires pour compenser votre
       manque de soldats.
@@ -4621,6 +4699,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: Contrat de Travail
     cardDescription: "Vous signez un contrat pour r\xE9aliser des travaux dans une
       cit\xE9 voisine."
@@ -4636,6 +4715,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: Nouveaux arrivants
     cardDescription: "Vous tentez d'attirer de nouveaux habitants dans votre royaume
       pour redynamiser l'\xE9conomie."
@@ -4651,6 +4731,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: "Heureuse arriv\xE9e"
     cardDescription: "Bonne nouvelle ! Un hameau de fermiers proche de chez vous
       demande \xE0 rejoindre votre royaume."
@@ -4666,6 +4747,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: Festival
     cardDescription: "Vous d\xE9cidez d'organiser un grand festival pour divertir
       vos citoyens."
@@ -4681,6 +4763,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: Parade militaire
     cardDescription: "Vous d\xE9cidez d'organiser un grand d\xE9fil\xE9 pour c\xE9l\xE9brer
       vos r\xE9centes victoires militaires."
@@ -4696,6 +4779,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
   - cardTitle: Projet militaire
     cardDescription: "Vous souhaitez vous doter d'une grande arm\xE9e, et d\xE9cidez
       d'acc\xE9l\xE9rer le recrutement de soldats."
@@ -4711,6 +4795,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
+    cooldown: 5
 --- !u!4 &1731559007
 Transform:
   m_ObjectHideFlags: 0

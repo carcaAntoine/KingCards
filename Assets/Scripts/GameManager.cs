@@ -39,6 +39,7 @@ namespace MyGame
         public CardCreator cardCreator;
         public GameObject[] cardSlots;
         public MalusCreator malusCreator;
+        public Card card;
 
         //------------- Pause Menu Canvas ---------------
 
@@ -49,6 +50,7 @@ namespace MyGame
         void Awake()
         {
             singleton = this;
+
         }
 
         void Start()
@@ -121,8 +123,8 @@ namespace MyGame
         {
             // Création des indexs pour la sélection aléatoire des 2 cartes
             System.Random rdn = new System.Random();
-            card1Index = rdn.Next(0, numberOfCards - 1);
-            card2Index = rdn.Next(0, numberOfCards - 1);
+            card1Index = rdn.Next(3, numberOfCards - 1);
+            card2Index = rdn.Next(3, numberOfCards - 1);
             while (card1Index == card2Index)
             {
                 card2Index = rdn.Next(0, numberOfCards);
@@ -176,11 +178,11 @@ namespace MyGame
 
         public void DisplayTurnOneCards()
         {
-            for (int i = 0; i < cardCreator.TurnOneCards.Count; i++)
+            for (int i = 0; i < 3; i++)
             {
                 //Assigne infos des cards de cardCreator
 
-                cardSlots[i].GetComponent<Cards>().Configure(cardCreator.TurnOneCards[i]);
+                cardSlots[i].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[i]);
 
             }
         }
@@ -230,7 +232,6 @@ namespace MyGame
                     Debug.Log("erreur, mauvais titre");
                     break;
             }
-            //malusScreen.SetActive(true);
 
             string nameMalus = malusCreator.MalusList[malusIndex].malusName;
             Debug.Log("Malus name : " + nameMalus);
@@ -313,15 +314,22 @@ namespace MyGame
         {
             //previousTurns.Add(card);
             CardManager.InitValues();
-            Debug.Log(card.foodIncome);
+            //Debug.Log(card.foodIncome);
 
             CardManager.FoodChange(card.food);
+            Debug.Log("card food : " + card.food);
             CardManager.FoodIncomeChange(card.foodIncome);
+            Debug.Log("card foodIncome : " + card.foodIncome);
             CardManager.ArmyChange(card.army);
+            Debug.Log("card army : " + card.army);
             CardManager.GoldChange(card.gold);
+            Debug.Log("card gold : " + card.gold);
             CardManager.GoldIncomeChange(card.goldIncome);
+            Debug.Log("card goldIncome : " + card.goldIncome);
             CardManager.HappinessChange(card.happiness);
+            Debug.Log("card happy : " + card.happiness);
             CardManager.PeopleChange(card.people);
+            Debug.Log("card people : " + card.people);
 
         }
 

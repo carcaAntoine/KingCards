@@ -9,6 +9,7 @@ namespace MyGame
     public class Cards : MonoBehaviour
     {
         public Card card;
+        public Card myCard;
         private string selectionnedCard;//Nom de la carte (GameObject) sélectionnée
         private string cardName; //Nom de la carte sélectionnée
 
@@ -21,10 +22,8 @@ namespace MyGame
             transform.GetChild(4).transform.GetChild(0).GetComponent<Text>().text = card.effect1Text;
             transform.GetChild(5).GetComponent<Image>().sprite = card.effect2Sprite;
             transform.GetChild(5).transform.GetChild(0).GetComponent<Text>().text = card.effect2Text;
-            Debug.Log("foodIncome : " + card.foodIncome);
-
+            myCard = card; // permet de faire le AddValue() dans la fonction OnMouseDown
         }
-
         
 
         private void OnMouseDown()
@@ -32,11 +31,9 @@ namespace MyGame
             selectionnedCard = this.gameObject.name;
             //Debug.Log("clic sur " + selectionnedCard);
             cardName = GameObject.Find(selectionnedCard).transform.GetChild(2).GetComponent<Text>().text;
-
             Debug.Log("nom de la carte : " + cardName);
-            //Debug.Log("foodIncome : " + card.foodIncome);
             
-            GameManager.singleton.AddValues(card);
+            GameManager.singleton.AddValues(myCard);
             GameManager.singleton.EndTurnOne();
             GameManager.singleton.newTurn();
         }
