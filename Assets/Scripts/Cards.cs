@@ -24,6 +24,7 @@ namespace MyGame
             transform.GetChild(5).GetComponent<Image>().sprite = card.effect2Sprite;
             transform.GetChild(5).transform.GetChild(0).GetComponent<Text>().text = card.effect2Text;
             myCard = card; // permet de faire le AddValue() dans la fonction OnMouseDown
+            GameManager.singleton.CardCooldown = card.cooldown;
         }
 
 

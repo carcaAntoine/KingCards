@@ -10,17 +10,20 @@ namespace MyGame
     public class GameManager : MonoBehaviour
     {
         public static GameManager singleton;
-        string card1; //Nom de la première carte, tiré du tableau cardList
-        string card2; //Nom de la deuxième carte, tiré du tableau cardList
+        //string card1; //Nom de la première carte, tiré du tableau cardList
+        //string card2; //Nom de la deuxième carte, tiré du tableau cardList
         public int turnCounterValue;
         public Text turnCounterText;
         int card1Index = 0;
         int card2Index = 0;
+        public int CardCooldown; //Valeur du cooldown, redistribué plus tard à card1Cooldown et card2Cooldown
+        int card1Cooldown;
+        int card2Cooldown;
         int malusIndex = 0;
         int minIndex = 0;
         public int numberOfCards; //Nombre de cartes (hors cartes du turn 1)
-        public GameObject Card1Object; //1re carte à afficher
-        public GameObject Card2Object; //2e carte à afficher
+        //public GameObject Card1Object; //1re carte à afficher
+        //public GameObject Card2Object; //2e carte à afficher
 
         //----------- Game Over Canvas -------------
         private GameObject gameOverScreen;
@@ -29,13 +32,6 @@ namespace MyGame
 
         //------------- Malus Canvas ---------------
         private GameObject malusScreen;
-        private GameObject malusCatastropheScreen;
-        private GameObject malusAlerteScreen;
-        private Text malusTitle;
-        private Text malusDesc;
-        private Image malusEffectIcon;
-        private Text malusEffect;
-
         public Malus malus;
         public GameObject[] malusSlots;
         public int malusALertLevel;
@@ -60,7 +56,6 @@ namespace MyGame
         void Start()
         {
             InitGame();
-            //UIManager.uiManagerSingleton.DisplayTurnOneCards();
             DisplayTurnOneCards();
         }
 
@@ -73,12 +68,6 @@ namespace MyGame
 
             //Initialise éléments Malus canvas et désactive Ecran Malus
             malusScreen = GameObject.Find("MalusCanvas");
-            malusTitle = GameObject.Find("MalusTitle").GetComponent<Text>();
-            malusDesc = GameObject.Find("Malus").GetComponent<Text>();
-            malusEffectIcon = GameObject.Find("IconMalus").GetComponent<Image>();
-            malusEffect = GameObject.Find("MalusEffect").GetComponent<Text>();
-            malusCatastropheScreen = GameObject.Find("background catastrophe");
-            malusAlerteScreen = GameObject.Find("background");
             malusScreen.SetActive(false);
 
             //Désactive Ecran Pause
@@ -113,7 +102,6 @@ namespace MyGame
                     GameObject.Find("FirstCard").SetActive(false);
                     GameObject.Find("SecondCard").SetActive(false);
 
-                    //minIndex = 10;
                     GetMalus();
                 }
 
@@ -192,7 +180,11 @@ namespace MyGame
         {
 
             cardSlots[0].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card1Index]);
+            card1Cooldown = CardCooldown;
+            Debug.Log("card 1 cooldown : " + card1Cooldown);
             cardSlots[1].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card2Index]);
+            card2Cooldown = CardCooldown;
+            Debug.Log("card 2 cooldown : " + card2Cooldown);
         }
 
         public void DisplayMalus()
@@ -231,22 +223,9 @@ namespace MyGame
 
             string nameMalus = malusCreator.MalusList[malusIndex].malusName;
             Debug.Log("Malus name : " + nameMalus);
-
-            //application du malus
-            CardManager.InitValues();
-            ApplyMalus(malus);
         }
 
-        public void ApplyMalus(Malus malus)
-        {
-            CardManager.InitValues();
-
-            CardManager.FoodChange(malus.foodMalus);
-            CardManager.ArmyChange(malus.armyMalus);
-            CardManager.GoldChange(malus.goldMalus);
-            CardManager.HappinessChange(malus.happinessMalus);
-            CardManager.PeopleChange(malus.peopleMalus);
-        }
+        
 
         public void AddValues(Card card)
         {
@@ -260,17 +239,6 @@ namespace MyGame
             CardManager.GoldIncomeChange(card.goldIncome);
             CardManager.HappinessChange(card.happiness);
             CardManager.PeopleChange(card.people);
-
-            /*
-            Debug.Log("card food : " + card.food);
-            Debug.Log("card foodIncome : " + card.foodIncome);
-            Debug.Log("card army : " + card.army);
-            Debug.Log("card gold : " + card.gold);
-            Debug.Log("card goldIncome : " + card.goldIncome);
-            Debug.Log("card happy : " + card.happiness);
-            Debug.Log("card people : " + card.people);
-            */
-
         }
 
     }

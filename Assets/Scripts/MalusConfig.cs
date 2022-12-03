@@ -20,12 +20,28 @@ namespace MyGame
             transform.GetChild(2).GetComponent<Image>().sprite = malus.malusSprite;
             transform.GetChild(2).GetChild(0).GetComponent<Text>().text = malus.malusEffectText;
             myMalus = malus;
+            ApplyMalus(myMalus);
 
+        }
+
+        public void ApplyMalus(Malus malus)
+        {
+            CardManager.InitValues();
+
+            CardManager.FoodChange(malus.foodMalus);
+            CardManager.ArmyChange(malus.armyMalus);
+            CardManager.GoldChange(malus.goldMalus);
+            CardManager.HappinessChange(malus.happinessMalus);
+            CardManager.PeopleChange(malus.peopleMalus);
+
+            // ------------ DEBUG ------------//
             /*
-            malusTitle.text = malusCreator.MalusList[malusIndex].alertLevel;
-            malusDesc.text = malusCreator.MalusList[malusIndex].malusDescription;
-            malusEffectIcon.sprite = malusCreator.MalusList[malusIndex].malusSprite;
-            malusEffect.text = malusCreator.MalusList[malusIndex].malusEffectText;*/
+            Debug.Log("foodMalus : " + malus.foodMalus);
+            Debug.Log("armyMalus : " + malus.armyMalus);
+            Debug.Log("goldMalus : " + malus.goldMalus);
+            Debug.Log("happyMalus : " + malus.happinessMalus);
+            Debug.Log("peopleMalus : " + malus.peopleMalus);
+            */
         }
 
     }
