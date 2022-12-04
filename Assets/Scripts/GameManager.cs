@@ -10,8 +10,6 @@ namespace MyGame
     public class GameManager : MonoBehaviour
     {
         public static GameManager singleton;
-        //string card1; //Nom de la première carte, tiré du tableau cardList
-        //string card2; //Nom de la deuxième carte, tiré du tableau cardList
         public int turnCounterValue;
         public Text turnCounterText;
         int card1Index = 0;
@@ -22,8 +20,6 @@ namespace MyGame
         int malusIndex = 0;
         int minIndex = 0;
         public int numberOfCards; //Nombre de cartes (hors cartes du turn 1)
-        //public GameObject Card1Object; //1re carte à afficher
-        //public GameObject Card2Object; //2e carte à afficher
 
         //----------- Game Over Canvas -------------
         private GameObject gameOverScreen;
@@ -50,7 +46,6 @@ namespace MyGame
         void Awake()
         {
             singleton = this;
-
         }
 
         void Start()
@@ -83,6 +78,8 @@ namespace MyGame
             numberOfCards = CardCreator.ListLength;
             Debug.Log("nombre de cartes : " + numberOfCards);
             GameObject.Find("ThirdCard").SetActive(false);
+            turnCounterValue += 1;
+            turnCounterText.text = turnCounterValue.ToString();
             CardManager.IncomeManager();
         }
 
@@ -94,8 +91,13 @@ namespace MyGame
             {
                 turnCounterValue += 1;
                 turnCounterText.text = turnCounterValue.ToString();
-
-                newTurn();
+                for(int i = 3; i < cardCreator.OtherTurnsCards.Count - 1; i++)
+                {
+                    if(cardCreator.OtherTurnsCards[i].cooldown > 0)
+                    {
+                        cardCreator.OtherTurnsCards[i].cooldown -= 1;
+                    }
+                }
 
                 if (turnCounterValue % 10 == 0)
                 {
@@ -118,13 +120,30 @@ namespace MyGame
             System.Random rdn = new System.Random();
             card1Index = rdn.Next(3, numberOfCards - 1);
             card2Index = rdn.Next(3, numberOfCards - 1);
+
+            Debug.Log("card1Index : " + card1Index);
+            Debug.Log("card2Index : " + card2Index);
+
+            while(cardCreator.OtherTurnsCards[card1Index].cooldown > 0)
+            {
+                Debug.Log("Card 1 en Cooldown. Nouvel essai");
+                card1Index = rdn.Next(3, numberOfCards - 1);
+                Debug.Log("card1Index : " + card1Index);
+            }
+
+            while(cardCreator.OtherTurnsCards[card2Index].cooldown > 0)
+            {
+                Debug.Log("Card 2 en Cooldown. Nouvel essai");
+                card2Index = rdn.Next(3, numberOfCards - 1);
+                Debug.Log("card2Index : " + card2Index);
+            }
+
             while (card1Index == card2Index)
             {
                 card2Index = rdn.Next(0, numberOfCards);
                 Debug.Log("valeurs identiques. Nouvel essai");
             }
-            Debug.Log("card1Index : " + card1Index);
-            Debug.Log("card2Index : " + card2Index);
+            
             // ------------------------------------------------------------
 
             DisplayCards();
@@ -181,10 +200,8 @@ namespace MyGame
 
             cardSlots[0].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card1Index]);
             card1Cooldown = CardCooldown;
-            Debug.Log("card 1 cooldown : " + card1Cooldown);
             cardSlots[1].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card2Index]);
             card2Cooldown = CardCooldown;
-            Debug.Log("card 2 cooldown : " + card2Cooldown);
         }
 
         public void DisplayMalus()

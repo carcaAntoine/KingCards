@@ -4000,9 +4000,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnCounterValue: 0
   turnCounterText: {fileID: 0}
+  CardCooldown: 0
   numberOfCards: 0
-  Card1Object: {fileID: 0}
-  Card2Object: {fileID: 0}
   malus:
     malusName: 
     alertLevel: 0
@@ -4228,7 +4227,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: Loi Fiscale
     cardDescription: "Vous ordonnez de privil\xE9gier le d\xE9veloppement de l'\xE9conomie."
     signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
@@ -4243,7 +4242,7 @@ MonoBehaviour:
     goldIncome: 5
     happiness: 0
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: Loi Martiale
     cardDescription: "Vous ordonnez de privil\xE9gier le d\xE9veloppement de l'arm\xE9e."
     signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
@@ -4258,7 +4257,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: Convoi
     cardDescription: Un convoi de nourriture vient d'arriver d'un pays voisin.
     signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
@@ -4273,7 +4272,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: "\xC9ducation"
     cardDescription: "Vous lancez la construction d'une biblioth\xE8que pour \xE9duquer
       vos citoyens."
@@ -4289,7 +4288,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 5
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: "Imp\xF4ts"
     cardDescription: "Les imp\xF4ts ont \xE9t\xE9 r\xE9colt\xE9s.\nIl est temps de
       renflouer les caisses."
@@ -4305,7 +4304,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: Joies de la Rue
     cardDescription: Vous interdisez la prostitution dans vos rues, et taxez lourdement
       les contrevenants.
@@ -4321,7 +4320,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: -5
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: Libre Passage
     cardDescription: "Vous autorisez les migrants \xE9trangers \xE0 venir dans votre
       cit\xE9."
@@ -4337,7 +4336,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 5
-    cooldown: 5
+    cooldown: 0
   - cardTitle: Joies du Cirque
     cardDescription: 'Le cirque est en ville !
 
@@ -4355,7 +4354,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 10
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: L'Art des Mots
     cardDescription: "Vous lancez la construction d'un th\xE9\xE2tre pour divertir
       le peuple."
@@ -4371,7 +4370,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 5
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: Nationalisme
     cardDescription: "De jeunes citoyens souhaitent s'enr\xF4ler, grossissant les
       rangs de votre arm\xE9e."
@@ -4387,7 +4386,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: Nouvelle Taxe
     cardDescription: "Vous d\xE9cidez d'instaurer une nouvelle taxe pour renflouer
       les caisses du royaume."
@@ -4403,7 +4402,7 @@ MonoBehaviour:
     goldIncome: 2
     happiness: -5
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: "R\xE9coltes Prometteuses"
     cardDescription: "D'apr\xE8s les paysans, la prochaine r\xE9colte devrait \xEAtre
       particuli\xE8rement bonne."
@@ -4419,7 +4418,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: Subventions Militaires
     cardDescription: "Vous d\xE9cidez de subventionner le secteur militaire afin
       d'augmenter les effectifs de votre arm\xE9e."
@@ -4435,7 +4434,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: "Coupe Budg\xE9taire"
     cardDescription: "Vous d\xE9cidez de diminuer vos effectifs militaires pour faire
       des \xE9conomies."
@@ -4451,7 +4450,7 @@ MonoBehaviour:
     goldIncome: 5
     happiness: 0
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: Contrat Agricole
     cardDescription: "Vous signez un contrat d'approvisionnement en nourriture avec
       une cit\xE9 voisine."
@@ -4467,7 +4466,7 @@ MonoBehaviour:
     goldIncome: -2
     happiness: 0
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: "Contrat de S\xE9curit\xE9"
     cardDescription: Vous employez une troupe de mercenaires pour compenser votre
       manque de soldats.
@@ -4483,7 +4482,7 @@ MonoBehaviour:
     goldIncome: 5
     happiness: 0
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: Contrat de Travail
     cardDescription: "Vous signez un contrat pour r\xE9aliser des travaux dans une
       cit\xE9 voisine."
@@ -4499,7 +4498,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: Nouveaux arrivants
     cardDescription: "Vous tentez d'attirer de nouveaux habitants dans votre royaume
       pour redynamiser l'\xE9conomie."
@@ -4515,7 +4514,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 7
-    cooldown: 5
+    cooldown: 0
   - cardTitle: "Heureuse arriv\xE9e"
     cardDescription: "Bonne nouvelle ! Un hameau de fermiers proche de chez vous
       demande \xE0 rejoindre votre royaume."
@@ -4531,7 +4530,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 10
-    cooldown: 5
+    cooldown: 0
   - cardTitle: Festival
     cardDescription: "Vous d\xE9cidez d'organiser un grand festival pour divertir
       vos citoyens."
@@ -4547,7 +4546,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 10
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: Parade militaire
     cardDescription: "Vous d\xE9cidez d'organiser un grand d\xE9fil\xE9 pour c\xE9l\xE9brer
       vos r\xE9centes victoires militaires."
@@ -4563,7 +4562,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 5
     people: 0
-    cooldown: 5
+    cooldown: 0
   - cardTitle: Projet militaire
     cardDescription: "Vous souhaitez vous doter d'une grande arm\xE9e, et d\xE9cidez
       d'acc\xE9l\xE9rer le recrutement de soldats."
@@ -4579,7 +4578,7 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 0
-    cooldown: 5
+    cooldown: 0
 --- !u!4 &1731559007
 Transform:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ namespace MyGame
         public int goldIncome;
         public int happiness;
         public int people;
-        public int cooldown = 5;
+        public int cooldown;
 
     }
 }
