@@ -14,9 +14,6 @@ namespace MyGame
         public Text turnCounterText;
         int card1Index = 0;
         int card2Index = 0;
-        public int CardCooldown; //Valeur du cooldown, redistribué plus tard à card1Cooldown et card2Cooldown
-        int card1Cooldown;
-        int card2Cooldown;
         int malusIndex = 0;
         int minIndex = 0;
         public int numberOfCards; //Nombre de cartes (hors cartes du turn 1)
@@ -199,9 +196,7 @@ namespace MyGame
         {
 
             cardSlots[0].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card1Index]);
-            card1Cooldown = CardCooldown;
             cardSlots[1].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card2Index]);
-            card2Cooldown = CardCooldown;
         }
 
         public void DisplayMalus()

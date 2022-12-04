@@ -3512,12 +3512,12 @@ MonoBehaviour:
     malusDescription: "Une \xE9pid\xE9mie se propage en ville ! De nombreux citoyens
       meurent \xE0 cause de cette maladie."
     malusSprite: {fileID: 21300000, guid: e160fa3829637df41a056dfad9bb9e1b, type: 3}
-    malusEffectText: "Population divis\xE9e par  2"
+    malusEffectText: Population - 60
     foodMalus: 0
     armyMalus: 0
     goldMalus: 0
     happinessMalus: 0
-    peopleMalus: 0
+    peopleMalus: -60
 --- !u!4 &1180980001
 Transform:
   m_ObjectHideFlags: 0
@@ -4000,7 +4000,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnCounterValue: 0
   turnCounterText: {fileID: 0}
-  CardCooldown: 0
   numberOfCards: 0
   malus:
     malusName: 
@@ -4126,7 +4125,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Version  0.4
+  m_Text: Version  0.5
 --- !u!222 &1705352413
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4447,7 +4446,7 @@ MonoBehaviour:
     foodIncome: 0
     army: -5
     gold: 0
-    goldIncome: 5
+    goldIncome: 0
     happiness: 0
     people: 0
     cooldown: 0
