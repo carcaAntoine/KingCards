@@ -49,7 +49,7 @@ namespace MyGame
                 GameManager.singleton.EndTurn();
             }
 
-            GameManager.singleton.newTurn();
+            GameManager.singleton.NewTurn();
         }
     }
 }

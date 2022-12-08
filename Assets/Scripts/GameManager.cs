@@ -35,8 +35,10 @@ namespace MyGame
         public Card card;
 
         //------------- Pause Menu Canvas ---------------
-
         public GameObject pauseMenuScreen;
+
+        //------------ Nouvelle Ère Canvas --------------
+        public GameObject newEraScreen;
 
         //------------------------------------------
 
@@ -66,6 +68,10 @@ namespace MyGame
             pauseMenuScreen = GameObject.Find("PauseMenuCanvas");
             pauseMenuScreen.SetActive(false);
 
+            //Désactive Ecran Nouvelle Ere
+            newEraScreen = GameObject.Find("NewEraCanvas");
+            newEraScreen.SetActive(false);
+
             turnCounterText = GameObject.Find("TurnCount").GetComponent<Text>();
             turnCounterValue = Convert.ToInt32(turnCounterText.text);
         }
@@ -83,7 +89,7 @@ namespace MyGame
         public void EndTurn()
         {
             CardManager.IncomeManager();
-            checkIfGameIsOver();
+            CheckIfGameIsOver();
             if (!CardManager.gameOver)
             {
                 turnCounterValue += 1;
@@ -111,7 +117,7 @@ namespace MyGame
             }
         }
 
-        public void newTurn()
+        public void NewTurn()
         {
             // Création des indexs pour la sélection aléatoire des 2 cartes
             System.Random rdn = new System.Random();
@@ -146,7 +152,7 @@ namespace MyGame
             DisplayCards();
         }
 
-        public void checkIfGameIsOver()
+        public void CheckIfGameIsOver()
         {
             //Debug.Log("CheckIsGameOver activé");
             CardManager.CheckValues();
