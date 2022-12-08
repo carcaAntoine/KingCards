@@ -10,12 +10,15 @@ namespace MyGame
     public class GameManager : MonoBehaviour
     {
         public static GameManager singleton;
+        [HideInInspector]
         public int turnCounterValue;
+        [HideInInspector]
         public Text turnCounterText;
         int card1Index = 0;
         int card2Index = 0;
         int malusIndex = 0;
         int minIndex = 0;
+        [HideInInspector]
         public int numberOfCards; //Nombre de cartes (hors cartes du turn 1)
 
         //----------- Game Over Canvas -------------
@@ -25,20 +28,27 @@ namespace MyGame
 
         //------------- Malus Canvas ---------------
         private GameObject malusScreen;
+        [HideInInspector]
         public Malus malus;
+        public MalusCreator malusCreator;
         public GameObject[] malusSlots;
-        public int malusALertLevel;
+        [HideInInspector]
+        public int malusAlertLevel;
         //------------------------------------------
         public CardCreator cardCreator;
         public GameObject[] cardSlots;
-        public MalusCreator malusCreator;
+        [HideInInspector]
         public Card card;
 
         //------------- Pause Menu Canvas ---------------
+        [HideInInspector]
         public GameObject pauseMenuScreen;
 
         //------------ Nouvelle Ère Canvas --------------
-        public GameObject newEraScreen;
+        [HideInInspector]
+        public GameObject newAgeScreen;
+        public AgeCreator ageCreator;
+        public GameObject agePrefab;
 
         //------------------------------------------
 
@@ -69,8 +79,8 @@ namespace MyGame
             pauseMenuScreen.SetActive(false);
 
             //Désactive Ecran Nouvelle Ere
-            newEraScreen = GameObject.Find("NewEraCanvas");
-            newEraScreen.SetActive(false);
+            newAgeScreen = GameObject.Find("NewAgeCanvas");
+            newAgeScreen.SetActive(false);
 
             turnCounterText = GameObject.Find("TurnCount").GetComponent<Text>();
             turnCounterValue = Convert.ToInt32(turnCounterText.text);
@@ -102,12 +112,21 @@ namespace MyGame
                     }
                 }
 
-                if (turnCounterValue % 10 == 0)
+                if (turnCounterValue % 10 == 0 && turnCounterValue % 15 != 0)
                 {
                     GameObject.Find("FirstCard").SetActive(false);
                     GameObject.Find("SecondCard").SetActive(false);
 
                     GetMalus();
+                }
+
+                if (turnCounterValue % 15 == 0)
+                {
+                    GameObject.Find("FirstCard").SetActive(false);
+                    GameObject.Find("SecondCard").SetActive(false);
+
+                    newAgeScreen.SetActive(true);
+                    DisplayNewAge();
                 }
 
                 if (turnCounterValue % 10 == 5 && turnCounterValue != 5)
@@ -205,9 +224,14 @@ namespace MyGame
             cardSlots[1].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card2Index]);
         }
 
+        public void DisplayNewAge()
+        {
+            agePrefab.GetComponent<AgeConfig>().ConfigureAge(ageCreator.AgeList[5]);
+        }
+
         public void DisplayMalus()
         {
-            malusSlots[malusALertLevel].GetComponent<MalusConfig>().ConfigureMalus(malusCreator.MalusList[malusIndex]);
+            malusSlots[malusAlertLevel].GetComponent<MalusConfig>().ConfigureMalus(malusCreator.MalusList[malusIndex]);
         }
 
         public void GetMalus()
@@ -226,13 +250,13 @@ namespace MyGame
             malusScreen.SetActive(true);
             if (malusCreator.MalusList[malusIndex].alertLevel == 0)
             {
-                malusALertLevel = 0;
+                malusAlertLevel = 0;
                 malusSlots[0].SetActive(true);
                 malusSlots[1].SetActive(false);
             }
             else
             {
-                malusALertLevel = 1;
+                malusAlertLevel = 1;
                 malusSlots[0].SetActive(false);
                 malusSlots[1].SetActive(true);
             }
