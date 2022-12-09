@@ -151,8 +151,8 @@ namespace MyGame
         {
             // Création des indexs pour la sélection aléatoire des 2 cartes
             System.Random rdn = new System.Random();
-            card1Index = rdn.Next(3, numberOfCards - 1);
-            card2Index = rdn.Next(3, numberOfCards - 1);
+            card1Index = rdn.Next(AgeConfig.minCardIndex, AgeConfig.maxCardIndex);
+            card2Index = rdn.Next(AgeConfig.minCardIndex, AgeConfig.maxCardIndex);
 
             Debug.Log("card1Index : " + card1Index);
             Debug.Log("card2Index : " + card2Index);
@@ -160,20 +160,20 @@ namespace MyGame
             while (cardCreator.OtherTurnsCards[card1Index].cooldown > 0)
             {
                 Debug.Log("Card 1 en Cooldown. Nouvel essai");
-                card1Index = rdn.Next(3, numberOfCards - 1);
+                card1Index = rdn.Next(AgeConfig.minCardIndex, AgeConfig.maxCardIndex);
                 Debug.Log("card1Index : " + card1Index);
             }
 
             while (cardCreator.OtherTurnsCards[card2Index].cooldown > 0)
             {
                 Debug.Log("Card 2 en Cooldown. Nouvel essai");
-                card2Index = rdn.Next(3, numberOfCards - 1);
+                card2Index = rdn.Next(AgeConfig.minCardIndex, AgeConfig.maxCardIndex);
                 Debug.Log("card2Index : " + card2Index);
             }
 
             while (card1Index == card2Index)
             {
-                card2Index = rdn.Next(0, numberOfCards);
+                card2Index = rdn.Next(AgeConfig.minCardIndex, AgeConfig.maxCardIndex);
                 Debug.Log("valeurs identiques. Nouvel essai");
             }
 

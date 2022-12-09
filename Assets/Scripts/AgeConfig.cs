@@ -8,17 +8,14 @@ namespace MyGame
 {
     public class AgeConfig : MonoBehaviour
     {
-        //public static AgeConfig ageSingleton;
         public Age age;
         public Age myAge;
         public static int actualAgeNumber = 1; //nombre de l'ère actuelle ( /!\ PAS INDEX /!\ )
         public static int armyCostValue = 1;
         public static int peopleAdd = 5; //nombre d'habitants ajoutés naturellement
+        public static int minCardIndex = 0; //index minimum des cards sélectionnables
+        public static int maxCardIndex = 17; //index maximum des cards sélectionnables
 
-        /*void Awake()
-        {
-            ageSingleton = this;
-        }*/
 
         public void ConfigureAge(Age age)
         {
@@ -34,6 +31,8 @@ namespace MyGame
             actualAgeNumber += 1;
             armyCostValue = age.ArmyCostValue;
             peopleAdd = age.peopleAddValue;
+            minCardIndex = age.indexMinCard;
+            maxCardIndex = age.indexMaxCard;
 
             Debug.Log(age.ageName);
             Debug.Log("army cost : " + armyCostValue);

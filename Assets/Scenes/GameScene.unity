@@ -818,17 +818,17 @@ MonoBehaviour:
   - ageName: Clan
     annonce: "\xC8re de D\xE9part. N'apporte aucune modif\nNE PAS UTILISER"
     effectsDescription: 
-    indexMinCard: 0
-    indexMaxCard: 0
+    indexMinCard: 3
+    indexMaxCard: 22
     AddEvolution: 0
-    peopleAddValue: 0
-    ArmyCostValue: 0
+    peopleAddValue: 5
+    ArmyCostValue: 1
   - ageName: "L'\xC8re du Village"
     annonce: "Votre Clan s'est bien agrandi. Il est temps de s'installer pour devenir
       un v\xE9ritable village."
     effectsDescription: De nouvelles Lois sont disponibles.
-    indexMinCard: 3
-    indexMaxCard: 38
+    indexMinCard: 0
+    indexMaxCard: 32
     AddEvolution: 0
     peopleAddValue: 5
     ArmyCostValue: 1
@@ -837,17 +837,17 @@ MonoBehaviour:
       dans une nouvelle \xC8re :"
     effectsDescription: "De nouvelles Lois sont disponibles.\nVotre population cro\xEEt
       plus vite."
-    indexMinCard: 23
-    indexMaxCard: 53
+    indexMinCard: 17
+    indexMaxCard: 48
     AddEvolution: 0
-    peopleAddValue: 8
+    peopleAddValue: 2
     ArmyCostValue: 1
   - ageName: "L'\xC8re de la Cit\xE9-\xC9tat"
     annonce: "Votre Cit\xE9 a tellement gagn\xE9 en inlfluence ces derni\xE8res ann\xE9es
       que vous d\xE9cidez d'en faire une Cit\xE9-\xC9tat autonome."
     effectsDescription: De nouvelles Lois sont disponibles.
-    indexMinCard: 0
-    indexMaxCard: 0
+    indexMinCard: 33
+    indexMaxCard: 48
     AddEvolution: 0
     peopleAddValue: 5
     ArmyCostValue: 1
@@ -856,7 +856,7 @@ MonoBehaviour:
       d\xE9sormais sur un v\xE9ritable Royaume !"
     effectsDescription: "De nouvelles Lois sont disponibles.\nVous allez maintenant
       devoir vous assurer que votre Royaume est suffisamment \xC9volu\xE9."
-    indexMinCard: 0
+    indexMinCard: 48
     indexMaxCard: 0
     AddEvolution: 1
     peopleAddValue: 5
@@ -998,7 +998,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1072,18 +1071,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b1fe9ad48b9c0343838cf9deb2e59a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &562456769 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6374037593201744012, guid: b6473cba63084e140be6ef2a45348262, type: 3}
@@ -4450,6 +4437,7 @@ MonoBehaviour:
   newAgeScreen: {fileID: 0}
   ageCreator: {fileID: 436992535}
   agePrefab: {fileID: 828167734}
+  ageConfig: {fileID: 0}
 --- !u!4 &1518848428
 Transform:
   m_ObjectHideFlags: 0
@@ -4622,54 +4610,133 @@ MonoBehaviour:
     people: 0
     cooldown: 5
   OtherTurnsCards:
-  - cardTitle: Loi Agricole
-    cardDescription: "Vous ordonnez de privil\xE9gier le d\xE9veloppement du secteur
-      agricole."
+  - cardTitle: Projet Agricole
+    cardDescription: "Vous d\xE9cidez de cr\xE9er un champ pour avoir une source
+      durable de Nourriture."
     signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
     effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
-    effect1Text: Nourriture + 5 par tour
+    effect1Text: Nourriture + 2 par tour
     effect2Sprite: {fileID: 0}
     effect2Text: 
     food: 0
-    foodIncome: 5
+    foodIncome: 2
     army: 0
     gold: 0
     goldIncome: 0
     happiness: 0
     people: 0
     cooldown: 0
-  - cardTitle: Loi Fiscale
-    cardDescription: "Vous ordonnez de privil\xE9gier le d\xE9veloppement de l'\xE9conomie."
+  - cardTitle: Projet Fiscal
+    cardDescription: "Vous d\xE9cidez de commercer avec d'autres Clans pour avoir
+      une source durable d'Argent."
     signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
     effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
-    effect1Text: Argent + 5 par tour
+    effect1Text: Argent + 3 par tour
     effect2Sprite: {fileID: 0}
     effect2Text: 
     food: 0
     foodIncome: 0
     army: 0
     gold: 0
-    goldIncome: 5
+    goldIncome: 3
     happiness: 0
     people: 0
     cooldown: 0
-  - cardTitle: Loi Martiale
-    cardDescription: "Vous ordonnez de privil\xE9gier le d\xE9veloppement de l'arm\xE9e."
+  - cardTitle: "Projet de D\xE9fense"
+    cardDescription: "Vous d\xE9cidez d'armer des membres de votre Clan pour pouvoir
+      vous d\xE9fendre contre les futures menaces."
     signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
     effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
-    effect1Text: "Arm\xE9e + 10"
+    effect1Text: "Arm\xE9e + 5"
     effect2Sprite: {fileID: 0}
     effect2Text: 
     food: 0
     foodIncome: 0
-    army: 10
+    army: 5
     gold: 0
     goldIncome: 0
     happiness: 0
     people: 0
     cooldown: 0
-  - cardTitle: Convoi
-    cardDescription: Un convoi de nourriture vient d'arriver d'un pays voisin.
+  - cardTitle: Nouveaux Membres
+    cardDescription: Un groupe de personnes souhaiterait rejoindre votre Clan.
+    signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
+    effect1Text: Population + 5
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 5
+    cooldown: 0
+  - cardTitle: Bannissement
+    cardDescription: "Un membre de votre Clan a commis l'irr\xE9parable. Vous d\xE9cidez
+      de le bannir \xE0 jamais."
+    signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
+    effect1Text: Population - 1
+    effect2Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect2Text: Bonheur - 2
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: -2
+    people: -1
+    cooldown: 0
+  - cardTitle: Cadeau
+    cardDescription: "Un Clan voisin vous offre ce pr\xE9sent en signe d'amiti\xE9."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent + 15
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 15
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: Retour des chasseurs
+    cardDescription: "Le groupe de chasseurs que vous avez envoy\xE9 est revenu avec
+      de bonnes prises."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture + 10
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 10
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: Banquet Divin
+    cardDescription: Vous organisez un gigantesque banquet en l'honneur des Dieux.
+    signetSprite: {fileID: 21300000, guid: d2fdbbe74dc0ee34e92677993f2fb718, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect1Text: Bonheur + 5
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 5
+    people: 0
+    cooldown: 0
+  - cardTitle: "R\xE9coltes"
+    cardDescription: "Il est temps de faire les r\xE9coltes de certains de vos champs."
     signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
     effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
     effect1Text: Nourriture + 15
@@ -4683,20 +4750,225 @@ MonoBehaviour:
     happiness: 0
     people: 0
     cooldown: 0
-  - cardTitle: "\xC9ducation"
-    cardDescription: "Vous lancez la construction d'une biblioth\xE8que pour \xE9duquer
-      vos citoyens."
-    signetSprite: {fileID: 21300000, guid: d2fdbbe74dc0ee34e92677993f2fb718, type: 3}
-    effect1Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
-    effect1Text: Bonheur + 5
-    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
-    effect2Text: Argent  - 50
+  - cardTitle: Commercialisation
+    cardDescription: "Vous d\xE9cidez de cr\xE9er des petits objets que vous vendez
+      \xE0 des marchands ambulants."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent + 2 par tour
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
     food: 0
     foodIncome: 0
     army: 0
-    gold: -50
+    gold: 0
+    goldIncome: 2
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: Attaque du Camp
+    cardDescription: "Vous attaquez et soumettez un camp barbare voisin. Ceux-ci
+      vous paieront d\xE9sormais un tribu."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent + 2 par tour
+    effect2Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect2Text: "Arm\xE9e - 2"
+    food: 0
+    foodIncome: 0
+    army: -2
+    gold: 0
+    goldIncome: 2
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: Nouvelles armes
+    cardDescription: "Vous avez r\xE9cemment acquis un stock d'arcs, et d\xE9cidez
+      de les utiliser."
+    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect1Text: "Arm\xE9e + 7"
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 7
+    gold: 0
     goldIncome: 0
-    happiness: 5
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: "D\xE9fense Efficace"
+    cardDescription: "Vous avez d\xE9fait un groupe de pillards, et vous vous emparez
+      de leurs richesses."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent + 15
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 15
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: Chasse importante
+    cardDescription: Votre groupe de chasseurs est revenu avec une grosse prise.
+      Malheureusement, l'un d'eux est mort pendant la chasse.
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture + 15
+    effect2Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
+    effect2Text: Population - 1
+    food: 15
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: -1
+    cooldown: 0
+  - cardTitle: Divertissement
+    cardDescription: "Vous cr\xE9ez de nouvelles occupations pour divertir les membres
+      de votre Clan."
+    signetSprite: {fileID: 21300000, guid: d2fdbbe74dc0ee34e92677993f2fb718, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect1Text: Bonheur + 3
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 3
+    people: 0
+    cooldown: 0
+  - cardTitle: "\xC0 la p\xEAche"
+    cardDescription: "Vous formez un groupe de p\xEAcheurs pour exploiter les ressources
+      du lac voisin."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture + 3 par tour
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 3
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: "R\xE9sultat des ventes"
+    cardDescription: "Les ventes de votre artisanat ont bien augment\xE9 et vous
+      rapportent une jolie somme."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent + 10
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 10
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: "R\xE9coltes Prometteuses"
+    cardDescription: "Bonne nouvelle, les prochaines r\xE9coltes devraient \xEAtre
+      particuli\xE8rement bonnes !"
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture + 2 par tour
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 2
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: Mon beau Moulin
+    cardDescription: "Vous demandez la cr\xE9ation d'un moulin pour acc\xE9l\xE9rer
+      la transformation du bl\xE9."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture  + 3 par tour
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent - 20
+    food: 0
+    foodIncome: 3
+    army: 0
+    gold: -20
+    goldIncome: 0
+    happiness: 0
+    people: 7
+    cooldown: 0
+  - cardTitle: Naissances
+    cardDescription: Une vague de naissances a eu lieu dans votre Village.
+    signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
+    effect1Text: Population  + 4
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 4
+    cooldown: 0
+  - cardTitle: Revalorisation
+    cardDescription: "La vente de votre artisanat progresse bien, et vous d\xE9cidez
+      d'augmenter les prix."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent + 3 par tour
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 3
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: Convoi
+    cardDescription: Un convoi de nourriture vient d'arriver d'un village voisin.
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture + 15
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 15
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: "Mesures de D\xE9fense"
+    cardDescription: "Vos soldats demandent plus de moyens pour prot\xE9ger le Village."
+    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect1Text: "Arm\xE9e  + 5"
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent - 30
+    food: 0
+    foodIncome: 0
+    army: 5
+    gold: -30
+    goldIncome: 0
+    happiness: 0
     people: 0
     cooldown: 0
   - cardTitle: "Imp\xF4ts"
@@ -4715,28 +4987,60 @@ MonoBehaviour:
     happiness: 0
     people: 0
     cooldown: 0
-  - cardTitle: Joies de la Rue
-    cardDescription: Vous interdisez la prostitution dans vos rues, et taxez lourdement
-      les contrevenants.
-    signetSprite: {fileID: 21300000, guid: d2fdbbe74dc0ee34e92677993f2fb718, type: 3}
-    effect1Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
-    effect1Text: Bonheur - 5
-    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
-    effect2Text: Argent + 15
+  - cardTitle: "P\xEAche Fructueuse"
+    cardDescription: "La p\xEAche a \xE9t\xE9 bonne ! De quoi faire des premiers
+      stocks de nourriture."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture +15
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 15
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: "R\xE9fugi\xE9s "
+    cardDescription: "Vous recueillez des r\xE9fugi\xE9s fuyant une guerre dans une
+      contr\xE9e voisine."
+    signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
+    effect1Text: Population  + 8
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
     food: 0
     foodIncome: 0
     army: 0
-    gold: 15
+    gold: 0
     goldIncome: 0
-    happiness: -5
+    happiness: 0
+    people: 8
+    cooldown: 0
+  - cardTitle: Mur d'Enceinte
+    cardDescription: "Vous d\xE9cidez d'\xE9riger un mur autour de votre village
+      afin de mieux vous prot\xE9ger."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent - 30
+    effect2Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect2Text: Bonheur + 4
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: -30
+    goldIncome: 0
+    happiness: 4
     people: 0
     cooldown: 0
-  - cardTitle: Libre Passage
-    cardDescription: "Vous autorisez les migrants \xE9trangers \xE0 venir dans votre
-      cit\xE9."
+  - cardTitle: Population Croissante
+    cardDescription: "Des habitants des r\xE9gions voisines viennent s'installer
+      chez vous."
     signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
     effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
-    effect1Text: Population + 5
+    effect1Text: Population  + 5
     effect2Sprite: {fileID: 0}
     effect2Text: 
     food: 0
@@ -4763,102 +5067,6 @@ MonoBehaviour:
     gold: 5
     goldIncome: 0
     happiness: 10
-    people: 0
-    cooldown: 0
-  - cardTitle: L'Art des Mots
-    cardDescription: "Vous lancez la construction d'un th\xE9\xE2tre pour divertir
-      le peuple."
-    signetSprite: {fileID: 21300000, guid: d2fdbbe74dc0ee34e92677993f2fb718, type: 3}
-    effect1Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
-    effect1Text: Bonheur + 5
-    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
-    effect2Text: Argent - 50
-    food: 0
-    foodIncome: 0
-    army: 0
-    gold: -50
-    goldIncome: 0
-    happiness: 5
-    people: 0
-    cooldown: 0
-  - cardTitle: Nationalisme
-    cardDescription: "De jeunes citoyens souhaitent s'enr\xF4ler, grossissant les
-      rangs de votre arm\xE9e."
-    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
-    effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
-    effect1Text: "Arm\xE9e + 5"
-    effect2Sprite: {fileID: 0}
-    effect2Text: 
-    food: 0
-    foodIncome: 0
-    army: 5
-    gold: 0
-    goldIncome: 0
-    happiness: 0
-    people: 0
-    cooldown: 0
-  - cardTitle: Nouvelle Taxe
-    cardDescription: "Vous d\xE9cidez d'instaurer une nouvelle taxe pour renflouer
-      les caisses du royaume."
-    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
-    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
-    effect1Text: Argent + 2 par tour
-    effect2Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
-    effect2Text: Bonheur  - 5
-    food: 0
-    foodIncome: 0
-    army: 0
-    gold: 0
-    goldIncome: 2
-    happiness: -5
-    people: 0
-    cooldown: 0
-  - cardTitle: "R\xE9coltes Prometteuses"
-    cardDescription: "D'apr\xE8s les paysans, la prochaine r\xE9colte devrait \xEAtre
-      particuli\xE8rement bonne."
-    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
-    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
-    effect1Text: Nourriture + 2 par tour
-    effect2Sprite: {fileID: 0}
-    effect2Text: 
-    food: 0
-    foodIncome: 2
-    army: 0
-    gold: 0
-    goldIncome: 0
-    happiness: 0
-    people: 0
-    cooldown: 0
-  - cardTitle: Subventions Militaires
-    cardDescription: "Vous d\xE9cidez de subventionner le secteur militaire afin
-      d'augmenter les effectifs de votre arm\xE9e."
-    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
-    effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
-    effect1Text: "Arm\xE9e + 10"
-    effect2Sprite: {fileID: 0}
-    effect2Text: 
-    food: 0
-    foodIncome: 0
-    army: 10
-    gold: 0
-    goldIncome: 0
-    happiness: 0
-    people: 0
-    cooldown: 0
-  - cardTitle: "Coupe Budg\xE9taire"
-    cardDescription: "Vous d\xE9cidez de diminuer vos effectifs militaires pour faire
-      des \xE9conomies."
-    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
-    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
-    effect1Text: Argent + 5 par tour
-    effect2Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
-    effect2Text: "Arm\xE9e - 5"
-    food: 0
-    foodIncome: 0
-    army: -5
-    gold: 0
-    goldIncome: 0
-    happiness: 0
     people: 0
     cooldown: 0
   - cardTitle: Contrat Agricole
@@ -4893,6 +5101,70 @@ MonoBehaviour:
     happiness: 0
     people: 0
     cooldown: 0
+  - cardTitle: Festival
+    cardDescription: "Vous d\xE9cidez d'organiser un grand festival pour divertir
+      vos citoyens."
+    signetSprite: {fileID: 21300000, guid: d2fdbbe74dc0ee34e92677993f2fb718, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect1Text: Bonheur + 10
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent - 35
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: -35
+    goldIncome: 0
+    happiness: 10
+    people: 0
+    cooldown: 0
+  - cardTitle: Nouvelle Taxe
+    cardDescription: "Vous d\xE9cidez d'instaurer une nouvelle taxe pour renflouer
+      vos caisses."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent + 2 par tour
+    effect2Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect2Text: Bonheur  - 5
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 2
+    happiness: -5
+    people: 0
+    cooldown: 0
+  - cardTitle: Subventions Militaires
+    cardDescription: "Vous d\xE9cidez de subventionner le secteur militaire afin
+      d'augmenter les effectifs de votre arm\xE9e."
+    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect1Text: "Arm\xE9e + 10"
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 10
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: "Coupe Budg\xE9taire"
+    cardDescription: "Vous d\xE9cidez de diminuer vos effectifs militaires pour faire
+      des \xE9conomies."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent + 5 par tour
+    effect2Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect2Text: "Arm\xE9e - 5"
+    food: 0
+    foodIncome: 0
+    army: -5
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
   - cardTitle: Contrat de Travail
     cardDescription: "Vous signez un contrat pour r\xE9aliser des travaux dans une
       cit\xE9 voisine."
@@ -4909,25 +5181,9 @@ MonoBehaviour:
     happiness: 0
     people: 0
     cooldown: 0
-  - cardTitle: Nouveaux arrivants
-    cardDescription: "Vous tentez d'attirer de nouveaux habitants dans votre royaume
-      pour redynamiser l'\xE9conomie."
-    signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
-    effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
-    effect1Text: Population  + 7
-    effect2Sprite: {fileID: 0}
-    effect2Text: 
-    food: 0
-    foodIncome: 0
-    army: 0
-    gold: 0
-    goldIncome: 0
-    happiness: 0
-    people: 7
-    cooldown: 0
   - cardTitle: "Heureuse arriv\xE9e"
     cardDescription: "Bonne nouvelle ! Un hameau de fermiers proche de chez vous
-      demande \xE0 rejoindre votre royaume."
+      demande \xE0 rejoindre votre Cit\xE9."
     signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
     effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
     effect1Text: Population + 10
@@ -4940,22 +5196,6 @@ MonoBehaviour:
     goldIncome: 0
     happiness: 0
     people: 10
-    cooldown: 0
-  - cardTitle: Festival
-    cardDescription: "Vous d\xE9cidez d'organiser un grand festival pour divertir
-      vos citoyens."
-    signetSprite: {fileID: 21300000, guid: d2fdbbe74dc0ee34e92677993f2fb718, type: 3}
-    effect1Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
-    effect1Text: Bonheur + 10
-    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
-    effect2Text: Argent - 35
-    food: 0
-    foodIncome: 0
-    army: 0
-    gold: -35
-    goldIncome: 0
-    happiness: 10
-    people: 0
     cooldown: 0
   - cardTitle: Parade militaire
     cardDescription: "Vous d\xE9cidez d'organiser un grand d\xE9fil\xE9 pour c\xE9l\xE9brer
@@ -4974,8 +5214,8 @@ MonoBehaviour:
     people: 0
     cooldown: 0
   - cardTitle: Projet militaire
-    cardDescription: "Vous souhaitez vous doter d'une grande arm\xE9e, et d\xE9cidez
-      d'acc\xE9l\xE9rer le recrutement de soldats."
+    cardDescription: Vous lancez une campagne de recrutement pour renforcer vos effectifs
+      militaires.
     signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
     effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
     effect1Text: "Arm\xE9e + 15"
@@ -4986,6 +5226,150 @@ MonoBehaviour:
     army: 15
     gold: 0
     goldIncome: 0
+    happiness: 5
+    people: 0
+    cooldown: 0
+  - cardTitle: "\xC9ducation"
+    cardDescription: "Vous lancez la construction d'une biblioth\xE8que pour \xE9duquer
+      vos citoyens."
+    signetSprite: {fileID: 21300000, guid: d2fdbbe74dc0ee34e92677993f2fb718, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect1Text: Bonheur + 5
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent  - 50
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: -50
+    goldIncome: 0
+    happiness: 5
+    people: 0
+    cooldown: 0
+  - cardTitle: Joies de la Rue
+    cardDescription: Vous interdisez la prostitution dans vos rues, et taxez lourdement
+      les contrevenants.
+    signetSprite: {fileID: 21300000, guid: d2fdbbe74dc0ee34e92677993f2fb718, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect1Text: Bonheur - 5
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent + 15
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 15
+    goldIncome: 0
+    happiness: -5
+    people: 0
+    cooldown: 0
+  - cardTitle: L'Art des Mots
+    cardDescription: "Vous lancez la construction d'un th\xE9\xE2tre pour divertir
+      le peuple."
+    signetSprite: {fileID: 21300000, guid: d2fdbbe74dc0ee34e92677993f2fb718, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect1Text: Bonheur + 5
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent - 50
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: -50
+    goldIncome: 0
+    happiness: 5
+    people: 0
+    cooldown: 0
+  - cardTitle: Nationalisme
+    cardDescription: "De jeunes citoyens souhaitent s'enr\xF4ler, grossissant les
+      rangs de votre arm\xE9e."
+    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect1Text: "Arm\xE9e + 5"
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 5
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: Nouveaux arrivants
+    cardDescription: "Vous tentez d'attirer de nouveaux habitants dans votre Cit\xE9
+      pour redynamiser l'\xE9conomie."
+    signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
+    effect1Text: Population  + 7
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 7
+    cooldown: 0
+  - cardTitle: Taxe Marchande
+    cardDescription: "Vous d\xE9cidez d'instaurer une taxe pour les marchands qui
+      entrent dans votre Cit\xE9."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent  + 5 par tour
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 5
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: Taxe de Passage
+    cardDescription: "Vous d\xE9cidez de cr\xE9er une taxe de passage pour toute
+      personne entrant dans votre Cit\xE9."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent  + 5 par tour
+    effect2Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect2Text: Bonheur - 10
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 5
+    happiness: -10
+    people: 0
+    cooldown: 0
+  - cardTitle: Politique Agricole
+    cardDescription: "Vous ordonnez la cr\xE9ation de nouveaux champs pour nourrir
+      votre population croissante."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture  + 5 par tour
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 5
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: Achat Nourricier
+    cardDescription: "Vous vendez du bl\xE9 \xE0 des Cit\xE9s voisines pour combler
+      vos trous de tr\xE9sorerie."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture  - 2 par tour
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent + 2 par tour
+    food: 0
+    foodIncome: -2
+    army: 0
+    gold: 0
+    goldIncome: 2
     happiness: 0
     people: 0
     cooldown: 0
