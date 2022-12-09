@@ -101,7 +101,7 @@ namespace MyGame
             armyValue = (Convert.ToInt32(armyValueText.text)) + val;
             armyValueText.text = armyValue.ToString();
             
-            goldIncome = (Convert.ToInt32(goldIncomeText.text)) - val /*AgeConfig.armyCostValue*/;
+            goldIncome = (Convert.ToInt32(goldIncomeText.text)) - val * AgeConfig.armyCostValue;
             goldIncomeText.text = goldIncome.ToString();
         }
 

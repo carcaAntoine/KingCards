@@ -49,6 +49,8 @@ namespace MyGame
         public GameObject newAgeScreen;
         public AgeCreator ageCreator;
         public GameObject agePrefab;
+        [HideInInspector]
+        public AgeConfig ageConfig;
 
         //------------------------------------------
 
@@ -104,14 +106,15 @@ namespace MyGame
             {
                 turnCounterValue += 1;
                 turnCounterText.text = turnCounterValue.ToString();
-                for(int i = 3; i < cardCreator.OtherTurnsCards.Count - 1; i++)
+                //Gère le CoolDown des Cards
+                for (int i = 3; i < cardCreator.OtherTurnsCards.Count - 1; i++)
                 {
-                    if(cardCreator.OtherTurnsCards[i].cooldown > 0)
+                    if (cardCreator.OtherTurnsCards[i].cooldown > 0)
                     {
                         cardCreator.OtherTurnsCards[i].cooldown -= 1;
                     }
                 }
-
+                //Gère l'activation du Malus
                 if (turnCounterValue % 10 == 0 && turnCounterValue % 15 != 0)
                 {
                     GameObject.Find("FirstCard").SetActive(false);
@@ -119,7 +122,7 @@ namespace MyGame
 
                     GetMalus();
                 }
-
+                //Gère l'activation d'une Nouvelle Ère
                 if (turnCounterValue % 15 == 0)
                 {
                     GameObject.Find("FirstCard").SetActive(false);
@@ -128,11 +131,19 @@ namespace MyGame
                     newAgeScreen.SetActive(true);
                     DisplayNewAge();
                 }
-
-                if (turnCounterValue % 10 == 5 && turnCounterValue != 5)
+                //Gère l'ajout naturel d'habitants
+                if (AgeConfig.actualAgeNumber == 3)
                 {
-                    CardManager.PeopleChange(5);
+                    CardManager.PeopleChange(AgeConfig.peopleAdd);
                 }
+                else
+                {
+                    if (turnCounterValue % 10 == 5 && turnCounterValue != 5)
+                    {
+                        CardManager.PeopleChange(AgeConfig.peopleAdd);
+                    }
+                }
+
             }
         }
 
@@ -146,14 +157,14 @@ namespace MyGame
             Debug.Log("card1Index : " + card1Index);
             Debug.Log("card2Index : " + card2Index);
 
-            while(cardCreator.OtherTurnsCards[card1Index].cooldown > 0)
+            while (cardCreator.OtherTurnsCards[card1Index].cooldown > 0)
             {
                 Debug.Log("Card 1 en Cooldown. Nouvel essai");
                 card1Index = rdn.Next(3, numberOfCards - 1);
                 Debug.Log("card1Index : " + card1Index);
             }
 
-            while(cardCreator.OtherTurnsCards[card2Index].cooldown > 0)
+            while (cardCreator.OtherTurnsCards[card2Index].cooldown > 0)
             {
                 Debug.Log("Card 2 en Cooldown. Nouvel essai");
                 card2Index = rdn.Next(3, numberOfCards - 1);
@@ -165,7 +176,7 @@ namespace MyGame
                 card2Index = rdn.Next(0, numberOfCards);
                 Debug.Log("valeurs identiques. Nouvel essai");
             }
-            
+
             // ------------------------------------------------------------
 
             DisplayCards();
@@ -182,23 +193,23 @@ namespace MyGame
 
                 if (CardManager.foodValue <= 0)
                 {
-                    gameOverText.text = "Votre peuple est mort de faim. \n Votre règne s'achève après " + turnCounterValue + " jours.";
+                    gameOverText.text = "Votre peuple est mort de faim. \n Votre Royaume s'éteint après " + turnCounterValue + " ans.";
                 }
                 else if (CardManager.armyValue <= 0)
                 {
-                    gameOverText.text = "Votre Royaume a fini par succomber à une attaque ennemie. \n Votre règne s'achève après " + turnCounterValue + " jours.";
+                    gameOverText.text = "Votre Royaume a fini par succomber à une attaque ennemie. \n Votre Royaume s'éteint après " + turnCounterValue + " ans.";
                 }
                 else if (CardManager.goldValue <= 0)
                 {
-                    gameOverText.text = "Votre Royaume est ruiné. \n Votre règne s'achève après " + turnCounterValue + " jours.";
+                    gameOverText.text = "Votre Royaume est ruiné. \n Votre Royaume s'éteint après " + turnCounterValue + " ans.";
                 }
                 else if (CardManager.peopleValue <= 0)
                 {
-                    gameOverText.text = "Tous vos habitants sont morts. \n Votre règne s'achève après " + turnCounterValue + " jours.";
+                    gameOverText.text = "Tous vos habitants sont morts. \n Votre Royaume s'éteint après " + turnCounterValue + " ans.";
                 }
                 else
                 {
-                    gameOverText.text = "Votre peuple vous a destitué. \n Votre règne s'achève après " + turnCounterValue + " jours.";
+                    gameOverText.text = "Votre peuple vous a destitué. \n Votre Royaume s'éteint après " + turnCounterValue + " ans.";
                 }
 
                 //Affichage du score
@@ -226,7 +237,8 @@ namespace MyGame
 
         public void DisplayNewAge()
         {
-            agePrefab.GetComponent<AgeConfig>().ConfigureAge(ageCreator.AgeList[5]);
+            Debug.Log("Actual Age : " + AgeConfig.actualAgeNumber);
+            agePrefab.GetComponent<AgeConfig>().ConfigureAge(ageCreator.AgeList[AgeConfig.actualAgeNumber]);
         }
 
         public void DisplayMalus()
@@ -267,7 +279,7 @@ namespace MyGame
             Debug.Log("Malus name : " + nameMalus);
         }
 
-        
+
 
         public void AddValues(Card card)
         {

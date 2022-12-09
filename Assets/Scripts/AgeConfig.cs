@@ -11,7 +11,9 @@ namespace MyGame
         //public static AgeConfig ageSingleton;
         public Age age;
         public Age myAge;
-        public static int armyCostValue;
+        public static int actualAgeNumber = 1; //nombre de l'ère actuelle ( /!\ PAS INDEX /!\ )
+        public static int armyCostValue = 1;
+        public static int peopleAdd = 5; //nombre d'habitants ajoutés naturellement
 
         /*void Awake()
         {
@@ -23,7 +25,19 @@ namespace MyGame
             transform.GetChild(1).GetComponent<Text>().text = age.annonce;
             transform.GetChild(2).GetComponent<Text>().text = age.ageName;
             transform.GetChild(3).GetComponent<Text>().text = age.effectsDescription;
+            myAge = age;
+            ChangeAge(age);
+        }
+
+        public void ChangeAge(Age age)
+        {
+            actualAgeNumber += 1;
             armyCostValue = age.ArmyCostValue;
+            peopleAdd = age.peopleAddValue;
+
+            Debug.Log(age.ageName);
+            Debug.Log("army cost : " + armyCostValue);
+            Debug.Log("people add : " + peopleAdd);
         }
     }
 }
