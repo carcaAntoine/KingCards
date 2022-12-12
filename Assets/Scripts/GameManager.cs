@@ -215,6 +215,16 @@ namespace MyGame
                 //Affichage du score
                 int score = (CardManager.peopleValue * 3) + CardManager.happyValue + CardManager.goldValue;
                 scoreText.text = score.ToString();
+
+                //Réinitialisation des stats
+                CardManager.foodValueText.text = "50";
+                CardManager.foodIncomeText.text = "5";
+                CardManager.armyValueText.text = "30";
+                CardManager.goldValueText.text = "100";
+                CardManager.goldIncomeText.text = "10";
+                CardManager.happyValueText.text = "10";
+                CardManager.peopleValueText.text = "50";
+                CardManager.gameOver = false;
             }
 
         }

@@ -699,7 +699,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 30
 --- !u!222 &332582140
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5314,14 +5314,14 @@ MonoBehaviour:
       entrent dans votre Cit\xE9."
     signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
     effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
-    effect1Text: Argent  + 5 par tour
+    effect1Text: Argent  + 3 par tour
     effect2Sprite: {fileID: 0}
     effect2Text: 
     food: 0
     foodIncome: 0
     army: 0
     gold: 0
-    goldIncome: 5
+    goldIncome: 3
     happiness: 0
     people: 0
     cooldown: 0
@@ -5330,14 +5330,14 @@ MonoBehaviour:
       personne entrant dans votre Cit\xE9."
     signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
     effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
-    effect1Text: Argent  + 5 par tour
+    effect1Text: Argent  + 3 par tour
     effect2Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
     effect2Text: Bonheur - 10
     food: 0
     foodIncome: 0
     army: 0
     gold: 0
-    goldIncome: 5
+    goldIncome: 3
     happiness: -10
     people: 0
     cooldown: 0
@@ -5371,6 +5371,118 @@ MonoBehaviour:
     gold: 0
     goldIncome: 2
     happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: Convoi Fluvial
+    cardDescription: "Une Cit\xE9 alli\xE9e vous envoie une cargaison de bl\xE9 par
+      le fleuve qui longe vos fronti\xE8res."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture  + 25
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 25
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: "M\xE9c\xE9nat Artistique"
+    cardDescription: "Un artiste en vogue a besoin de financement pour r\xE9aliser
+      ses chefs-d'oeuvre. Cela pourrait \xEAtre un bon investissement."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent  - 100
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: -100
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: "M\xE9c\xE9nat "
+    cardDescription: "Vouas avez rep\xE9r\xE9 un ing\xE9nieur particuli\xE8rement
+      brillant. Le financer pourrait \xEAtre une bonne id\xE9e."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent  - 2 par tour
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: -2
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: Les 40 Voleurs
+    cardDescription: "Vous ordonnez la traque d'un groupe de voleurs tr\xE8s actifs
+      ces derniers temps."
+    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect1Text: Bonheur + 5
+    effect2Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect2Text: "Arm\xE9e - 2"
+    food: 0
+    foodIncome: 0
+    army: -2
+    gold: 0
+    goldIncome: 0
+    happiness: 5
+    people: 0
+    cooldown: 0
+  - cardTitle: Manifestation
+    cardDescription: "Une manifestation a \xE9clat\xE9 pour protester contre la hausse
+      des taxes."
+    signetSprite: {fileID: 21300000, guid: d2fdbbe74dc0ee34e92677993f2fb718, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect1Text: Bonheur - 5
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 5
+    people: 0
+    cooldown: 0
+  - cardTitle: "Camp d'Entra\xEEnement"
+    cardDescription: "Vous financez la cr\xE9ation d'un camp pour entra\xEEner vos
+      nouveaux soldats."
+    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect1Text: "Arm\xE9e + 15"
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent - 75
+    food: 0
+    foodIncome: 0
+    army: 15
+    gold: -75
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: "March\xE9 d'\xC9t\xE9"
+    cardDescription: "Vous organisez un grand march\xE9 avec de nombreuses activit\xE9s
+      pour f\xEAter l'arriv\xE9e de l'\xC9t\xE9."
+    signetSprite: {fileID: 21300000, guid: d2fdbbe74dc0ee34e92677993f2fb718, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect1Text: Bonheur + 15
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent - 60
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: -60
+    goldIncome: 0
+    happiness: 15
     people: 0
     cooldown: 0
 --- !u!4 &1731559007
