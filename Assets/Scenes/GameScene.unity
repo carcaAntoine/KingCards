@@ -847,7 +847,7 @@ MonoBehaviour:
       que vous d\xE9cidez d'en faire une Cit\xE9-\xC9tat autonome."
     effectsDescription: De nouvelles Lois sont disponibles.
     indexMinCard: 33
-    indexMaxCard: 48
+    indexMaxCard: 62
     AddEvolution: 0
     peopleAddValue: 5
     ArmyCostValue: 1
@@ -856,8 +856,8 @@ MonoBehaviour:
       d\xE9sormais sur un v\xE9ritable Royaume !"
     effectsDescription: "De nouvelles Lois sont disponibles.\nVous allez maintenant
       devoir vous assurer que votre Royaume est suffisamment \xC9volu\xE9."
-    indexMinCard: 48
-    indexMaxCard: 0
+    indexMinCard: 33
+    indexMaxCard: 62
     AddEvolution: 1
     peopleAddValue: 5
     ArmyCostValue: 1
@@ -866,8 +866,8 @@ MonoBehaviour:
       s'\xE9l\xE8ve d\xE9sormais vers une nouvelle \xC8re :"
     effectsDescription: "De nouvelles Lois sont disponibles.\nLe d\xE9veloppement
       de votre Arm\xE9e est plus co\xFBteux."
-    indexMinCard: 0
-    indexMaxCard: 0
+    indexMinCard: 33
+    indexMaxCard: 62
     AddEvolution: 1
     peopleAddValue: 5
     ArmyCostValue: 2
@@ -1981,11 +1981,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815744481339140798, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 3815744481339140798, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 3815744481339140798, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_LocalScale.z
@@ -2053,11 +2053,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815744482630639933, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 120
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 3815744482630639933, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30
+      value: -54
       objectReference: {fileID: 0}
     - target: {fileID: 8342676430126075660, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2265,7 +2265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &850793223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2371,7 +2371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &856287461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3038,11 +3038,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815744481339140798, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 3815744481339140798, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 3815744481339140798, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_LocalScale.z
@@ -3110,11 +3110,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815744482630639933, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 120
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 3815744482630639933, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30
+      value: -54
       objectReference: {fileID: 0}
     - target: {fileID: 8342676430126075660, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3441,7 +3441,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 5
 --- !u!222 &1176163697
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4221,7 +4221,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 500, y: 485}
+  m_CellSize: {x: 550, y: 533}
   m_Spacing: {x: -100, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -4281,7 +4281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1447048561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4524,7 +4524,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Version  0.5.2
+  m_Text: Version  0.6
 --- !u!222 &1705352413
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5450,7 +5450,7 @@ MonoBehaviour:
     army: 0
     gold: 0
     goldIncome: 0
-    happiness: 5
+    happiness: -5
     people: 0
     cooldown: 0
   - cardTitle: "Camp d'Entra\xEEnement"
@@ -5483,6 +5483,133 @@ MonoBehaviour:
     gold: -60
     goldIncome: 0
     happiness: 15
+    people: 0
+    cooldown: 0
+  - cardTitle: "All\xE9geance"
+    cardDescription: "De petits Clans ont migr\xE9 des montagnes pour vous pr\xEAter
+      all\xE9geance."
+    signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
+    effect1Text: Population + 8
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 8
+    cooldown: 0
+  - cardTitle: Extension
+    cardDescription: "Votre influence s'\xE9tend et des villages voisins souhaitent
+      vous rejoindre."
+    signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
+    effect1Text: Population + 20
+    effect2Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect2Text: Nourriture + 15 par tour
+    food: 0
+    foodIncome: 15
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 20
+    cooldown: 0
+  - cardTitle: Promotion
+    cardDescription: "Vous offrez une prime exceptionnelle pour tous ceux qui s'engagent
+      dans votre arm\xE9e."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent - 120
+    effect2Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect2Text: "Arm\xE9e + 12"
+    food: 0
+    foodIncome: 0
+    army: 12
+    gold: -120
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: Patriotisme
+    cardDescription: "Face aux menaces grandissantes de la r\xE9gion, de nombreux
+      citoyens d\xE9cident de s'enr\xF4ler dans votre arm\xE9e."
+    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect1Text: "Arm\xE9e + 20"
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 20
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: "Nouvelles r\xE9coltes"
+    cardDescription: "Vos nouveaux champs sont pr\xEAts pour les r\xE9coltes !"
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture + 4 par tour
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 4
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: Exploration
+    cardDescription: "Vous lancez une exp\xE9dition pour explorer des ruines d\xE9couvertes
+      par vos soldats."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture - 100
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent + 100
+    food: -100
+    foodIncome: 0
+    army: 0
+    gold: 100
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: Import d'Urgence
+    cardDescription: "Vous achetez d'urgence une cargaison de bl\xE9 pour remplir
+      vos stocks."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent - 100
+    effect2Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect2Text: Nourriture + 100
+    food: 100
+    foodIncome: 0
+    army: 0
+    gold: -100
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    cooldown: 0
+  - cardTitle: "Hausse d'Imp\xF4ts"
+    cardDescription: "Vous d\xE9cidez d'augmenter les imp\xF4ts dans la ville, au
+      grand d\xE9sarroi de vos citoyens."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent + 3 par tour
+    effect2Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect2Text: Bonheur - 15
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 3
+    happiness: -15
     people: 0
     cooldown: 0
 --- !u!4 &1731559007
@@ -5674,7 +5801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1843428538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6221,11 +6348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815744481339140798, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 3815744481339140798, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 3815744481339140798, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_LocalScale.z
@@ -6293,11 +6420,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815744482630639933, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 120
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 3815744482630639933, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30
+      value: -54
       objectReference: {fileID: 0}
     - target: {fileID: 8342676430126075660, guid: eef84463d1f1b5b4ba05ab04b80f14c8, type: 3}
       propertyPath: m_AnchoredPosition.x

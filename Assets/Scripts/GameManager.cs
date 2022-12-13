@@ -123,7 +123,7 @@ namespace MyGame
                     GetMalus();
                 }
                 //Gère l'activation d'une Nouvelle Ère
-                if (turnCounterValue % 15 == 0)
+                if (turnCounterValue % 15 == 0 && turnCounterValue <= 75)
                 {
                     GameObject.Find("FirstCard").SetActive(false);
                     GameObject.Find("SecondCard").SetActive(false);
@@ -221,7 +221,7 @@ namespace MyGame
                 CardManager.foodIncomeText.text = "5";
                 CardManager.armyValueText.text = "30";
                 CardManager.goldValueText.text = "100";
-                CardManager.goldIncomeText.text = "10";
+                CardManager.goldIncomeText.text = "5";
                 CardManager.happyValueText.text = "10";
                 CardManager.peopleValueText.text = "50";
                 CardManager.gameOver = false;
