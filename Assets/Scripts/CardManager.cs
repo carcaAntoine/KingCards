@@ -32,6 +32,10 @@ namespace MyGame
         static public Text peopleValueText;
         static public int peopleValue;
 
+        /*------------------ POPULATION ------------------*/
+        static public Text evolutionValueText;
+        static public int evolutionValue;
+
         /*------------------------------------------------*/
         public static bool gameOver = false;
         public AgeConfig ageConfig;
@@ -100,7 +104,7 @@ namespace MyGame
         {
             armyValue = (Convert.ToInt32(armyValueText.text)) + val;
             armyValueText.text = armyValue.ToString();
-            
+
             goldIncome = (Convert.ToInt32(goldIncomeText.text)) - val * AgeConfig.armyCostValue;
             goldIncomeText.text = goldIncome.ToString();
         }

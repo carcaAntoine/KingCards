@@ -53,6 +53,10 @@ namespace MyGame
         public AgeConfig ageConfig;
 
         //------------------------------------------
+        public GameObject evolutionStat;
+
+        //------------------------------------------
+
 
         void Awake()
         {
@@ -83,6 +87,10 @@ namespace MyGame
             //Désactive Ecran Nouvelle Ere
             newAgeScreen = GameObject.Find("NewAgeCanvas");
             newAgeScreen.SetActive(false);
+
+            //Désactive Icon Evolution
+            evolutionStat = GameObject.Find("Evolution");
+            evolutionStat.SetActive(false);
 
             turnCounterText = GameObject.Find("TurnCount").GetComponent<Text>();
             turnCounterValue = Convert.ToInt32(turnCounterText.text);
@@ -144,6 +152,12 @@ namespace MyGame
                     }
                 }
 
+                //Active la stat d'Evolution
+                if (turnCounterValue == 60)
+                {
+                    evolutionStat.SetActive(true);
+                }
+
             }
         }
 
@@ -153,6 +167,9 @@ namespace MyGame
             System.Random rdn = new System.Random();
             card1Index = rdn.Next(AgeConfig.minCardIndex, AgeConfig.maxCardIndex);
             card2Index = rdn.Next(AgeConfig.minCardIndex, AgeConfig.maxCardIndex);
+
+            //Debug.Log("minindex : " + AgeConfig.minCardIndex);
+            //Debug.Log("maxindex : " + AgeConfig.maxCardIndex);
 
             Debug.Log("card1Index : " + card1Index);
             Debug.Log("card2Index : " + card2Index);
@@ -224,7 +241,15 @@ namespace MyGame
                 CardManager.goldIncomeText.text = "5";
                 CardManager.happyValueText.text = "10";
                 CardManager.peopleValueText.text = "50";
+                turnCounterText.text = "1";
                 CardManager.gameOver = false;
+                Cards.turnone = true;
+                //ageConfig.ReInitValues();
+                AgeConfig.actualAgeNumber = 1;
+                AgeConfig.armyCostValue = 1;
+                AgeConfig.peopleAdd = 5;
+                AgeConfig.minCardIndex = 0;
+                AgeConfig.maxCardIndex = 17;
             }
 
         }

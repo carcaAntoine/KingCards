@@ -38,5 +38,14 @@ namespace MyGame
             Debug.Log("army cost : " + armyCostValue);
             Debug.Log("people add : " + peopleAdd);
         }
+
+        public void ReInitValues()
+        {
+            actualAgeNumber = 1;
+            armyCostValue = 1;
+            peopleAdd = 5;
+            minCardIndex = 0;
+            maxCardIndex = 17;
+        }
     }
 }
