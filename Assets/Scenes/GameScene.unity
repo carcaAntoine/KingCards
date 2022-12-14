@@ -868,8 +868,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -75}
-  m_SizeDelta: {x: 1920, y: 150}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 1920, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &284649585
 MonoBehaviour:
@@ -891,7 +891,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c2ea21eb7926449478b31e42ab26c8ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ffc908927633f56478c4b14ff2f79354, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4692,7 +4692,7 @@ MonoBehaviour:
       Nos soldats tentent
       de les repousser tant bien que mal.'
     malusSprite: {fileID: 21300000, guid: e2db4f647aec3ba40aedae1cc5fbd4d9, type: 3}
-    malusEffectText: "Arm\xE9e  -  20"
+    malusEffectText: "Arm\xE9e  "
     foodMalus: 0
     armyMalus: -20
     goldMalus: 0
@@ -4703,7 +4703,7 @@ MonoBehaviour:
     malusDescription: "Un incendie dans un d\xE9p\xF4t de grains a d\xE9truit une
       partie des r\xE9coltes de l'ann\xE9e."
     malusSprite: {fileID: 21300000, guid: f427ce5ce983ef74b9bc95f0332e3af4, type: 3}
-    malusEffectText: Nourriture  -  30
+    malusEffectText: 'Nourriture  '
     foodMalus: -30
     armyMalus: 0
     goldMalus: 0
@@ -4714,7 +4714,7 @@ MonoBehaviour:
     malusDescription: "Un voleur s'est introduit dans la salle du tr\xE9sor et \xE0
       d\xE9rob\xE9 une partie de vos richesses."
     malusSprite: {fileID: 21300000, guid: b7a0dabd84f6d0a47b153d558a0d5ec3, type: 3}
-    malusEffectText: Argent  -  30
+    malusEffectText: 'Argent  '
     foodMalus: 0
     armyMalus: 0
     goldMalus: -30
@@ -4725,7 +4725,7 @@ MonoBehaviour:
     malusDescription: "Un kidnappeur s\xE9vit dans vos rues et a enlev\xE9 certains
       de vos citoyens."
     malusSprite: {fileID: 21300000, guid: e160fa3829637df41a056dfad9bb9e1b, type: 3}
-    malusEffectText: Population  -  3
+    malusEffectText: 'Population  '
     foodMalus: 0
     armyMalus: 0
     goldMalus: 0
@@ -4736,7 +4736,7 @@ MonoBehaviour:
     malusDescription: "Une partie des citoyens vient de manifester contre la hausse
       des imp\xF4ts et des taxes que vous ajoutez constamment."
     malusSprite: {fileID: 21300000, guid: e94ac09bd842a294c8a33884eb91c957, type: 3}
-    malusEffectText: Bonheur  -  5
+    malusEffectText: 'Bonheur  '
     foodMalus: 0
     armyMalus: 0
     goldMalus: 0
@@ -4747,7 +4747,7 @@ MonoBehaviour:
     malusDescription: "L'augmentation des activit\xE9s barbares dans la r\xE9gion
       vous oblige \xE0 r\xE9quisitionner des soldats pour prot\xE9ger les routes."
     malusSprite: {fileID: 21300000, guid: e2db4f647aec3ba40aedae1cc5fbd4d9, type: 3}
-    malusEffectText: "Arm\xE9e  -  10"
+    malusEffectText: "Arm\xE9e  "
     foodMalus: 0
     armyMalus: -10
     goldMalus: 0
@@ -4758,7 +4758,7 @@ MonoBehaviour:
     malusDescription: "Les r\xE9coltes de bl\xE9 sont moins bonnes que pr\xE9vu,
       diminuant votre stock pour passer l'hiver."
     malusSprite: {fileID: 21300000, guid: f427ce5ce983ef74b9bc95f0332e3af4, type: 3}
-    malusEffectText: Nourriture  -  50
+    malusEffectText: 'Nourriture  '
     foodMalus: -50
     armyMalus: 0
     goldMalus: 0
@@ -4769,7 +4769,7 @@ MonoBehaviour:
     malusDescription: "Vous devez r\xE9aliser des travaux en urgence pour restaurer
       des b\xE2timents v\xE9tustes qui risquent de s'effondrer."
     malusSprite: {fileID: 21300000, guid: b7a0dabd84f6d0a47b153d558a0d5ec3, type: 3}
-    malusEffectText: Argent  -  60
+    malusEffectText: 'Argent  '
     foodMalus: 0
     armyMalus: 0
     goldMalus: -60
@@ -4780,7 +4780,7 @@ MonoBehaviour:
     malusDescription: "Un grave accident a eu lieu dans la cit\xE9, causant de nombreuses
       victimes."
     malusSprite: {fileID: 21300000, guid: e160fa3829637df41a056dfad9bb9e1b, type: 3}
-    malusEffectText: Population  -  10
+    malusEffectText: 'Population  '
     foodMalus: 0
     armyMalus: 0
     goldMalus: 0
@@ -4791,7 +4791,7 @@ MonoBehaviour:
     malusDescription: "La cit\xE9 est en deuil suite \xE0 l'annonce de la mort d'un
       membre de la famille royale."
     malusSprite: {fileID: 21300000, guid: e94ac09bd842a294c8a33884eb91c957, type: 3}
-    malusEffectText: Bonheur  -  5
+    malusEffectText: 'Bonheur  '
     foodMalus: 0
     armyMalus: 0
     goldMalus: 0
@@ -4802,7 +4802,7 @@ MonoBehaviour:
     malusDescription: "La mauvaise m\xE9t\xE9o de ces derni\xE8res semaines \xE0
       ravag\xE9 les r\xE9coltes ! Il va \xEAtre difficile de nourrir votre peuple."
     malusSprite: {fileID: 21300000, guid: f427ce5ce983ef74b9bc95f0332e3af4, type: 3}
-    malusEffectText: Nourriture  -  150
+    malusEffectText: 'Nourriture  '
     foodMalus: -150
     armyMalus: 0
     goldMalus: 0
@@ -4810,12 +4810,12 @@ MonoBehaviour:
     peopleMalus: 0
   - malusName: Guerre
     alertLevel: 1
-    malusDescription: "Une cit\xE9 voisine vous a d\xE9clar\xE9 la guerre !\nVous
-      envoyez votre arm\xE9e d\xE9fendre votre royaume."
+    malusDescription: "Un Royaume voisin vous a d\xE9clar\xE9 la guerre !\nVous envoyez
+      votre arm\xE9e d\xE9fendre votre royaume."
     malusSprite: {fileID: 21300000, guid: e2db4f647aec3ba40aedae1cc5fbd4d9, type: 3}
-    malusEffectText: "Arm\xE9e  -  150"
+    malusEffectText: "Arm\xE9e  "
     foodMalus: 0
-    armyMalus: -150
+    armyMalus: -100
     goldMalus: 0
     happinessMalus: 0
     peopleMalus: 0
@@ -4824,7 +4824,7 @@ MonoBehaviour:
     malusDescription: "Le fleuve est entr\xE9 en crue ! \nDe nombreux b\xE2timents
       sont inond\xE9s, et de gros travaux sont \xE0 pr\xE9voir."
     malusSprite: {fileID: 21300000, guid: b7a0dabd84f6d0a47b153d558a0d5ec3, type: 3}
-    malusEffectText: Argent  -  150
+    malusEffectText: 'Argent  '
     foodMalus: 0
     armyMalus: 0
     goldMalus: -150
@@ -4835,7 +4835,7 @@ MonoBehaviour:
     malusDescription: "Des r\xE9volutionnaires sont arriv\xE9s en ville et tentent
       de retourner une partie de la population contre vous !"
     malusSprite: {fileID: 21300000, guid: e94ac09bd842a294c8a33884eb91c957, type: 3}
-    malusEffectText: Bonheur  -  20
+    malusEffectText: 'Bonheur  '
     foodMalus: 0
     armyMalus: 0
     goldMalus: 0
@@ -4846,7 +4846,7 @@ MonoBehaviour:
     malusDescription: "Une \xE9pid\xE9mie se propage en ville ! De nombreux citoyens
       meurent \xE0 cause de cette maladie."
     malusSprite: {fileID: 21300000, guid: e160fa3829637df41a056dfad9bb9e1b, type: 3}
-    malusEffectText: Population - 60
+    malusEffectText: 'Population '
     foodMalus: 0
     armyMalus: 0
     goldMalus: 0

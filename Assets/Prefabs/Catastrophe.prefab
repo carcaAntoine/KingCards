@@ -307,7 +307,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 47c33d9056f10eb46b7ba0ce2b8dc578, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 995891ecc5d5130429bf29c33d661a0e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -351,6 +351,7 @@ MonoBehaviour:
     goldMalus: 0
     happinessMalus: 0
     peopleMalus: 0
+  malusValue: 0
 --- !u!1 &8475724124047886917
 GameObject:
   m_ObjectHideFlags: 0
