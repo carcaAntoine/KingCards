@@ -62,6 +62,12 @@ namespace MyGame
 
             peopleValueText = GameObject.Find("PeopleValue").GetComponent<Text>();
             peopleValue = Convert.ToInt32(peopleValueText.text);
+
+            if(GameManager.singleton.evolutionIsActive)
+            {
+            evolutionValueText = GameObject.Find("EvolutionValue").GetComponent<Text>();
+            evolutionValue = Convert.ToInt32(evolutionValueText.text);
+            }
         }
 
         public static void CheckValues()
@@ -134,6 +140,12 @@ namespace MyGame
 
             foodIncome = Convert.ToInt32(foodIncomeText.text) - val;
             foodIncomeText.text = foodIncome.ToString();
+        }
+
+        public static void EvolutionChange(int val)
+        {
+            evolutionValue = Convert.ToInt32(evolutionValueText.text) + val;
+            evolutionValueText.text = evolutionValue.ToString();
         }
 
         //########################################################################################

@@ -53,7 +53,9 @@ namespace MyGame
         public AgeConfig ageConfig;
 
         //------------------------------------------
+        [HideInInspector]
         public GameObject evolutionStat;
+        public bool evolutionIsActive;
 
         //------------------------------------------
 
@@ -140,7 +142,7 @@ namespace MyGame
                     DisplayNewAge();
                 }
                 //Gère l'ajout naturel d'habitants
-                if (AgeConfig.actualAgeNumber == 3)
+                if (AgeConfig.actualAgeNumber == 3 && turnCounterValue % 2 == 0)
                 {
                     CardManager.PeopleChange(AgeConfig.peopleAdd);
                 }
@@ -156,6 +158,7 @@ namespace MyGame
                 if (turnCounterValue == 60)
                 {
                     evolutionStat.SetActive(true);
+                    evolutionIsActive = true;
                 }
 
             }
@@ -284,7 +287,7 @@ namespace MyGame
         public void GetMalus()
         {
             //augmentation de la difficulté au-delà du tour 50
-            if (turnCounterValue == 50)
+            if (turnCounterValue == 80)
             {
                 minIndex = 10;
             }
