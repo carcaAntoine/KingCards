@@ -4803,7 +4803,7 @@ MonoBehaviour:
       ravag\xE9 les r\xE9coltes ! Il va \xEAtre difficile de nourrir votre peuple."
     malusSprite: {fileID: 21300000, guid: f427ce5ce983ef74b9bc95f0332e3af4, type: 3}
     malusEffectText: 'Nourriture  '
-    foodMalus: -150
+    foodMalus: -100
     armyMalus: 0
     goldMalus: 0
     happinessMalus: 0
@@ -4815,7 +4815,7 @@ MonoBehaviour:
     malusSprite: {fileID: 21300000, guid: e2db4f647aec3ba40aedae1cc5fbd4d9, type: 3}
     malusEffectText: "Arm\xE9e  "
     foodMalus: 0
-    armyMalus: -100
+    armyMalus: -80
     goldMalus: 0
     happinessMalus: 0
     peopleMalus: 0
@@ -4851,7 +4851,7 @@ MonoBehaviour:
     armyMalus: 0
     goldMalus: 0
     happinessMalus: 0
-    peopleMalus: -60
+    peopleMalus: -40
 --- !u!4 &1180980001
 Transform:
   m_ObjectHideFlags: 0
@@ -6905,6 +6905,23 @@ MonoBehaviour:
     foodIncome: 0
     army: 0
     gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    evolution: 0
+    cooldown: 0
+  - cardTitle: Bonne Affaire
+    cardDescription: "Vous achetez \xE0 prix d'or les revenus agricoles d'un village
+      voisin."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture + 3 par tour
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent - 100
+    food: 0
+    foodIncome: 3
+    army: 0
+    gold: -100
     goldIncome: 0
     happiness: 0
     people: 0
