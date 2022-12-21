@@ -331,6 +331,16 @@ namespace MyGame
             CardManager.GoldIncomeChange(card.goldIncome);
             CardManager.HappinessChange(card.happiness);
             CardManager.PeopleChange(card.people);
+            if(card.goldenAge)
+            {
+                Debug.Log("Golden Age !!");
+                CardManager.GoldenAge();
+            }
+            if(card.foodGoldenAge)
+            {
+                Debug.Log("Food Golden Age !!");
+                CardManager.FoodGoldenAge();
+            }
         }
 
     }

@@ -25,6 +25,8 @@ namespace MyGame
         public int people;
         public int evolution;
         public int cooldown;
+        public bool goldenAge;
+        public bool foodGoldenAge;
 
     }
 }

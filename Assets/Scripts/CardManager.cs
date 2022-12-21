@@ -150,5 +150,17 @@ namespace MyGame
 
         //########################################################################################
 
+        public static void GoldenAge()
+        {
+            goldValue = (Convert.ToInt32(goldValueText.text) + peopleValue);
+            goldValueText.text = goldValue.ToString();
+        }
+
+        public static void FoodGoldenAge()
+        {
+            foodIncome = Convert.ToInt32(foodIncomeText.text) + evolutionValue;
+            foodIncomeText.text = foodIncome.ToString();
+        }
+
     }
 }

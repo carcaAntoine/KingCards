@@ -1404,7 +1404,7 @@ MonoBehaviour:
     effectsDescription: "De nouvelles Lois sont disponibles.\nVous allez maintenant
       devoir vous assurer que votre Royaume est suffisamment \xC9volu\xE9."
     indexMinCard: 46
-    indexMaxCard: 63
+    indexMaxCard: 78
     AddEvolution: 1
     peopleAddValue: 5
     ArmyCostValue: 1
@@ -1413,10 +1413,10 @@ MonoBehaviour:
       s'\xE9l\xE8ve d\xE9sormais vers une nouvelle \xC8re :"
     effectsDescription: "De nouvelles Lois sont disponibles.\nLe d\xE9veloppement
       de votre Arm\xE9e est plus co\xFBteux."
-    indexMinCard: 33
-    indexMaxCard: 62
+    indexMinCard: 65
+    indexMaxCard: 94
     AddEvolution: 1
-    peopleAddValue: 5
+    peopleAddValue: 7
     ArmyCostValue: 2
 --- !u!4 &436992536
 Transform:
@@ -5717,6 +5717,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 5
+    goldenAge: 0
+    foodGoldenAge: 0
   pauseMenuScreen: {fileID: 0}
   newAgeScreen: {fileID: 0}
   ageCreator: {fileID: 436992535}
@@ -6128,6 +6130,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 5
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Loi Fiscale
     cardDescription: "Vous ordonnez de privil\xE9gier le d\xE9veloppement de l'\xE9conomie."
     signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
@@ -6144,6 +6148,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 5
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Loi Martiale
     cardDescription: 
     signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
@@ -6160,6 +6166,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 5
+    goldenAge: 0
+    foodGoldenAge: 0
   OtherTurnsCards:
   - cardTitle: Projet Agricole
     cardDescription: "Vous d\xE9cidez de cr\xE9er un champ pour avoir une source
@@ -6178,6 +6186,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Projet Fiscal
     cardDescription: "Vous d\xE9cidez de commercer avec d'autres Clans pour avoir
       une source durable d'Argent."
@@ -6195,6 +6205,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "Projet de D\xE9fense"
     cardDescription: "Vous d\xE9cidez d'armer des membres de votre Clan pour pouvoir
       vous d\xE9fendre contre les futures menaces."
@@ -6212,6 +6224,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Nouveaux Membres
     cardDescription: Un groupe de personnes souhaiterait rejoindre votre Clan.
     signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
@@ -6228,6 +6242,8 @@ MonoBehaviour:
     people: 5
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Bannissement
     cardDescription: "Un membre de votre Clan a commis l'irr\xE9parable. Vous d\xE9cidez
       de le bannir \xE0 jamais."
@@ -6245,6 +6261,8 @@ MonoBehaviour:
     people: -1
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Cadeau
     cardDescription: "Un Clan voisin vous offre ce pr\xE9sent en signe d'amiti\xE9."
     signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
@@ -6261,6 +6279,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Retour des chasseurs
     cardDescription: "Le groupe de chasseurs que vous avez envoy\xE9 est revenu avec
       de bonnes prises."
@@ -6278,6 +6298,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Banquet Divin
     cardDescription: Vous organisez un gigantesque banquet en l'honneur des Dieux.
     signetSprite: {fileID: 21300000, guid: d2fdbbe74dc0ee34e92677993f2fb718, type: 3}
@@ -6294,6 +6316,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "R\xE9coltes"
     cardDescription: "Il est temps de faire les r\xE9coltes de certains de vos champs."
     signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
@@ -6310,6 +6334,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Commercialisation
     cardDescription: "Vous d\xE9cidez de cr\xE9er des petits objets que vous vendez
       \xE0 des marchands ambulants."
@@ -6327,6 +6353,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Attaque du Camp
     cardDescription: "Vous attaquez et soumettez un camp barbare voisin. Ceux-ci
       vous paieront d\xE9sormais un tribu."
@@ -6344,6 +6372,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Nouvelles armes
     cardDescription: "Vous avez r\xE9cemment acquis un stock d'arcs, et d\xE9cidez
       de les utiliser."
@@ -6361,6 +6391,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "D\xE9fense Efficace"
     cardDescription: "Vous avez d\xE9fait un groupe de pillards, et vous vous emparez
       de leurs richesses."
@@ -6378,6 +6410,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Chasse importante
     cardDescription: Votre groupe de chasseurs est revenu avec une grosse prise.
       Malheureusement, l'un d'eux est mort pendant la chasse.
@@ -6395,6 +6429,8 @@ MonoBehaviour:
     people: -1
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Divertissement
     cardDescription: "Vous cr\xE9ez de nouvelles occupations pour divertir les membres
       de votre Clan."
@@ -6412,6 +6448,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "\xC0 la p\xEAche"
     cardDescription: "Vous formez un groupe de p\xEAcheurs pour exploiter les ressources
       du lac voisin."
@@ -6429,6 +6467,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "R\xE9sultat des ventes"
     cardDescription: "Les ventes de votre artisanat ont bien augment\xE9 et vous
       rapportent une jolie somme."
@@ -6446,6 +6486,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "R\xE9coltes Prometteuses"
     cardDescription: "Bonne nouvelle, les prochaines r\xE9coltes devraient \xEAtre
       particuli\xE8rement bonnes !"
@@ -6463,6 +6505,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Mon beau Moulin
     cardDescription: "Vous demandez la cr\xE9ation d'un moulin pour acc\xE9l\xE9rer
       la transformation du bl\xE9."
@@ -6480,6 +6524,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Naissances
     cardDescription: Une vague de naissances a eu lieu dans votre Village.
     signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
@@ -6496,6 +6542,8 @@ MonoBehaviour:
     people: 4
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Revalorisation
     cardDescription: "La vente de votre artisanat progresse bien, et vous d\xE9cidez
       d'augmenter les prix."
@@ -6513,6 +6561,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Convoi
     cardDescription: Un convoi de nourriture vient d'arriver d'un village voisin.
     signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
@@ -6529,6 +6579,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "Mesures de D\xE9fense"
     cardDescription: "Vos soldats demandent plus de moyens pour prot\xE9ger le Village."
     signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
@@ -6545,6 +6597,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "Imp\xF4ts"
     cardDescription: "Les imp\xF4ts ont \xE9t\xE9 r\xE9colt\xE9s.\nIl est temps de
       renflouer les caisses."
@@ -6562,6 +6616,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "P\xEAche Fructueuse"
     cardDescription: "La p\xEAche a \xE9t\xE9 bonne ! De quoi faire des premiers
       stocks de nourriture."
@@ -6579,6 +6635,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "R\xE9fugi\xE9s "
     cardDescription: "Vous recueillez des r\xE9fugi\xE9s fuyant une guerre dans une
       contr\xE9e voisine."
@@ -6596,6 +6654,8 @@ MonoBehaviour:
     people: 8
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Mur d'Enceinte
     cardDescription: "Vous d\xE9cidez d'\xE9riger un mur autour de votre village
       afin de mieux vous prot\xE9ger."
@@ -6613,6 +6673,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Population Croissante
     cardDescription: "Des habitants des r\xE9gions voisines viennent s'installer
       chez vous."
@@ -6630,6 +6692,8 @@ MonoBehaviour:
     people: 5
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Joies du Cirque
     cardDescription: 'Le cirque est en ville !
 
@@ -6649,6 +6713,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Contrat Agricole
     cardDescription: "Vous signez un contrat d'approvisionnement en nourriture avec
       une cit\xE9 voisine."
@@ -6666,6 +6732,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "Contrat de S\xE9curit\xE9"
     cardDescription: Vous employez une troupe de mercenaires pour compenser votre
       manque de soldats.
@@ -6683,6 +6751,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Festival
     cardDescription: "Vous d\xE9cidez d'organiser un grand festival pour divertir
       vos citoyens."
@@ -6700,6 +6770,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Nouvelle Taxe
     cardDescription: "Vous d\xE9cidez d'instaurer une nouvelle taxe pour renflouer
       vos caisses."
@@ -6717,6 +6789,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Subventions Militaires
     cardDescription: "Vous d\xE9cidez de subventionner le secteur militaire afin
       d'augmenter les effectifs de votre arm\xE9e."
@@ -6734,6 +6808,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "Coupe Budg\xE9taire"
     cardDescription: "Vous d\xE9cidez de diminuer vos effectifs militaires pour faire
       des \xE9conomies."
@@ -6751,6 +6827,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Contrat de Travail
     cardDescription: "Vous signez un contrat pour r\xE9aliser des travaux dans une
       cit\xE9 voisine."
@@ -6768,6 +6846,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "Heureuse arriv\xE9e"
     cardDescription: "Bonne nouvelle ! Un hameau de fermiers proche de chez vous
       demande \xE0 rejoindre votre Cit\xE9."
@@ -6785,6 +6865,8 @@ MonoBehaviour:
     people: 10
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Parade militaire
     cardDescription: "Vous d\xE9cidez d'organiser un grand d\xE9fil\xE9 pour c\xE9l\xE9brer
       vos r\xE9centes victoires militaires."
@@ -6802,6 +6884,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Projet militaire
     cardDescription: Vous lancez une campagne de recrutement pour renforcer vos effectifs
       militaires.
@@ -6819,6 +6903,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "\xC9ducation"
     cardDescription: "Vous lancez la construction d'une biblioth\xE8que pour \xE9duquer
       vos citoyens."
@@ -6836,6 +6922,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Joies de la Rue
     cardDescription: Vous interdisez la prostitution dans vos rues, et taxez lourdement
       les contrevenants.
@@ -6853,6 +6941,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: L'Art des Mots
     cardDescription: "Vous lancez la construction d'un th\xE9\xE2tre pour divertir
       le peuple."
@@ -6870,6 +6960,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Nationalisme
     cardDescription: "De jeunes citoyens souhaitent s'enr\xF4ler, grossissant les
       rangs de votre arm\xE9e."
@@ -6887,6 +6979,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Nouveaux arrivants
     cardDescription: "Vous tentez d'attirer de nouveaux habitants dans votre Cit\xE9
       pour redynamiser l'\xE9conomie."
@@ -6904,6 +6998,8 @@ MonoBehaviour:
     people: 7
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Taxe Marchande
     cardDescription: "Vous d\xE9cidez d'instaurer une taxe pour les marchands qui
       entrent dans votre Cit\xE9."
@@ -6921,6 +7017,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Taxe de Passage
     cardDescription: "Vous d\xE9cidez de cr\xE9er une taxe de passage pour toute
       personne entrant dans votre Cit\xE9."
@@ -6938,6 +7036,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Politique Agricole
     cardDescription: "Vous ordonnez la cr\xE9ation de nouveaux champs pour nourrir
       votre population croissante."
@@ -6955,6 +7055,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Achat Nourricier
     cardDescription: "Vous vendez du bl\xE9 \xE0 des Cit\xE9s voisines pour combler
       vos trous de tr\xE9sorerie."
@@ -6972,6 +7074,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Convoi Fluvial
     cardDescription: "Une Cit\xE9 alli\xE9e vous envoie une cargaison de bl\xE9 par
       le fleuve qui longe vos fronti\xE8res."
@@ -6989,6 +7093,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Bonne Affaire
     cardDescription: "Vous achetez \xE0 prix d'or les revenus agricoles d'un village
       voisin."
@@ -7006,6 +7112,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "M\xE9c\xE9nat Artistique"
     cardDescription: "Un artiste en vogue a besoin de financement pour r\xE9aliser
       ses chefs-d'oeuvre. Cela pourrait \xEAtre un bon investissement."
@@ -7023,6 +7131,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "M\xE9c\xE9nat "
     cardDescription: "Vouas avez rep\xE9r\xE9 un ing\xE9nieur particuli\xE8rement
       brillant. Le financer pourrait \xEAtre une bonne id\xE9e."
@@ -7040,6 +7150,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Les 40 Voleurs
     cardDescription: "Vous ordonnez la traque d'un groupe de voleurs tr\xE8s actifs
       ces derniers temps."
@@ -7057,6 +7169,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Manifestation
     cardDescription: "Une manifestation a \xE9clat\xE9 pour protester contre la hausse
       des taxes."
@@ -7074,6 +7188,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "Camp d'Entra\xEEnement"
     cardDescription: "Vous financez la cr\xE9ation d'un camp pour entra\xEEner vos
       nouveaux soldats."
@@ -7091,6 +7207,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "March\xE9 d'\xC9t\xE9"
     cardDescription: "Vous organisez un grand march\xE9 avec de nombreuses activit\xE9s
       pour f\xEAter l'arriv\xE9e de l'\xC9t\xE9."
@@ -7108,6 +7226,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "All\xE9geance"
     cardDescription: "De petits Clans ont migr\xE9 des montagnes pour vous pr\xEAter
       all\xE9geance."
@@ -7125,6 +7245,8 @@ MonoBehaviour:
     people: 8
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Extension
     cardDescription: "Votre influence s'\xE9tend et des villages voisins souhaitent
       vous rejoindre."
@@ -7142,6 +7264,8 @@ MonoBehaviour:
     people: 20
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Promotion
     cardDescription: "Vous offrez une prime exceptionnelle pour tous ceux qui s'engagent
       dans votre arm\xE9e."
@@ -7159,6 +7283,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Patriotisme
     cardDescription: "Face aux menaces grandissantes de la r\xE9gion, de nombreux
       citoyens d\xE9cident de s'enr\xF4ler dans votre arm\xE9e."
@@ -7176,6 +7302,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "Nouvelles r\xE9coltes"
     cardDescription: "Vos nouveaux champs sont pr\xEAts pour les r\xE9coltes !"
     signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
@@ -7192,6 +7320,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Exploration
     cardDescription: "Vous lancez une exp\xE9dition pour explorer des ruines d\xE9couvertes
       par vos soldats."
@@ -7209,6 +7339,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Import d'Urgence
     cardDescription: "Vous achetez d'urgence une cargaison de bl\xE9 pour remplir
       vos stocks."
@@ -7226,6 +7358,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "Hausse d'Imp\xF4ts"
     cardDescription: "Vous d\xE9cidez d'augmenter les imp\xF4ts dans la ville, au
       grand d\xE9sarroi de vos citoyens."
@@ -7243,6 +7377,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "Exp\xE9dition"
     cardDescription: "Vous lancez une grande exp\xE9dition \xE0 la recherche des
       tr\xE9sors de civilisations anciennes."
@@ -7260,6 +7396,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Financement Public
     cardDescription: "Vous lancez de grands travaux de r\xE9novation de vos infrastructures."
     signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
@@ -7276,6 +7414,8 @@ MonoBehaviour:
     people: 0
     evolution: 1
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Muraille
     cardDescription: "Vous agrandissez et renforcez la muraille qui prot\xE8ge votre
       Royaume."
@@ -7293,6 +7433,8 @@ MonoBehaviour:
     people: 0
     evolution: 1
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Pillage
     cardDescription: "Vous avez attaqu\xE9 une Cit\xE9 voisine et revenez avec le
       r\xE9sultat de votre pillage."
@@ -7310,6 +7452,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Technique Agraire
     cardDescription: "Vous essayez d'employer une nouvelle technique de plantation
       d\xE9couverte par un de vos savants."
@@ -7327,6 +7471,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Emprunt
     cardDescription: Vous empruntez une grosse somme d'Argent pour financer vos travaux
       publics.
@@ -7344,6 +7490,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "Moulins \xE0 Vent"
     cardDescription: Vous financez un parc de moulins pour augmenter la production
       de farine pour le pain.
@@ -7361,6 +7509,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Nouvelles Armes
     cardDescription: "Le d\xE9veloppement de nouvelles armes incite de nouveaux citoyens
       \xE0 s'engager."
@@ -7378,6 +7528,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Mobilisation
     cardDescription: "Vous craignez une attaque imminente et mobilisez des troupes
       pour vous d\xE9fendre."
@@ -7395,6 +7547,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "D\xE9sarmement"
     cardDescription: "Faute de moyens, vous d\xE9cidez de r\xE9duire vos effectifs
       militaires."
@@ -7412,6 +7566,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Remerciements
     cardDescription: "Votre peuple fait une c\xE9l\xE9bration pour vous remercier
       de vos travaux pour am\xE9liorer leurs vies."
@@ -7429,6 +7585,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: Commerce Fluvial
     cardDescription: "Vous am\xE9liorez le commerce fluvial avec d'autres Royaumes
       voisins."
@@ -7446,6 +7604,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   - cardTitle: "P\xEAche Am\xE9lior\xE9e"
     cardDescription: "Vous d\xE9cidez d'augmenter vos capacit\xE9s de p\xEAche dans
       le fleuve et le lac voisin."
@@ -7463,6 +7623,348 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: "\xC2ge d'Or"
+    cardDescription: "Vous entrez dans un \xC2ge d'Or !! Vous recevez 1 d'Argent
+      par Habitant !"
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent ++
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    evolution: 0
+    cooldown: 0
+    goldenAge: 1
+    foodGoldenAge: 0
+  - cardTitle: "\xC2ge d'Or"
+    cardDescription: "Vous entrez dans un \xC2ge d'Or !! Vous recevez 1 de Nourriture
+      par Tour par point d'\xC9volution !"
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture par tour ++
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    evolution: 0
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 1
+  - cardTitle: Grand Muraille
+    cardDescription: "Vous \xE9rigez une nouvelle grande muraille pour renforcer
+      les d\xE9fenses de l'Empire."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent -150
+    effect2Sprite: {fileID: 21300000, guid: a34e1e1881ddf7544b19e761ba23643b, type: 3}
+    effect2Text: "\xC9volution + 1"
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: -150
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    evolution: 1
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: "Universit\xE9"
+    cardDescription: "Vous ordonnez la cr\xE9ation d'une universit\xE9 dans la capitale
+      de votre Empire."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent -100
+    effect2Sprite: {fileID: 21300000, guid: a34e1e1881ddf7544b19e761ba23643b, type: 3}
+    effect2Text: "\xC9volution + 1"
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: -100
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    evolution: 1
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: Don de Pain
+    cardDescription: "Une partie de vos citoyens crie famine. Vous d\xE9cidez donc
+      d'organiser une ditribution de pain pour les aider."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture -100
+    effect2Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect2Text: Bonheur + 10
+    food: -100
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 10
+    people: 0
+    evolution: 0
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: Route Commerciale
+    cardDescription: "Vous cr\xE9ez de nouvelles routes commerciales pour subvenir
+      aux besoins croissants de l'Empire."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent + 4 par tour
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 4
+    happiness: 0
+    people: 0
+    evolution: 0
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: Escarmouche
+    cardDescription: 'Vous subissez des escarmouches de barbares qui tentent de piller
+      vos villages. '
+    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect1Text: "Arm\xE9e -5"
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: -5
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    evolution: 0
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: "Adh\xE9sion"
+    cardDescription: "Un nouveau village demande \xE0 rejoindre votre Empire."
+    signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
+    effect1Text: Population + 10
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 10
+    evolution: 0
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: Soutien Financier
+    cardDescription: "Vous apportez un soutien financier aux villages qui vous ont
+      r\xE9cemment rejoint pour aider leur d\xE9veloppement."
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent - 3 par tour
+    effect2Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect2Text: Bonheur + 12
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: -3
+    happiness: 12
+    people: 0
+    evolution: 0
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: Aide Alimentaire
+    cardDescription: "Un pays alli\xE9 vous propose un juteux contrat d'aide alimentaire."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture + 3 par tour
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent - 175
+    food: 0
+    foodIncome: 3
+    army: 0
+    gold: -175
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    evolution: 0
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: Pays Savant
+    cardDescription: Vous lancez un programme de financement pour soutenir les grands
+      esprits de votre Empire.
+    signetSprite: {fileID: 21300000, guid: d3bb6ad098351e14f86f9d8d00f6caf9, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect1Text: Argent - 2 par tour
+    effect2Sprite: {fileID: 21300000, guid: a34e1e1881ddf7544b19e761ba23643b, type: 3}
+    effect2Text: "\xC9volution + 2"
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: -2
+    happiness: 0
+    people: 0
+    evolution: 2
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: "Grande Arm\xE9e"
+    cardDescription: "Assez d'\xEAtre faible ! Vous \xEAtes un Empire ! Il vous faut
+      une grande Arm\xE9e !"
+    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect1Text: "Arm\xE9e +30"
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 30
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    evolution: 0
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: Alliance
+    cardDescription: "Un Royaume voisin signe une Alliance avec vous et vous aide
+      \xE0 monter une arm\xE9e digne de ce nom."
+    signetSprite: {fileID: 21300000, guid: 9f229ee21e81ea949902176073fb9175, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 0c635d53dfcd1024bada85ea43caaf31, type: 3}
+    effect1Text: "Arm\xE9e +45"
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent - 30 par tour
+    food: 0
+    foodIncome: 0
+    army: 45
+    gold: 0
+    goldIncome: 15
+    happiness: 0
+    people: 0
+    evolution: 0
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: Port
+    cardDescription: "Vous cr\xE9ez un Port de p\xEAche et de commerce le long du
+      fleuve."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture + 5 par tour
+    effect2Sprite: {fileID: 21300000, guid: bface769779ed004db22313fee9c1131, type: 3}
+    effect2Text: Argent + 5 par tour
+    food: 0
+    foodIncome: 5
+    army: 0
+    gold: 0
+    goldIncome: 5
+    happiness: 0
+    people: 0
+    evolution: 0
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: Taxe sur le Grain
+    cardDescription: "Pour pr\xE9venir les p\xE9nuries, vous cr\xE9ez une nouvelle
+      taxes sur les r\xE9coltes de grains."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture + 2 par tour
+    effect2Sprite: {fileID: 21300000, guid: 3fe8599df96790c458cd1d9e1d089efd, type: 3}
+    effect2Text: Bonheur - 15
+    food: 0
+    foodIncome: 2
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: -15
+    people: 0
+    evolution: 0
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: Croissance
+    cardDescription: "Le fort taux de natalit\xE9 de ces derni\xE8res ann\xE9es vous
+      permet d'avoir une population importante."
+    signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
+    effect1Text: Population + 10
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 0
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 10
+    evolution: 0
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: "Cit\xE9 des Chasseurs"
+    cardDescription: "Une Cit\xE9 de chasseurs vous jure all\xE9geance, ajoutant
+      leur population et leurs ressources \xE0 votre Empire."
+    signetSprite: {fileID: 21300000, guid: d4d695e903499354b9de307485639b5a, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: 4899ac5d4b84a104089ec8b63c0c38e2, type: 3}
+    effect1Text: Population + 10
+    effect2Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect2Text: Nourriture + 12 par tour
+    food: 0
+    foodIncome: 12
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 10
+    evolution: 0
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
+  - cardTitle: Plantations
+    cardDescription: "Les r\xE9coltes de vos plantations ont commenc\xE9. Vos stocks
+      vont pouvoir se renflouer."
+    signetSprite: {fileID: 21300000, guid: 8e6ea43eaa209b341a2ef89fec21fd83, type: 3}
+    effect1Sprite: {fileID: 21300000, guid: c9a44ebf7662b7f49903cf4fd0c7b630, type: 3}
+    effect1Text: Nourriture + 100
+    effect2Sprite: {fileID: 0}
+    effect2Text: 
+    food: 100
+    foodIncome: 0
+    army: 0
+    gold: 0
+    goldIncome: 0
+    happiness: 0
+    people: 0
+    evolution: 0
+    cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
 --- !u!4 &1731559007
 Transform:
   m_ObjectHideFlags: 0
