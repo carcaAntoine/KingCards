@@ -52,6 +52,10 @@ namespace MyGame
         [HideInInspector]
         public AgeConfig ageConfig;
 
+        //---------------- Rules Canvas -----------------
+        [HideInInspector]
+        public GameObject rulesScreen;
+
         //------------------------------------------
         [HideInInspector]
         public GameObject evolutionStat;
@@ -89,6 +93,10 @@ namespace MyGame
             //Désactive Ecran Nouvelle Ere
             newAgeScreen = GameObject.Find("NewAgeCanvas");
             newAgeScreen.SetActive(false);
+
+            //Désctive Ecran Règles
+            rulesScreen = GameObject.Find("RulesCanvas");
+            rulesScreen.SetActive(false);
 
             //Désactive Icon Evolution
             evolutionStat = GameObject.Find("Evolution");
@@ -331,6 +339,10 @@ namespace MyGame
             CardManager.GoldIncomeChange(card.goldIncome);
             CardManager.HappinessChange(card.happiness);
             CardManager.PeopleChange(card.people);
+            if(evolutionIsActive)
+            {
+                CardManager.EvolutionChange(card.evolution);
+            }
             if(card.goldenAge)
             {
                 Debug.Log("Golden Age !!");
