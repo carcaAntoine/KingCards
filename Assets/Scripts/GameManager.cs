@@ -61,6 +61,11 @@ namespace MyGame
         public GameObject evolutionStat;
         public bool evolutionIsActive;
 
+        //-------------- Sound Effects -----------------
+        public AudioSource cardSound;
+        public AudioSource backgroundGameMusic;
+        public AudioSource gameOverMusic;
+
         //------------------------------------------
 
 
@@ -218,6 +223,8 @@ namespace MyGame
             {
                 gameOverScreen.SetActive(true);
                 gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
+                backgroundGameMusic.Pause();
+                gameOverMusic.Play();
 
                 if (CardManager.foodValue <= 0)
                 {
@@ -271,6 +278,7 @@ namespace MyGame
             {
                 //Assigne infos des cards de cardCreator
                 cardSlots[i].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[i]);
+                cardSound.Play();
             }
         }
 
@@ -278,7 +286,9 @@ namespace MyGame
         {
 
             cardSlots[0].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card1Index]);
+            cardSound.Play();
             cardSlots[1].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card2Index]);
+            cardSound.Play();
         }
 
         public void DisplayNewAge()
