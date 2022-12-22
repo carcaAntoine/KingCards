@@ -39,6 +39,8 @@ namespace MyGame
         public GameObject[] cardSlots;
         [HideInInspector]
         public Card card;
+        [HideInInspector]
+        public GameObject cardsPanel;
 
         //------------- Pause Menu Canvas ---------------
         [HideInInspector]
@@ -82,6 +84,9 @@ namespace MyGame
 
         void InitGame()
         {
+
+            cardsPanel = GameObject.Find("CardsCanvas");
+
             //----- Désactive Ecran de GameOver -----
             gameOverScreen = GameObject.Find("GameOverCanva");
             scoreText = GameObject.Find("ScoreValue").GetComponent<Text>();
@@ -224,6 +229,7 @@ namespace MyGame
             if (CardManager.gameOver == true)
             {
                 gameOverScreen.SetActive(true);
+                cardsPanel.SetActive(false);
                 gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
                 backgroundGameMusic.Pause();
                 gameOverMusic.Play();
@@ -288,9 +294,8 @@ namespace MyGame
         {
 
             cardSlots[0].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card1Index]);
-            cardSound.Play();
+            //cardSound.Play();
             cardSlots[1].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card2Index]);
-            cardSound.Play();
         }
 
         public void DisplayNewAge()
