@@ -109,6 +109,8 @@ namespace MyGame
 
             turnCounterText = GameObject.Find("TurnCount").GetComponent<Text>();
             turnCounterValue = Convert.ToInt32(turnCounterText.text);
+
+            Cards.turnone = true;
         }
 
         public void EndTurnOne()
@@ -261,7 +263,7 @@ namespace MyGame
                 CardManager.peopleValueText.text = "50";
                 turnCounterText.text = "1";
                 CardManager.gameOver = false;
-                Cards.turnone = true;
+                
                 //ageConfig.ReInitValues();
                 AgeConfig.actualAgeNumber = 1;
                 AgeConfig.armyCostValue = 1;

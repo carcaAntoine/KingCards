@@ -28,6 +28,19 @@ namespace MyGame
             
         }
 
+        private void OnMouseEnter()
+        {
+            transform.GetComponent<RectTransform>().localScale = new Vector3(1.05f, 1.05f, 1f);
+            //transform.GetComponent<RectTransform>().rotation = new Vector3(0, 0, 3);
+            transform.Rotate(0f, 0f, 1f);
+            GameManager.singleton.cardSound.Play();
+        }
+
+        private void OnMouseExit()
+        {
+            transform.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
+            transform.Rotate(0f, 0f, -1f);
+        }
 
         private void OnMouseDown()
         {
