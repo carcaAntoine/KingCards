@@ -67,6 +67,9 @@ namespace MyGame
         public AudioSource cardSound;
         public AudioSource backgroundGameMusic;
         public AudioSource gameOverMusic;
+        public AudioSource newAgeSound;
+        public AudioSource alertSound;
+        public AudioSource catastropheSound;
 
         //------------------------------------------
 
@@ -294,14 +297,19 @@ namespace MyGame
         {
 
             cardSlots[0].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card1Index]);
-            //cardSound.Play();
+            cardSlots[0].transform.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
+            cardSlots[0].transform.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, 0);
+
             cardSlots[1].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card2Index]);
+            cardSlots[1].transform.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
+            cardSlots[1].transform.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, 0);
         }
 
         public void DisplayNewAge()
         {
             Debug.Log("Actual Age : " + AgeConfig.actualAgeNumber);
             agePrefab.GetComponent<AgeConfig>().ConfigureAge(ageCreator.AgeList[AgeConfig.actualAgeNumber]);
+            newAgeSound.Play();
         }
 
         public void DisplayMalus()
@@ -311,7 +319,7 @@ namespace MyGame
 
         public void GetMalus()
         {
-            //augmentation de la difficulté au-delà du tour 50
+            //augmentation de la difficulté au-delà du tour 80
             if (turnCounterValue == 80)
             {
                 minIndex = 10;
@@ -328,12 +336,14 @@ namespace MyGame
                 malusAlertLevel = 0;
                 malusSlots[0].SetActive(true);
                 malusSlots[1].SetActive(false);
+                alertSound.Play();
             }
             else
             {
                 malusAlertLevel = 1;
                 malusSlots[0].SetActive(false);
                 malusSlots[1].SetActive(true);
+                catastropheSound.Play();
             }
 
             DisplayMalus();
