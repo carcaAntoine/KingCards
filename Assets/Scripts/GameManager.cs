@@ -63,6 +63,9 @@ namespace MyGame
         public GameObject evolutionStat;
         public bool evolutionIsActive;
 
+        [HideInInspector]
+        public Color evolutionColor = Color.black;
+
         //-------------- Sound Effects -----------------
         public AudioSource cardSound;
         public AudioSource backgroundGameMusic;
@@ -74,6 +77,8 @@ namespace MyGame
         //------------------------------------------
 
 
+
+
         void Awake()
         {
             singleton = this;
@@ -81,6 +86,7 @@ namespace MyGame
 
         void Start()
         {
+            evolutionColor.a = 0.3f;
             InitGame();
             DisplayTurnOneCards();
         }
@@ -113,7 +119,8 @@ namespace MyGame
 
             //Désactive Icon Evolution
             evolutionStat = GameObject.Find("Evolution");
-            evolutionStat.SetActive(false);
+            evolutionStat.transform.GetComponent<Image>().color = evolutionColor;
+            evolutionStat.transform.GetChild(0).GetComponent<Text>().color = evolutionColor;
 
             turnCounterText = GameObject.Find("TurnCount").GetComponent<Text>();
             turnCounterValue = Convert.ToInt32(turnCounterText.text);
@@ -180,7 +187,8 @@ namespace MyGame
                 //Active la stat d'Evolution
                 if (turnCounterValue == 60)
                 {
-                    evolutionStat.SetActive(true);
+                    evolutionStat.transform.GetComponent<Image>().color = Color.black;
+                    evolutionStat.transform.GetChild(0).GetComponent<Text>().color = Color.black;
                     evolutionIsActive = true;
                 }
 
@@ -259,8 +267,17 @@ namespace MyGame
                 }
 
                 //Affichage du score
-                int score = (CardManager.peopleValue * 3) + CardManager.happyValue + CardManager.goldValue;
-                scoreText.text = score.ToString();
+                if (evolutionIsActive)
+                {
+                    int score = (CardManager.peopleValue * 3) + CardManager.happyValue + (CardManager.evolutionValue * 5);
+                    scoreText.text = score.ToString();
+                }
+                else
+                {
+                    int score = (CardManager.peopleValue * 3) + CardManager.happyValue;
+                    scoreText.text = score.ToString();
+                }
+
 
                 //Réinitialisation des stats
                 CardManager.foodValueText.text = "50";
@@ -272,8 +289,8 @@ namespace MyGame
                 CardManager.peopleValueText.text = "50";
                 turnCounterText.text = "1";
                 CardManager.gameOver = false;
-                
-                //ageConfig.ReInitValues();
+                evolutionIsActive = false;
+
                 AgeConfig.actualAgeNumber = 1;
                 AgeConfig.armyCostValue = 1;
                 AgeConfig.peopleAdd = 5;
@@ -366,21 +383,20 @@ namespace MyGame
             CardManager.GoldIncomeChange(card.goldIncome);
             CardManager.HappinessChange(card.happiness);
             CardManager.PeopleChange(card.people);
-            if(evolutionIsActive)
+            if (evolutionIsActive)
             {
                 CardManager.EvolutionChange(card.evolution);
             }
-            if(card.goldenAge)
+            if (card.goldenAge)
             {
                 Debug.Log("Golden Age !!");
                 CardManager.GoldenAge();
             }
-            if(card.foodGoldenAge)
+            if (card.foodGoldenAge)
             {
                 Debug.Log("Food Golden Age !!");
                 CardManager.FoodGoldenAge();
             }
         }
-
     }
 }
