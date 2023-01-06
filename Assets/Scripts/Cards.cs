@@ -28,6 +28,7 @@ namespace MyGame
             
         }
 
+#if UNITY_STANDALONE_WIN
         private void OnMouseEnter()
         {
             transform.GetComponent<RectTransform>().localScale = new Vector3(1.05f, 1.05f, 1f);
@@ -40,7 +41,7 @@ namespace MyGame
             transform.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
             transform.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, 0);
         }
-
+#endif
         private void OnMouseDown()
         {
             selectionnedCard = this.gameObject.name;
