@@ -319,6 +319,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
   myCard:
     cardTitle: 
     cardDescription: 
@@ -336,6 +338,8 @@ MonoBehaviour:
     people: 0
     evolution: 0
     cooldown: 0
+    goldenAge: 0
+    foodGoldenAge: 0
 --- !u!1 &3815744481914991881
 GameObject:
   m_ObjectHideFlags: 0

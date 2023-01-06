@@ -75,9 +75,10 @@ namespace MyGame
         public AudioSource catastropheSound;
 
         //------------------------------------------
+        private GameObject firstCard;
+        private GameObject secondCard;
 
-
-
+        //------------------------------------------
 
         void Awake()
         {
@@ -125,6 +126,10 @@ namespace MyGame
             turnCounterText = GameObject.Find("TurnCount").GetComponent<Text>();
             turnCounterValue = Convert.ToInt32(turnCounterText.text);
 
+            firstCard = GameObject.Find("FirstCard");
+            secondCard = GameObject.Find("SecondCard");
+
+
             Cards.turnone = true;
         }
 
@@ -136,6 +141,7 @@ namespace MyGame
             turnCounterValue += 1;
             turnCounterText.text = turnCounterValue.ToString();
             CardManager.IncomeManager();
+
         }
 
         public void EndTurn()
@@ -307,6 +313,9 @@ namespace MyGame
                 //Assigne infos des cards de cardCreator
                 cardSlots[i].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[i]);
                 cardSound.Play();
+#if UNITY_ANDROID              
+                cardSlots[i].transform.GetComponent<RectTransform>().localScale = new Vector3(1.1f, 1.1f, 1f);
+#endif
             }
         }
 
@@ -314,12 +323,20 @@ namespace MyGame
         {
 
             cardSlots[0].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card1Index]);
+#if UNITY_STANDALONE_WIN
             cardSlots[0].transform.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
             cardSlots[0].transform.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, 0);
+#elif UNITY_ANDROID
+            cardSlots[0].transform.GetComponent<RectTransform>().localScale = new Vector3(1.1f, 1.1f, 1f);
+#endif
 
             cardSlots[1].GetComponent<Cards>().Configure(cardCreator.OtherTurnsCards[card2Index]);
+#if UNITY_STANDALONE_WIN
             cardSlots[1].transform.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
             cardSlots[1].transform.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, 0);
+#elif UNITY_ANDROID
+            cardSlots[1].transform.GetComponent<RectTransform>().localScale = new Vector3(1.1f, 1.1f, 1f);
+#endif
         }
 
         public void DisplayNewAge()
