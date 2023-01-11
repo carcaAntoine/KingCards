@@ -17,9 +17,9 @@ namespace MyGame
             if(PlayerPrefs.HasKey(achievement.trophyID))
             {
                 transform.GetChild(0).GetComponent<Image>().sprite = achievement.trophySprite;
+                transform.GetComponent<Image>().color = new Color32(255,255,255,255);
             }else
             {
-                
                 transform.GetChild(0).GetComponent<Image>().sprite = achievement.ifLocked;
                 transform.GetComponent<Image>().color = new Color32(193,193,193,255);
             }

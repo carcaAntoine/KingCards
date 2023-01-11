@@ -97,6 +97,8 @@ MonoBehaviour:
     trophyTitle: 
     trophyDescription: 
     trophySprite: {fileID: 0}
+    ifLocked: {fileID: 0}
+  lockedTrophyIcon: {fileID: 0}
 --- !u!1 &624801647217287737
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +172,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 8
     m_MaxSize: 80
-    m_Alignment: 4
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

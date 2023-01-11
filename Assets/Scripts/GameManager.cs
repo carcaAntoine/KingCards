@@ -20,11 +20,15 @@ namespace MyGame
         int minIndex = 0;
         [HideInInspector]
         public int numberOfCards; //Nombre de cartes (hors cartes du turn 1)
+        private int numberOfGames; //Nombre de parties jouées
+        private int numberOfCatastrophes; //Nombre de catastrophes subies
 
         //----------- Game Over Canvas -------------
         private GameObject gameOverScreen;
         private Text gameOverText;
         private Text scoreText;
+        private Text highScoreText;
+        private int score;
 
         //------------- Malus Canvas ---------------
         private GameObject malusScreen;
@@ -100,6 +104,7 @@ namespace MyGame
             //----- Désactive Ecran de GameOver -----
             gameOverScreen = GameObject.Find("GameOverCanva");
             scoreText = GameObject.Find("ScoreValue").GetComponent<Text>();
+            highScoreText = GameObject.Find("HighScoreValue").GetComponent<Text>();
             gameOverScreen.SetActive(false);
 
             //Initialise éléments Malus canvas et désactive Ecran Malus
@@ -190,6 +195,37 @@ namespace MyGame
                     }
                 }
 
+                //Gestion Trophées
+                if (turnCounterValue == 50 && !PlayerPrefs.HasKey("50Tours"))
+                {
+                    PlayerPrefs.SetInt("50Tours", 1);
+                }
+                if (turnCounterValue == 75 && !PlayerPrefs.HasKey("Empire"))
+                {
+                    PlayerPrefs.SetInt("Empire", 1);
+                }
+                if (turnCounterValue == 100 && !PlayerPrefs.HasKey("OldKing"))
+                {
+                    PlayerPrefs.SetInt("OldKing", 1);
+                }
+                if (CardManager.goldValue >= 1000 && !PlayerPrefs.HasKey("Tresor"))
+                {
+                    PlayerPrefs.SetInt("Tresor", 1);
+                }
+                if (CardManager.foodValue >= 1000 && !PlayerPrefs.HasKey("Festin"))
+                {
+                    PlayerPrefs.SetInt("Festin", 1);
+                }
+                if (CardManager.peopleValue >= 150 && !PlayerPrefs.HasKey("Population"))
+                {
+                    PlayerPrefs.SetInt("Population", 1);
+                }
+                if (CardManager.evolutionValue >= 5 && !PlayerPrefs.HasKey("Evolution"))
+                {
+                    PlayerPrefs.SetInt("Evolution", 1);
+                }
+
+
                 //Active la stat d'Evolution
                 if (turnCounterValue == 60)
                 {
@@ -245,6 +281,31 @@ namespace MyGame
             CardManager.CheckValues();
             if (CardManager.gameOver == true)
             {
+                //Gestion Trophée
+                if (turnCounterValue == 10 && !PlayerPrefs.HasKey("10Tours"))
+                {
+                    PlayerPrefs.SetInt("10Tours", 1);
+                }
+
+                if (!PlayerPrefs.HasKey("NbrParties")) //Si c'est la première partie
+                {
+                    PlayerPrefs.SetInt("HighScore", 0);
+                    PlayerPrefs.SetInt("NbrParties", 1);
+                }
+                else
+                {
+                    numberOfGames = PlayerPrefs.GetInt("NbrParties");
+                    Debug.Log("Tu as joué " + numberOfGames + " partie(s).");
+                    PlayerPrefs.SetInt("NbrParties", numberOfGames + 1);
+
+                    if (numberOfGames == 10)
+                    {
+                        PlayerPrefs.SetInt("10Parties", 1);
+                    }
+
+                }
+                //---------------
+
                 gameOverScreen.SetActive(true);
                 cardsPanel.SetActive(false);
                 gameOverText = GameObject.Find("GameOverText").GetComponent<Text>();
@@ -275,14 +336,20 @@ namespace MyGame
                 //Affichage du score
                 if (evolutionIsActive)
                 {
-                    int score = (CardManager.peopleValue * 3) + CardManager.happyValue + (CardManager.evolutionValue * 5);
+                    score = (CardManager.peopleValue * 3) + CardManager.happyValue + (CardManager.evolutionValue * 5);
                     scoreText.text = score.ToString();
                 }
                 else
                 {
-                    int score = (CardManager.peopleValue * 3) + CardManager.happyValue;
+                    score = (CardManager.peopleValue * 3) + CardManager.happyValue;
                     scoreText.text = score.ToString();
                 }
+                if(score > PlayerPrefs.GetInt("HighScore"))
+                {
+                    PlayerPrefs.SetInt("HighScore", score);
+                }
+
+                highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
 
 
                 //Réinitialisation des stats
@@ -378,6 +445,23 @@ namespace MyGame
                 malusSlots[0].SetActive(false);
                 malusSlots[1].SetActive(true);
                 catastropheSound.Play();
+
+                //Gestion Trophée
+                if (!PlayerPrefs.HasKey("NbrCatastrophes"))
+                {
+                    PlayerPrefs.SetInt("NbrCatastrophes", 1);
+                }
+                else
+                {
+                    numberOfCatastrophes = PlayerPrefs.GetInt("NbrCatastrophes");
+                    Debug.Log("Tu as subi " + numberOfCatastrophes + " catastrophes(s).");
+                    PlayerPrefs.SetInt("NbrCatastrophes", numberOfCatastrophes + 1);
+
+                    if (numberOfCatastrophes == 20)
+                    {
+                        PlayerPrefs.SetInt("Catastrophe", 1);
+                    }
+                }
             }
 
             DisplayMalus();
@@ -415,5 +499,7 @@ namespace MyGame
                 CardManager.FoodGoldenAge();
             }
         }
+
+       
     }
 }

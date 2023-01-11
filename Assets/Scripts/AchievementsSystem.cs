@@ -19,6 +19,7 @@ namespace MyGame
             {
                 trophiesSlots[i].GetComponent<Achievements>().ConfigureTrophy(achievementsList[i]);
             }
+            
         }
 
     }
